@@ -1,0 +1,273 @@
+// Function to handle the navigation menu toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navLinksList = document.querySelectorAll(".nav-links a");
+    const body = document.body;
+
+    mobileMenuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        body.classList.toggle("menu-open");
+    });
+
+    // Close menu when a link is clicked
+    navLinksList.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            body.classList.remove("menu-open");
+        });
+    });
+});
+
+// Add this CSS to your styles.css to prevent body scrolling when menu is open
+/*
+body.menu-open {
+    overflow: hidden;
+}
+*/
+
+// Existing scroll-based header effect
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".site-header");
+  if (window.scrollY > 10) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+// Fade-in on scroll (IntersectionObserver)
+const faders = document.querySelectorAll(".fade-in");
+const appearOptions = {
+  threshold: 0.2,
+};
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
+});
+
+// Count up animation
+function animateCountUp(el, target) {
+  let count = 0;
+  const speed = target / 200; // adjust speed
+  const updateCount = () => {
+    count += speed;
+    if (count < target) {
+      el.textContent = Math.floor(count).toLocaleString();
+      requestAnimationFrame(updateCount);
+    } else {
+      el.textContent = target.toLocaleString() + "+";
+    }
+  };
+  updateCount();
+}
+
+// Observer for stat-item scroll animation
+const statItems = document.querySelectorAll(".stat-item");
+const statObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const numEl = entry.target.querySelector(".stat-number");
+        const target = +entry.target.getAttribute("data-target");
+        animateCountUp(numEl, target);
+        entry.target.classList.add("visible");
+        statObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 },
+);
+statItems.forEach((item) => statObserver.observe(item));
+
+// Activity & Media Corner
+fetch("activities.json")
+  .then((res) => res.json())
+  .then((data) => {
+    const linkedinContainer = document.getElementById("linkedin-posts");
+    const eventsContainer = document.getElementById("events");
+
+    data.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "activity-card";
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.title}" class="activity-image">
+        <div class="activity-content">
+          <h4 class="activity-title">${item.title}</h4>
+          <p class="activity-description">${item.description}</p>
+          <a href="${item.link}" target="_blank" class="activity-link">
+            ${item.type === "event" ? "Join Now →" : "Read More →"}
+          </a>
+        </div>
+      `;
+
+      if (item.type === "post") {
+        linkedinContainer.appendChild(card);
+      } else if (item.type === "event") {
+        eventsContainer.appendChild(card);
+      }
+    });
+  })
+  .catch((err) => console.error("Error loading activities:", err));
+
+const mediaData = {
+  videos: [
+    {
+      title: "Cyber Awareness Webinar",
+      desc: "A deep dive into cybersecurity basics.",
+      yt: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    },
+    {
+      title: "Advanced Threat Detection",
+      desc: "Learn how to identify cyber threats effectively.",
+      yt: "https://www.youtube.com/embed/ScMzIvxBSi4",
+    },
+  ],
+  blogs: [
+    {
+      title: "Staying Safe Online",
+      desc: "Tips for protecting your personal data.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+    {
+      title: "Cybersecurity Myths",
+      desc: "Debunking common security misconceptions.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+  ],
+  gallery: [
+    {
+      title: "Hackathon 2025",
+      desc: "Highlights from our latest event.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+    {
+      title: "Team Meet",
+      desc: "Our global community meet-up.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+  ],
+};
+const mediaGrid = document.getElementById("mediaGrid");
+const tabs = document.querySelectorAll(".media-tab");
+
+function loadMedia(type) {
+  mediaGrid.innerHTML = "";
+  setTimeout(() => {
+    mediaData[type].forEach((item, index) => {
+      const card = document.createElement("div");
+      card.classList.add("media-card");
+
+      if (type === "videos") {
+        card.innerHTML = `
+          <iframe src="${item.yt}" frameborder="0" allowfullscreen></iframe>
+          <div class="media-content">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+          </div>
+        `;
+      } else {
+        card.innerHTML = `
+          <img src="${item.img}" alt="${item.title}">
+          <div class="media-content">
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+            <a href="${item.link}" class="media-btn">${type === "blogs" ? "Read More" : "View Photo"}</a>
+          </div>
+        `;
+      }
+      mediaGrid.appendChild(card);
+      setTimeout(() => card.classList.add("show"), index * 150);
+    });
+  }, 100);
+}
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    document.querySelector(".media-tab.active").classList.remove("active");
+    tab.classList.add("active");
+    loadMedia(tab.dataset.type);
+  });
+});
+loadMedia("videos");
+
+// Reviews Slider
+const track = document.querySelector(".reviews-track");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+let cards = document.querySelectorAll(".review-card");
+
+// Clone cards for infinite loop illusion
+const clonedCards = [];
+cards.forEach(card => {
+    clonedCards.push(card.cloneNode(true));
+});
+clonedCards.forEach(card => {
+    track.appendChild(card);
+    track.insertBefore(card.cloneNode(true), track.firstChild);
+});
+
+cards = document.querySelectorAll(".review-card"); // Update the list after cloning
+let index = cards.length / 3;
+let cardWidth = cards[0].offsetWidth + 20;
+
+const updateTrackPosition = () => {
+  cardWidth = cards[0].offsetWidth + 20;
+  track.style.transform = `translateX(${-index * cardWidth}px)`;
+};
+updateTrackPosition();
+
+function moveSlider(direction) {
+  index += direction;
+  track.style.transition = "transform 0.4s ease";
+  updateTrackPosition();
+
+  track.addEventListener("transitionend", () => {
+    if (index <= 0) {
+      index = cards.length / 3;
+      track.style.transition = "none";
+      updateTrackPosition();
+    }
+    if (index >= cards.length - cards.length / 3) {
+      index = cards.length / 3 - 1;
+      track.style.transition = "none";
+      updateTrackPosition();
+    }
+  }, { once: true });
+}
+
+nextBtn.addEventListener("click", () => moveSlider(1));
+prevBtn.addEventListener("click", () => moveSlider(-1));
+
+setInterval(() => {
+  moveSlider(1);
+}, 4000);
+
+window.addEventListener("resize", () => {
+  updateTrackPosition();
+});
+
+// Help Section
+const helpItems = document.querySelectorAll(".help-item");
+const helpDescriptions = document.querySelectorAll(".help-description");
+
+helpItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    helpItems.forEach((i) => i.classList.remove("active"));
+    helpDescriptions.forEach((desc) => desc.classList.remove("active"));
+
+    item.classList.add("active");
+    document.getElementById(item.dataset.help).classList.add("active");
+  });
+});

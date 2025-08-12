@@ -1,0 +1,30 @@
+[
+  {
+    "type": "post",
+    "title": "Cybersecurity Awareness Month Kickoff",
+    "description": "Highlights from our opening keynote on cyber resilience.",
+    "image": "images/linkedin1.jpg",
+    "link": "https://linkedin.com/company/example"
+  },
+  {
+    "type": "post",
+    "title": "Member Spotlight: Global Outreach",
+    "description": "Our work has now reached 130+ countries with new collaborations.",
+    "image": "images/linkedin2.jpg",
+    "link": "https://linkedin.com/company/example"
+  },
+  {
+    "type": "event",
+    "title": "Global Cyber Hackathon 2025",
+    "description": "Join top ethical hackers in a worldwide competition.",
+    "image": "images/event1.jpg",
+    "link": "#"
+  },
+  {
+    "type": "event",
+    "title": "Cybercrime Detection Workshop",
+    "description": "Hands-on training session with industry experts.",
+    "image": "images/event2.jpg",
+    "link": "#"
+  }
+]
