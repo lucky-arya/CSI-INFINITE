@@ -81,6 +81,7 @@ body {
     position: relative;
     min-height: 90vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem 1.5rem;
@@ -121,6 +122,7 @@ body {
     z-index: 2;
     animation: pulseGlow 6s ease-in-out infinite;
     box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+    
 }
 
 @keyframes pulseGlow {
@@ -234,7 +236,6 @@ body {
     color: var(--primary);
     padding: 6px 12px;
     border-radius: 20px;
-    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -244,6 +245,7 @@ body {
     position: relative;
     width: 100%;
     margin-top: 1rem;
+    
 }
 
 .flag-carousel::before,
@@ -274,7 +276,7 @@ body {
 }
 
 .flag-carousel img {
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     transition: filter 0.3s ease;
     flex-shrink: 0;
 }
@@ -292,73 +294,159 @@ body {
     }
 }
 
-/* About Us Section */
-.about-us {
-    background: linear-gradient(to bottom, var(--light) 0%, #f9fbfc 100%);
-    padding: 6rem 1.5rem;
+/* Overall Container */
+.about-us-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  align-items: stretch; /* Ensures both columns match height */
 }
 
-.about-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
+/* Left Column – About Us */
+.about-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.about-text h2 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
+.about-section h2 {
+  font-size: 32px;
+  color: #007BCE;
+  margin-bottom: 20px;
 }
 
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-    color: #333;
+.about-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-/* Steps styling */
-.about-steps {
-    display: flex;
+/* Minimal Button Styling */
+.minimal-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 20px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.minimal-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Right Column – Goals */
+.goals-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.goals-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #007BCE;
+  margin-bottom: 40px;
+}
+
+/* Goal Container */
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* Stepped Spacing */
+.step-1 { margin-left: 0px; }
+.step-2 { margin-left: 40px; }
+.step-3 { margin-left: 80px; }
+
+.goal {
+  position: relative;
+  padding-left: 60px;
+}
+
+/* Stacked Numbers */
+.number-stack {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 140px;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.number-stack span {
+  position: absolute;
+  color: #64748b; /* darker bluish-gray */
+}
+
+.number-stack .n1 {
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+}
+
+.number-stack .n2 {
+  opacity: 0.25;
+  top: 10px;
+  left: 10px;
+}
+
+.number-stack .n3 {
+  opacity: 0.1;
+  top: 20px;
+  left: 20px;
+}
+
+/* Goal Text */
+.text {
+  position: relative;
+  z-index: 1;
+}
+
+.text h3 {
+  font-size: 24px;
+  margin: 0 0 8px;
+  font-weight: bold;
+  color: #000;
+}
+
+.text p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  max-width: 420px;
+}
+
+/* Mobile view - Center button */
+@media (max-width: 768px) {
+  .about-us-container {
     flex-direction: column;
-    gap: 3rem;
+  }
+
+  .minimal-btn {
+    align-self: center;
+  }
 }
 
-.step {
-    position: relative;
-    padding-left: 6rem;
-}
 
-.step-number {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    font-size: 5rem;
-    font-weight: 900;
-    color: rgba(16, 132, 195, 0.08);
-    z-index: 0;
-}
 
-.step-content {
-    position: relative;
-    z-index: 1;
-}
-
-.step-content h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
-
-.step-content p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.6;
-}
 
 /* Fade-in Animation */
 .fade-in {
@@ -412,7 +500,7 @@ body {
 
 /* Who We Serve Section */
 .who-we-serve {
-    padding: 6rem 1.5rem;
+    padding: 1rem 1.5rem;
     background: #fff;
 }
 
@@ -421,6 +509,7 @@ body {
     font-size: clamp(2rem, 5vw, 2.4rem);
     font-weight: 800;
     margin-bottom: 3.5rem;
+    color: var(--primary);
 }
 
 .serve-grid {
@@ -500,25 +589,27 @@ body {
 }
 
 /* Logo Carousel */
+
+
 .logo-carousel {
     position: relative;
     background: white;
     padding: 40px 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px; /* space between rows */
     min-height: 300px;
 }
 
 .logo-row {
     display: flex;
-    justify-content: flex-start;
+    /* Removed justify-content: center to allow for continuous scroll */
     align-items: center;
     gap: 60px;
     animation: scroll-left 20s linear infinite;
     flex-wrap: nowrap;
-}
-
-.logo-row.row-2 {
-    animation: scroll-right 20s linear infinite;
 }
 
 .logo-row img {
@@ -528,12 +619,20 @@ body {
     transition:
         filter 0.3s ease,
         opacity 0.3s ease;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents logos from shrinking on small screens */
 }
 
 .logo-row img:hover {
     filter: grayscale(0%);
     opacity: 1;
+}
+
+.row-2 {
+    animation: scroll-right 20s linear infinite;
+}
+
+.row-3 {
+    animation: scroll-left 25s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -572,6 +671,7 @@ body {
     right: 0;
     background: linear-gradient(to left, white, transparent);
 }
+
 
 /* Activities Section */
 .activities-section {
