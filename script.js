@@ -1,22 +1,22 @@
 // Function to handle the navigation menu toggle
 document.addEventListener("DOMContentLoaded", () => {
-    const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    const navLinksList = document.querySelectorAll(".nav-links a");
-    const body = document.body;
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navLinksList = document.querySelectorAll(".nav-links a");
+  const body = document.body;
 
-    mobileMenuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        body.classList.toggle("menu-open");
-    });
+  mobileMenuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    body.classList.toggle("menu-open");
+  });
 
-    // Close menu when a link is clicked
-    navLinksList.forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("open");
-            body.classList.remove("menu-open");
-        });
+  // Close menu when a link is clicked
+  navLinksList.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      body.classList.remove("menu-open");
     });
+  });
 });
 
 // Add this CSS to your styles.css to prevent body scrolling when menu is open
@@ -52,6 +52,153 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 faders.forEach((fader) => {
   appearOnScroll.observe(fader);
 });
+
+const countries = [
+  { code: "in", name: "India" },
+  { code: "sg", name: "Singapore" },
+  { code: "ng", name: "Nigeria" },
+  { code: "gh", name: "Ghana" },
+  { code: "ke", name: "Kenya" },
+  { code: "us", name: "United States" },
+  { code: "gb", name: "United Kingdom" },
+  { code: "ae", name: "United Arab Emirates" },
+  { code: "eg", name: "Egypt" },
+  { code: "za", name: "South Africa" },
+  { code: "ca", name: "Canada" },
+  { code: "np", name: "Nepal" },
+  { code: "bd", name: "Bangladesh" },
+  { code: "sa", name: "Saudi Arabia" },
+  { code: "ma", name: "Morocco" },
+  { code: "et", name: "Ethiopia" },
+  { code: "au", name: "Australia" },
+  { code: "cm", name: "Cameroon" },
+  { code: "ug", name: "Uganda" },
+  { code: "lk", name: "Sri Lanka" },
+  { code: "ie", name: "Ireland" },
+  { code: "rw", name: "Rwanda" },
+  { code: "bj", name: "Benin" },
+  { code: "zw", name: "Zimbabwe" },
+  { code: "fr", name: "France" },
+  { code: "ph", name: "Philippines" },
+  { code: "id", name: "Indonesia" },
+  { code: "de", name: "Germany" },
+  { code: "nl", name: "Netherlands" },
+  { code: "br", name: "Brazil" },
+  { code: "qa", name: "Qatar" },
+  { code: "tz", name: "Tanzania" },
+  { code: "my", name: "Malaysia" },
+  { code: "tr", name: "Turkey" },
+  { code: "mw", name: "Malawi" },
+  { code: "pe", name: "Peru" },
+  { code: "tn", name: "Tunisia" },
+  { code: "co", name: "Colombia" },
+  { code: "bh", name: "Bahrain" },
+  { code: "nz", name: "New Zealand" },
+  { code: "do", name: "Dominican Republic" },
+  { code: "bf", name: "Burkina Faso" },
+  { code: "om", name: "Oman" },
+  { code: "kw", name: "Kuwait" },
+  { code: "tg", name: "Togo" },
+  { code: "pl", name: "Poland" },
+  { code: "es", name: "Spain" },
+  { code: "it", name: "Italy" },
+  { code: "jp", name: "Japan" },
+  { code: "mx", name: "Mexico" },
+  { code: "zm", name: "Zambia" },
+  { code: "jo", name: "Jordan" },
+  { code: "sl", name: "Sierra Leone" },
+  { code: "kh", name: "Cambodia" },
+  { code: "bw", name: "Botswana" },
+  { code: "ao", name: "Angola" },
+  { code: "fi", name: "Finland" },
+  { code: "dz", name: "Algeria" },
+  { code: "ec", name: "Ecuador" },
+  { code: "kg", name: "Kyrgyzstan" },
+  { code: "mz", name: "Mozambique" },
+  { code: "kr", name: "South Korea" },
+  { code: "pt", name: "Portugal" },
+  { code: "ar", name: "Argentina" },
+  { code: "af", name: "Afghanistan" },
+  { code: "az", name: "Azerbaijan" },
+  { code: "lr", name: "Liberia" },
+  { code: "th", name: "Thailand" },
+  { code: "no", name: "Norway" },
+  { code: "ci", name: "Ivory Coast" },
+  { code: "jm", name: "Jamaica" },
+  { code: "ro", name: "Romania" },
+  { code: "mk", name: "North Macedonia" },
+  { code: "dk", name: "Denmark" },
+  { code: "mm", name: "Myanmar" },
+  { code: "cl", name: "Chile" },
+  { code: "gt", name: "Guatemala" },
+  { code: "at", name: "Austria" },
+  { code: "iq", name: "Iraq" },
+  { code: "be", name: "Belgium" },
+  { code: "vn", name: "Vietnam" },
+  { code: "ne", name: "Niger" },
+  { code: "il", name: "Israel" },
+  { code: "sz", name: "Eswatini" },
+  { code: "ga", name: "Gabon" },
+  { code: "sn", name: "Senegal" },
+  { code: "se", name: "Sweden" },
+  { code: "gr", name: "Greece" },
+  { code: "sd", name: "Sudan" },
+  { code: "rs", name: "Serbia" },
+  { code: "ls", name: "Lesotho" },
+  { code: "lu", name: "Luxembourg" },
+  { code: "hu", name: "Hungary" },
+  { code: "td", name: "Chad" },
+  { code: "sv", name: "El Salvador" },
+  { code: "ch", name: "Switzerland" },
+  { code: "ve", name: "Venezuela" },
+  { code: "tt", name: "Trinidad and Tobago" },
+  { code: "uz", name: "Uzbekistan" },
+  { code: "sy", name: "Syria" },
+  { code: "mu", name: "Mauritius" },
+  { code: "na", name: "Namibia" },
+  { code: "ml", name: "Mali" },
+  { code: "lb", name: "Lebanon" },
+  { code: "ss", name: "South Sudan" },
+  { code: "mg", name: "Madagascar" },
+  { code: "pa", name: "Panama" },
+  { code: "lt", name: "Lithuania" },
+  { code: "ht", name: "Haiti" },
+  { code: "so", name: "Somalia" },
+  { code: "ua", name: "Ukraine" },
+  { code: "cr", name: "Costa Rica" },
+  { code: "cn", name: "China" },
+  { code: "ye", name: "Yemen" },
+  { code: "gn", name: "Guinea" },
+  { code: "cz", name: "Czech Republic" },
+  { code: "al", name: "Albania" },
+  { code: "pr", name: "Puerto Rico" },
+  { code: "cd", name: "DR Congo" },
+  { code: "py", name: "Paraguay" },
+  { code: "je", name: "Jersey" },
+  { code: "xk", name: "Kosovo" },
+  { code: "gm", name: "Gambia" },
+  { code: "hn", name: "Honduras" },
+  { code: "ly", name: "Libya" },
+  { code: "ps", name: "Palestine" },
+  { code: "ru", name: "Russia" },
+];
+
+const carouselTrack = document.querySelector(".carousel-track");
+
+function createFlags() {
+  for (let i = 0; i < 2; i++) {
+    // duplicate list for smooth loop
+    countries.forEach((country) => {
+      const img = document.createElement("img");
+      img.src = `https://flagcdn.com/w40/${country.code}.png`;
+      img.alt = `${country.name} Flag`;
+      img.loading = "lazy";
+      carouselTrack.appendChild(img);
+    });
+  }
+}
+
+createFlags();
 
 // Count up animation
 function animateCountUp(el, target) {
@@ -210,12 +357,12 @@ let cards = document.querySelectorAll(".review-card");
 
 // Clone cards for infinite loop illusion
 const clonedCards = [];
-cards.forEach(card => {
-    clonedCards.push(card.cloneNode(true));
+cards.forEach((card) => {
+  clonedCards.push(card.cloneNode(true));
 });
-clonedCards.forEach(card => {
-    track.appendChild(card);
-    track.insertBefore(card.cloneNode(true), track.firstChild);
+clonedCards.forEach((card) => {
+  track.appendChild(card);
+  track.insertBefore(card.cloneNode(true), track.firstChild);
 });
 
 cards = document.querySelectorAll(".review-card"); // Update the list after cloning
@@ -233,18 +380,22 @@ function moveSlider(direction) {
   track.style.transition = "transform 0.4s ease";
   updateTrackPosition();
 
-  track.addEventListener("transitionend", () => {
-    if (index <= 0) {
-      index = cards.length / 3;
-      track.style.transition = "none";
-      updateTrackPosition();
-    }
-    if (index >= cards.length - cards.length / 3) {
-      index = cards.length / 3 - 1;
-      track.style.transition = "none";
-      updateTrackPosition();
-    }
-  }, { once: true });
+  track.addEventListener(
+    "transitionend",
+    () => {
+      if (index <= 0) {
+        index = cards.length / 3;
+        track.style.transition = "none";
+        updateTrackPosition();
+      }
+      if (index >= cards.length - cards.length / 3) {
+        index = cards.length / 3 - 1;
+        track.style.transition = "none";
+        updateTrackPosition();
+      }
+    },
+    { once: true },
+  );
 }
 
 nextBtn.addEventListener("click", () => moveSlider(1));
