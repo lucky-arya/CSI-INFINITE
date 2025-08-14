@@ -1326,6 +1326,22 @@ body {
 }
 
 
+/* Update the 'select' element within your form to style its options */
+.form-group select option {
+  background: #101c36; /* A dark blue that matches your contact section */
+  color: white; /* Ensures the text is visible */
+}
+
+/* You might also want to style the dropdown arrow, as it can be hard to see */
+.form-group select {
+  /* Using a custom arrow to ensure consistent styling */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+}
+
+
 .submit-btn {
     align-self: flex-end;
     padding: 1rem 2.5rem;
