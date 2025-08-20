@@ -320,6 +320,13 @@ body {
     margin-bottom: 20px;
 }
 
+.about-section h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
 .about-section p {
     font-size: 16px;
     line-height: 1.6;
@@ -1029,7 +1036,7 @@ body {
     width: clamp(280px, 80vw, 500px);
     border-radius: 16px;
     overflow: hidden;
-    min-height: 200px;
+    min-height: 275px;
     background: #1f1f1f;
     color: #fff;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);

@@ -43,9 +43,11 @@ const appearOptions = {
 };
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible");
+    }
   });
 }, appearOptions);
 
@@ -202,18 +204,22 @@ createFlags();
 
 // Count up animation
 function animateCountUp(el, target) {
-  let count = 0;
-  const speed = target / 200; // adjust speed
-  const updateCount = () => {
-    count += speed;
-    if (count < target) {
-      el.textContent = Math.floor(count).toLocaleString();
-      requestAnimationFrame(updateCount);
+  const duration = 3000; // 3000ms = 3 seconds
+  let startTimestamp = null;
+
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    el.textContent = Math.floor(progress * target).toLocaleString() + "+";
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
     } else {
       el.textContent = target.toLocaleString() + "+";
     }
   };
-  updateCount();
+
+  window.requestAnimationFrame(step);
 }
 
 // Observer for stat-item scroll animation
