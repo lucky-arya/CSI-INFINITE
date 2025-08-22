@@ -247,6 +247,9 @@ body {
     position: relative;
     width: 100%;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 36px; /* Adds space between the rows */
 }
 
 .flag-carousel::before,
@@ -275,6 +278,8 @@ body {
     animation: scrollFlags 60s linear infinite;
     flex-shrink: 0;
 }
+
+/* Pause animation on hover */
 .carousel-track:hover {
     animation-play-state: paused;
 }
@@ -295,6 +300,23 @@ body {
     }
 }
 
+/* New animations for alternating direction */
+@keyframes scrollFlagsRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.carousel-track.row-2 {
+    animation: scrollFlagsRight 60s linear infinite;
+}
+
+.carousel-track.row-3 {
+    animation: scrollFlags 60s linear infinite;
+}
 /* Overall Container */
 .about-us-container {
     display: flex;
@@ -1640,7 +1662,7 @@ body {
     }
 
     .hero-inner {
-        padding: 2rem;
+        padding: 5rem;
     }
 
     .headline {

@@ -185,22 +185,27 @@ const countries = [
   { code: "ru", name: "Russia" },
 ];
 
-const carouselTrack = document.querySelector(".carousel-track");
+const carouselTracks = document.querySelectorAll(".carousel-track");
 
 function createFlags() {
-  for (let i = 0; i < 2; i++) {
-    // duplicate list for smooth loop
-    countries.forEach((country) => {
-      const img = document.createElement("img");
-      img.src = `https://flagcdn.com/w40/${country.code}.png`;
-      img.alt = `${country.name} Flag`;
-      img.loading = "lazy";
-      carouselTrack.appendChild(img);
-    });
-  }
+  carouselTracks.forEach((track) => {
+    // Clear any existing content
+    track.innerHTML = ''; 
+    for (let i = 0; i < 2; i++) {
+      // duplicate list for smooth loop
+      countries.forEach((country) => {
+        const img = document.createElement("img");
+        img.src = `https://flagcdn.com/w40/${country.code}.png`;
+        img.alt = `${country.name} Flag`;
+        img.loading = "lazy";
+        track.appendChild(img);
+      });
+    }
+  });
 }
 
 createFlags();
+
 
 // Count up animation
 function animateCountUp(el, target) {
