@@ -103,6 +103,17 @@
           <a href="#services">Who We Serve</a>
           <a href="#join">Get Involved</a>
           <a href="#contact">Contact</a>
+          <div class="social-icons">
+            <a href="https://instagram.com/yourprofile" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://t.me/yourchannel" target="_blank"
+              ><i class="fab fa-telegram"></i
+            ></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
         </nav>
       </div>
     </header>
@@ -666,64 +677,65 @@
           </div>
         </div>
       </div>
+
+      <!-- Contact section -->
+      <section class="contact-section fade-in">
+        <div class="contact-container">
+          <h2 class="contact-heading">
+            Get in <span class="highlight">Touch</span>
+          </h2>
+
+          <p class="contact-subheading">
+            We’d love to hear from you. Fill out the form below and we'll get
+            back to you as soon as possible.
+          </p>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <input
+                type="text"
+                id="full-name"
+                placeholder="Full Name"
+                required
+              />
+              <input
+                type="email"
+                id="email-address"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <select id="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="general">General Inquiry</option>
+                <option value="volunteer">Volunteer / Internship</option>
+                <option value="donate">Donation (Money / Hardware)</option>
+                <option value="collab">Collaboration</option>
+              </select>
+              <input type="tel" id="phone-number" placeholder="Phone Number" />
+            </div>
+
+            <div class="form-group full-width">
+              <input type="text" id="subject" placeholder="Subject" />
+            </div>
+
+            <div class="form-group full-width">
+              <textarea
+                id="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
     </section>
 
-    <!-- Contact section -->
-    <section class="contact-section fade-in">
-      <div class="contact-container">
-        <h2 class="contact-heading">
-          Get in <span class="highlight">Touch</span>
-        </h2>
-
-        <p class="contact-subheading">
-          We’d love to hear from you. Fill out the form below and we'll get back
-          to you as soon as possible.
-        </p>
-
-        <form class="contact-form">
-          <div class="form-group">
-            <input
-              type="text"
-              id="full-name"
-              placeholder="Full Name"
-              required
-            />
-            <input
-              type="email"
-              id="email-address"
-              placeholder="Email Address"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <select id="category" required>
-              <option value="" disabled selected>Select Category</option>
-              <option value="general">General Inquiry</option>
-              <option value="volunteer">Volunteer / Internship</option>
-              <option value="donate">Donation (Money / Hardware)</option>
-              <option value="collab">Collaboration</option>
-            </select>
-            <input type="tel" id="phone-number" placeholder="Phone Number" />
-          </div>
-
-          <div class="form-group full-width">
-            <input type="text" id="subject" placeholder="Subject" />
-          </div>
-
-          <div class="form-group full-width">
-            <textarea
-              id="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-    </section>
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-about">

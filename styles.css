@@ -57,6 +57,11 @@ body {
     text-decoration: none;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links a {
     margin-left: 2rem;
     text-decoration: none;
@@ -125,6 +130,7 @@ body {
     z-index: 2;
     animation: pulseGlow 6s ease-in-out infinite;
     box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+    margin-top: 1rem;
 }
 
 @keyframes pulseGlow {
@@ -1132,7 +1138,7 @@ body {
 
 /* Help Section (New Styles) */
 .help-section {
-    background: #1f1d36;
+    background: #0d1117;
       
     color: white;
     padding: 100px 1.5rem;
@@ -1618,7 +1624,9 @@ body {
 /* ===================== */
 /* Mobile Responsiveness */
 /* ===================== */
-@media (max-width: 768px) {
+
+
+@media (max-width: 867px) {
     .nav-links {
         position: fixed;
         top: 0; /* Set to the top of the viewport */
@@ -1651,9 +1659,23 @@ body {
         display: block;
     }
 
-    .header-container {
+        .header-container {
         padding: 1rem 1.5rem;
     }
+
+    .social-icons{
+        display: flex;
+        gap: 1rem;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    
+
+
 
     /* Hero section */
     .hero {
@@ -1663,6 +1685,7 @@ body {
 
     .hero-inner {
         padding: 5rem;
+            margin-top: -3rem;
     }
 
     .headline {
