@@ -276,7 +276,7 @@ fetch("activities.json")
   .catch((err) => console.error("Error loading activities:", err));
 
 const mediaData = {
-  videos: [
+  live: [
     {
       title: "Cyber Awareness Webinar",
       desc: "A deep dive into cybersecurity basics.",
@@ -287,8 +287,18 @@ const mediaData = {
       desc: "Learn how to identify cyber threats effectively.",
       yt: "https://www.youtube.com/embed/ScMzIvxBSi4",
     },
+      {
+      title: "Cyber Awareness Webinar",
+      desc: "A deep dive into cybersecurity basics.",
+      yt: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    },
+    {
+      title: "Advanced Threat Detection",
+      desc: "Learn how to identify cyber threats effectively.",
+      yt: "https://www.youtube.com/embed/ScMzIvxBSi4",
+    },
   ],
-  blogs: [
+  podcasts: [
     {
       title: "Staying Safe Online",
       desc: "Tips for protecting your personal data.",
@@ -301,9 +311,33 @@ const mediaData = {
       img: "https://via.placeholder.com/300x180",
       link: "#",
     },
-  ],
-  gallery: [
+       {
+      title: "Staying Safe Online",
+      desc: "Tips for protecting your personal data.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
     {
+      title: "Cybersecurity Myths",
+      desc: "Debunking common security misconceptions.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+  ],
+  article: [
+    {
+      title: "Hackathon 2025",
+      desc: "Highlights from our latest event.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+    {
+      title: "Team Meet",
+      desc: "Our global community meet-up.",
+      img: "https://via.placeholder.com/300x180",
+      link: "#",
+    },
+        {
       title: "Hackathon 2025",
       desc: "Highlights from our latest event.",
       img: "https://via.placeholder.com/300x180",
@@ -327,7 +361,7 @@ function loadMedia(type) {
       const card = document.createElement("div");
       card.classList.add("media-card");
 
-      if (type === "videos") {
+      if (type === "live") {
         card.innerHTML = `
           <iframe src="${item.yt}" frameborder="0" allowfullscreen></iframe>
           <div class="media-content">
@@ -341,7 +375,7 @@ function loadMedia(type) {
           <div class="media-content">
             <h3>${item.title}</h3>
             <p>${item.desc}</p>
-            <a href="${item.link}" class="media-btn">${type === "blogs" ? "Read More" : "View Photo"}</a>
+            <a href="${item.link}" class="media-btn">${type === "article" ? "Read More" : "Listen Now"}</a>
           </div>
         `;
       }
@@ -358,7 +392,7 @@ tabs.forEach((tab) => {
     loadMedia(tab.dataset.type);
   });
 });
-loadMedia("videos");
+loadMedia("live");
 
 // Reviews Slider
 const track = document.querySelector(".reviews-track");
