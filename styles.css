@@ -1752,6 +1752,29 @@ body {
   box-shadow: 0 6px 20px rgba(167, 243, 208, 0.6);
 }
 
+/* Full-width form elements */
+.form-group.full-width {
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Cloudflare Turnstile Responsive Styling */
+.cf-turnstile {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure the iframe inside Turnstile is responsive */
+.cf-turnstile iframe {
+  width: 100% !important;
+  max-width: 300px;
+  height: auto !important;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .contact-form {
@@ -1766,6 +1789,19 @@ body {
   .form-group textarea {
     min-width: unset;
   }
+  
+  /* Cloudflare Turnstile Mobile Adjustments */
+  .form-group.full-width {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cf-turnstile {
+    transform: scale(0.85);
+    transform-origin: center;
+    margin: -10px 0;
+  }
+  
   .submit-btn {
     align-self: stretch; /* Stretch button to full width */
   }
@@ -2256,5 +2292,39 @@ body {
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Cloudflare Turnstile for very small screens */
+  .cf-turnstile {
+    transform: scale(0.75) !important;
+    transform-origin: center;
+    margin: -15px 0;
+    width: 100% !important;
+    overflow: visible;
+  }
+  
+  .form-group.full-width {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Contact form adjustments for very small screens */
+  .contact-form {
+    padding: 1rem;
+    margin: 0 10px;
+  }
+}
+
+/* Extra small screens (under 360px) */
+@media (max-width: 360px) {
+  .cf-turnstile {
+    transform: scale(0.65) !important;
+    margin: -20px 0;
+  }
+  
+  .contact-form {
+    padding: 0.75rem;
+    margin: 0 5px;
   }
 }
