@@ -1,0 +1,45 @@
+[
+  {
+    "type": "post",
+    "image": "https://via.placeholder.com/400x250",
+    "title": "Cyber Awareness Webinar",
+    "description": "A deep dive into cybersecurity basics and best practices.",
+    "link": "https://www.linkedin.com/company/cybersecuredindia/"
+  },
+  {
+    "type": "post",
+    "image": "https://via.placeholder.com/400x250",
+    "title": "Advanced Threat Detection",
+    "description": "Learn how to identify cyber threats effectively with our new guide.",
+    "link": "https://www.linkedin.com/company/cybersecuredindia/"
+  },
+  {
+    "type": "post",
+    "image": "https://via.placeholder.com/400x250",
+    "title": "Our Team at Def Con",
+    "description": "Highlights and takeaways from our recent trip to the Def Con conference.",
+    "link": "https://www.linkedin.com/company/cybersecuredindia/"
+  },
+
+  {
+    "type": "event",
+    "image": "https://via.placeholder.com/400x250",
+    "title": "Upcoming Webinar: Phishing Defense",
+    "description": "Learn advanced techniques to identify and counter phishing attacks.",
+    "link": "#"
+  },
+  {
+    "type": "event",
+    "image": "https://via.placeholder.com/400x250",
+    "title": "Community Workshop: Ethical Hacking",
+    "description": "A hands-on workshop for beginners interested in ethical hacking and penetration testing.",
+    "link": "#"
+  },
+  {
+    "type": "event",
+    "image": "https://via.placeholder.com/400x250",
+    "title": "Data Privacy Summit 2024",
+    "description": "Join industry experts to discuss the future of data privacy regulations.",
+    "link": "#"
+  }
+]
