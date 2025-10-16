@@ -45,31 +45,62 @@ class LinkedInFeed {
      */
     public function getCompanyPosts($count = 5) {
         try {
-            // If credentials are not configured, return mock data
-            if (!$this->clientId || !$this->clientSecret || !$this->companyId || !$this->accessToken) {
+            // FORCE API CALL - Remove this condition temporarily for testing
+            $forceApi = true; // Set to true to force API calls even without credentials
+            
+            // If credentials are not configured, return mock data UNLESS forcing API
+            if (!$forceApi && (!$this->clientId || !$this->clientSecret || !$this->companyId || !$this->accessToken)) {
+                error_log('LinkedIn: Missing credentials, using mock data');
                 return $this->getMockPosts();
             }
             
-            $url = "https://api.linkedin.com/v2/shares";
-            $params = [
-                'q' => 'owners',
-                'owners' => 'urn:li:organization:' . $this->companyId,
-                'count' => $count,
-                'sortBy' => 'CREATED_TIME'
+            error_log('LinkedIn: Attempting API call with token: ' . substr($this->accessToken ?? 'NONE', 0, 20) . '...');
+            error_log('LinkedIn: Company ID: ' . ($this->companyId ?? 'NONE'));
+            
+            // Try multiple API endpoints with correct formats
+            $endpoints = [
+                [
+                    'name' => 'UGC Posts (Fixed Format)',
+                    'url' => 'https://api.linkedin.com/v2/ugcPosts',
+                    'params' => [
+                        'q' => 'authors',
+                        'authors' => 'urn:li:organization:' . $this->companyId,
+                        'sortBy' => 'CREATED',
+                        'count' => $count
+                    ]
+                ],
+                [
+                    'name' => 'Shares (Legacy)',
+                    'url' => 'https://api.linkedin.com/v2/shares',
+                    'params' => [
+                        'q' => 'owners',
+                        'owners' => 'urn:li:organization:' . $this->companyId,
+                        'count' => $count,
+                        'sortBy' => 'CREATED_TIME'
+                    ]
+                ]
             ];
             
-            $headers = [
-                'Authorization: Bearer ' . $this->accessToken,
-                'Content-Type: application/json',
-                'X-Restli-Protocol-Version: 2.0.0'
-            ];
-            
-            $response = $this->makeRequest($url . '?' . http_build_query($params), $headers);
-            
-            if ($response && isset($response['elements'])) {
-                return $this->formatPosts($response['elements']);
+            foreach ($endpoints as $endpoint) {
+                $headers = [
+                    'Authorization: Bearer ' . $this->accessToken,
+                    'Content-Type: application/json',
+                    'X-Restli-Protocol-Version: 2.0.0',
+                    'LinkedIn-Version: 202401'
+                ];
+                
+                $url = $endpoint['url'] . '?' . http_build_query($endpoint['params']);
+                error_log("LinkedIn: Trying {$endpoint['name']} endpoint: $url");
+                
+                $response = $this->makeRequest($url, $headers);
+                
+                if ($response && isset($response['elements']) && !empty($response['elements'])) {
+                    error_log("LinkedIn: Success with {$endpoint['name']}, found " . count($response['elements']) . " posts");
+                    return $this->formatPosts($response['elements']);
+                }
             }
             
+            error_log('LinkedIn: No posts found from API, using mock data');
             // Fallback to mock data
             return $this->getMockPosts();
             
@@ -90,23 +121,45 @@ class LinkedInFeed {
             CURLOPT_HTTPHEADER => $headers,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_FOLLOWLOCATION => true
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_USERAGENT => 'CyberSecuredIndia-LinkedInIntegration/1.0'
         ]);
         
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        
-        if (curl_errno($ch)) {
-            throw new Exception('cURL error: ' . curl_error($ch));
-        }
+        $curlError = curl_error($ch);
         
         curl_close($ch);
         
-        if ($httpCode !== 200) {
-            throw new Exception('HTTP error: ' . $httpCode);
+        if ($curlError) {
+            error_log("LinkedIn cURL error: $curlError");
+            throw new Exception('cURL error: ' . $curlError);
         }
         
-        return json_decode($response, true);
+        error_log("LinkedIn API response: HTTP $httpCode for $url");
+        
+        if ($httpCode === 401) {
+            error_log('LinkedIn API: Unauthorized - token may be expired');
+            throw new Exception('LinkedIn API: Unauthorized (token expired?)');
+        }
+        
+        if ($httpCode === 403) {
+            error_log('LinkedIn API: Forbidden - insufficient permissions');
+            throw new Exception('LinkedIn API: Forbidden (check app permissions)');
+        }
+        
+        if ($httpCode !== 200) {
+            error_log("LinkedIn API error response: $response");
+            throw new Exception("LinkedIn API HTTP error: $httpCode - $response");
+        }
+        
+        $data = json_decode($response, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            error_log('LinkedIn API: Invalid JSON response');
+            throw new Exception('Invalid JSON response from LinkedIn API');
+        }
+        
+        return $data;
     }
     
     /**
@@ -116,6 +169,13 @@ class LinkedInFeed {
         $formattedPosts = [];
         
         foreach ($posts as $post) {
+            $media = $this->extractMedia($post);
+            
+            // If no media from API, use fallback images for better visual appeal
+            if (!$media) {
+                $media = $this->getFallbackMedia();
+            }
+            
             $formattedPosts[] = [
                 'id' => $post['id'] ?? uniqid(),
                 'text' => $this->extractText($post),
@@ -129,12 +189,47 @@ class LinkedInFeed {
                     'comments' => rand(2, 25),
                     'shares' => rand(1, 15)
                 ],
-                'media' => $this->extractMedia($post),
+                'media' => $media,
                 'url' => $this->generateLinkedInUrl($post['id'] ?? '')
             ];
         }
         
         return $formattedPosts;
+    }
+    
+    /**
+     * Get fallback media for posts without images
+     */
+    private function getFallbackMedia() {
+        $fallbackImages = [
+            [
+                'type' => 'image',
+                'url' => 'hero_img1.jpg',
+                'alt' => 'CyberSecuredIndia cybersecurity content'
+            ],
+            [
+                'type' => 'image',
+                'url' => 'hero_img2.JPG',
+                'alt' => 'Digital security and protection'
+            ],
+            [
+                'type' => 'image',
+                'url' => 'hero_img3.jpg',
+                'alt' => 'Cybersecurity awareness and training'
+            ],
+            [
+                'type' => 'image',
+                'url' => 'hero_img4.jpg',
+                'alt' => 'Enterprise security solutions'
+            ]
+        ];
+        
+        // Return random fallback image or null (30% chance of no image)
+        if (rand(1, 10) <= 7) {
+            return $fallbackImages[array_rand($fallbackImages)];
+        }
+        
+        return null;
     }
     
     /**
@@ -152,8 +247,48 @@ class LinkedInFeed {
      * Extract media from post
      */
     private function extractMedia($post) {
-        // This would extract images/videos from the post
-        // For now, return null as media extraction requires additional API calls
+        // Check if post has content (LinkedIn API v2 structure)
+        if (isset($post['content']) && isset($post['content']['contentEntities'])) {
+            $contentEntities = $post['content']['contentEntities'];
+            
+            foreach ($contentEntities as $entity) {
+                if (isset($entity['entityLocation'])) {
+                    // This is a media entity
+                    $mediaUrn = $entity['entityLocation'];
+                    
+                    // Extract media details (requires additional API call in real implementation)
+                    // For now, return a placeholder structure
+                    return [
+                        'type' => 'image',
+                        'url' => $this->getMediaUrl($mediaUrn),
+                        'alt' => 'LinkedIn post image'
+                    ];
+                }
+            }
+        }
+        
+        // Check for legacy content structure
+        if (isset($post['content']['contentEntities'][0]['thumbnails'])) {
+            $thumbnail = $post['content']['contentEntities'][0]['thumbnails'][0];
+            return [
+                'type' => 'image',
+                'url' => $thumbnail['url'] ?? null,
+                'alt' => 'LinkedIn post image'
+            ];
+        }
+        
+        // No media found
+        return null;
+    }
+    
+    /**
+     * Get media URL from LinkedIn media URN
+     * In real implementation, this would make an additional API call
+     */
+    private function getMediaUrl($mediaUrn) {
+        // This would require additional API call to:
+        // GET https://api.linkedin.com/v2/assets/{assetId}
+        // For now, return null to use fallback
         return null;
     }
     
@@ -202,7 +337,11 @@ class LinkedInFeed {
                     'comments' => 12,
                     'shares' => 8
                 ],
-                'media' => null,
+                'media' => [
+                    'type' => 'image',
+                    'url' => 'hero_img1.jpg',
+                    'alt' => 'Advanced cybersecurity training program launch'
+                ],
                 'url' => 'https://linkedin.com/company/cybersecuredindia'
             ],
             [
@@ -218,7 +357,11 @@ class LinkedInFeed {
                     'comments' => 18,
                     'shares' => 15
                 ],
-                'media' => null,
+                'media' => [
+                    'type' => 'image',
+                    'url' => 'hero_img2.JPG',
+                    'alt' => 'Cybersecurity awareness training statistics'
+                ],
                 'url' => 'https://linkedin.com/company/cybersecuredindia'
             ],
             [
@@ -234,7 +377,11 @@ class LinkedInFeed {
                     'comments' => 7,
                     'shares' => 11
                 ],
-                'media' => null,
+                'media' => [
+                    'type' => 'image',
+                    'url' => 'hero_img3.jpg',
+                    'alt' => 'Partnership announcement in cybersecurity industry'
+                ],
                 'url' => 'https://linkedin.com/company/cybersecuredindia'
             ],
             [
@@ -250,7 +397,11 @@ class LinkedInFeed {
                     'comments' => 23,
                     'shares' => 19
                 ],
-                'media' => null,
+                'media' => [
+                    'type' => 'image',
+                    'url' => 'hero_img4.jpg',
+                    'alt' => 'Multi-factor authentication implementation guide'
+                ],
                 'url' => 'https://linkedin.com/company/cybersecuredindia'
             ],
             [

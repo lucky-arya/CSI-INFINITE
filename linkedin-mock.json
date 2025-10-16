@@ -14,7 +14,11 @@
         "comments": 12,
         "shares": 8
       },
-      "media": null,
+      "media": {
+        "type": "image",
+        "url": "hero_img1.jpg",
+        "alt": "Advanced cybersecurity training program launch"
+      },
       "url": "https://linkedin.com/company/cybersecuredindia"
     },
     {
@@ -30,7 +34,11 @@
         "comments": 18,
         "shares": 15
       },
-      "media": null,
+      "media": {
+        "type": "image",
+        "url": "hero_img2.JPG",
+        "alt": "Cybersecurity awareness training statistics"
+      },
       "url": "https://linkedin.com/company/cybersecuredindia"
     },
     {
@@ -45,6 +53,46 @@
         "likes": 92,
         "comments": 7,
         "shares": 11
+      },
+      "media": {
+        "type": "image",
+        "url": "hero_img3.jpg",
+        "alt": "Partnership announcement in cybersecurity industry"
+      },
+      "url": "https://linkedin.com/company/cybersecuredindia"
+    },
+    {
+      "id": "mock_4",
+      "text": "💡 Did you know? Multi-factor authentication can prevent 99.9% of automated attacks. Here are 3 simple steps to implement MFA in your organization. Swipe to learn more! #MFA #CyberTips",
+      "createdTime": "5 days ago",
+      "author": {
+        "name": "CyberSecuredIndia",
+        "image": "cybersecuredindia_logo.jpeg"
+      },
+      "engagement": {
+        "likes": 156,
+        "comments": 23,
+        "shares": 19
+      },
+      "media": {
+        "type": "image",
+        "url": "hero_img4.jpg",
+        "alt": "Multi-factor authentication implementation guide"
+      },
+      "url": "https://linkedin.com/company/cybersecuredindia"
+    },
+    {
+      "id": "mock_5",
+      "text": "🌟 Celebrating our team's achievement! We've successfully helped 500+ businesses strengthen their cybersecurity posture this year. Thank you for trusting us with your digital security! #Milestone #ThankYou",
+      "createdTime": "1 week ago",
+      "author": {
+        "name": "CyberSecuredIndia",
+        "image": "cybersecuredindia_logo.jpeg"
+      },
+      "engagement": {
+        "likes": 203,
+        "comments": 31,
+        "shares": 24
       },
       "media": null,
       "url": "https://linkedin.com/company/cybersecuredindia"

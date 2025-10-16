@@ -477,6 +477,11 @@ function displayLinkedInPosts(posts) {
       <div class="linkedin-post-content">
         ${post.text}
       </div>
+      ${post.media ? `
+        <div class="linkedin-post-media">
+          <img src="${post.media.url}" alt="${post.media.alt}" class="linkedin-post-image" loading="lazy">
+        </div>
+      ` : ''}
       <div class="linkedin-post-engagement">
         <div class="engagement-item">
           <i class="far fa-thumbs-up"></i>
