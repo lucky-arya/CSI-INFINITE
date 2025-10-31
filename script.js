@@ -355,11 +355,25 @@ function createFlags() {
     for (let i = 0; i < 2; i++) {
       // duplicate list for smooth loop
       countries.forEach((country) => {
+        // Create wrapper div for flag and tooltip
+        const flagItem = document.createElement("div");
+        flagItem.className = "flag-item";
+        
+        // Create flag image
         const img = document.createElement("img");
         img.src = `https://flagcdn.com/w40/${country.code}.png`;
         img.alt = `${country.name} Flag`;
         img.loading = "lazy";
-        track.appendChild(img);
+        
+        // Create tooltip
+        const tooltip = document.createElement("div");
+        tooltip.className = "flag-tooltip";
+        tooltip.textContent = country.name;
+        
+        // Append elements
+        flagItem.appendChild(img);
+        flagItem.appendChild(tooltip);
+        track.appendChild(flagItem);
       });
     }
   });

@@ -410,7 +410,7 @@ body {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 36px; /* Adds space between the rows */
+  gap: 36px;
 }
 
 .flag-carousel::before,
@@ -445,11 +445,62 @@ body {
   animation-play-state: paused;
 }
 
+/* Flag container with tooltip */
+.flag-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .flag-carousel img {
-  height: 30px; /* slightly bigger */
+  height: 35px;
   width: auto;
-  transition: filter 0.3s ease;
+  transition: all 0.3s ease;
   flex-shrink: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.flag-item:hover img {
+  transform: scale(1.2) translateY(-3px);
+  box-shadow: 0 4px 12px rgba(16, 132, 195, 0.3);
+}
+
+/* Tooltip styling */
+.flag-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: linear-gradient(135deg, var(--primary-color), #0e76ad);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(16, 132, 195, 0.4);
+  z-index: 10;
+}
+
+.flag-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #0e76ad;
+}
+
+.flag-item:hover .flag-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
 }
 
 @keyframes scrollFlags {
@@ -912,44 +963,55 @@ body {
 
 .logo-carousel {
   position: relative;
-  background: white;
-  padding: 40px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 50px 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 25px; /* space between rows */
-  min-height: 300px;
+  gap: 30px;
+  min-height: 350px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo-row {
   display: flex;
-  /* Removed justify-content: center to allow for continuous scroll */
   align-items: center;
-  gap: 60px;
-  animation: scroll-left 20s linear infinite;
+  gap: 50px;
+  animation: scroll-left 40s linear infinite;
   flex-wrap: nowrap;
+  width: max-content;
 }
 
 .logo-row img {
-  height: 60px;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: filter 0.3s ease, opacity 0.3s ease;
-  flex-shrink: 0; /* Prevents logos from shrinking on small screens */
+  height: 80px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  opacity: 0.85;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .logo-row img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) opacity(1);
   opacity: 1;
+  transform: scale(1.12) translateY(-8px);
+  box-shadow: 0 10px 25px rgba(16, 132, 195, 0.25);
 }
 
 .row-2 {
-  animation: scroll-right 20s linear infinite;
+  animation: scroll-right 45s linear infinite;
 }
 
 .row-3 {
-  animation: scroll-left 25s linear infinite;
+  animation: scroll-left 50s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -974,19 +1036,19 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
+  width: 120px;
   pointer-events: none;
   z-index: 5;
 }
 
 .fade-left {
   left: 0;
-  background: linear-gradient(to right, white, transparent);
+  background: linear-gradient(to right, #f8f9fa, transparent);
 }
 
 .fade-right {
   right: 0;
-  background: linear-gradient(to left, white, transparent);
+  background: linear-gradient(to left, #f8f9fa, transparent);
 }
 
 /* Activities Section */
