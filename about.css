@@ -556,53 +556,103 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Mobile Menu Styles */
+  /* Mobile Menu Styles - Matching index.html exactly */
   .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    background: transparent;
+    justify-content: center;
+    align-items: center;
+    background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
-    z-index: 101;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 1001;
+    position: relative;
   }
 
   .hamburger-line {
-    width: 25px;
-    height: 3px;
-    background: var(--dark);
-    transition: all 0.3s ease;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: absolute;
+  }
+
+  .hamburger-line:nth-child(1) {
+    top: 14px;
+  }
+
+  .hamburger-line:nth-child(2) {
+    top: 19px;
+  }
+
+  .hamburger-line:nth-child(3) {
+    top: 24px;
+  }
+
+  /* Professional hamburger to cross transformation */
+  .menu-open .hamburger-line:nth-child(1) {
+    top: 19px;
+    transform: rotate(45deg);
+  }
+
+  .menu-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .menu-open .hamburger-line:nth-child(3) {
+    top: 19px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-toggle:hover .hamburger-line {
+    background-color: var(--accent-color);
   }
 
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 300px;
+    right: 0;
+    bottom: 0;
+    width: 70%;
     height: 100vh;
-    background: white;
+    background-color: var(--light);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 2rem 2rem;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 99;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    z-index: 100;
+    gap: 2rem;
   }
 
-  .nav-links.active {
-    right: 0;
+  .nav-links.open {
+    transform: translateX(0);
+    display: flex;
   }
 
   .nav-links a {
-    margin-left: 0;
-    margin-bottom: 1.5rem;
-    width: 100%;
+    margin: 0;
+    font-size: 1.4rem;
   }
 
   .nav-links .social-icons {
+    display: flex;
+    gap: 1rem;
     margin-left: 0;
-    margin-top: 1rem;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .header-container {
+    padding: 1rem 1.5rem;
   }
 
   .about-section {
