@@ -1,0 +1,247 @@
+{
+  "founder": {
+    "name": "Nikhil Mahadeshwar",
+    "role": "Founder",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+    "bio": "Founder of Cyber Secured India, driving the mission to create a safer digital environment through comprehensive cybersecurity awareness, education, and innovative solutions.",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#"
+    }
+  },
+  "team": [
+    {
+      "name": "Prathamesh Rane",
+      "role": "CEO & Director",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Retd. ACP Ravi Sardesai",
+      "role": "Director - Law enforcement & Govt affairs",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Retd. Brig. Ramesh Balan",
+      "role": "Strategic Advisor",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Retd. Col. Mahesh Ramachandran",
+      "role": "Strategic Advisor",
+      "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Alpana Barua",
+      "role": "Strategic Advisor",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Dr. Radhakrishnan Pillai",
+      "role": "Mentor",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Mahendra Chavan",
+      "role": "Head of Operations",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Nidhi Shah",
+      "role": "Head of Legal & Compliance",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Mahadev Gavas",
+      "role": "Core Team",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Kirankumar Subuddi",
+      "role": "Core Team",
+      "image": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Prasad Palwankar",
+      "role": "Core Team",
+      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Shinja Nagvekar",
+      "role": "Core Team",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Akash Patil",
+      "role": "Core Team",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    }
+  ],
+  "mentors": [
+    {
+      "name": "Bonaventure Armaah",
+      "organization": "Cyber Secured Africa",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Abu Blay Safian",
+      "organization": "Inveteck Global",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Geeta Singh",
+      "organization": "QUIK",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Shreya Gadve",
+      "organization": "HDFC BANK",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Sheetal Gawande",
+      "organization": "Pillai Collage",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Dr Poorna Shankar",
+      "organization": "Indira College",
+      "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Saurabh Jagtap",
+      "organization": "Cybersecurity Expert",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Neelanjan Manna",
+      "organization": "SWASTIK AI TECH",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Yugal Patak",
+      "organization": "Government of India",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Shrirang Pande",
+      "organization": "Maharashtra Cyber",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Shiv Kataria",
+      "organization": "Siemens",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Harshad Shah",
+      "organization": "Hackers Associate",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Chinmay Lavekar",
+      "organization": "cloudxchange.io",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Tushar Verma",
+      "organization": "NST Cyber",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Shreenivas Palle",
+      "organization": "Cloud Seals UK",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Akeel wani",
+      "organization": "ICICI BANK",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Agnibha Dutta",
+      "organization": "Concentrix",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Darshan Naik",
+      "organization": "TCS",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Shivang Trivedi",
+      "organization": "QuillAudits",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Yashashvi Kumar",
+      "organization": "Tata Motors",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Nikhil Suvarna",
+      "organization": "Banking",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Priyank Gada",
+      "organization": "Bhartiya Shesha",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Rushikesh Walvekar",
+      "organization": "White Arrow",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Vasudev Jha",
+      "organization": "Infotact Solutions",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Ashutosh Upadhyay",
+      "organization": "Raise Financial Services",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Saurabh Kashyap",
+      "organization": "Cybersecurity Expert",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Het Vikam",
+      "organization": "KPMG",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Rikunj Sindhwad",
+      "organization": "EY",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Goverdhan Kumar",
+      "organization": "TCS",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Harsh Parekh",
+      "organization": "Securze",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Sreedeep AY",
+      "organization": "EY",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Sushant Kamble",
+      "organization": "EY",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop"
+    },
+    {
+      "name": "Nikhil Rane",
+      "organization": "Entain",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop"
+    }
+  ]
+}
