@@ -1768,7 +1768,6 @@ body {
 }
 
 .form-group input,
-.form-group select,
 .form-group textarea {
   flex: 1;
   min-width: 250px;
@@ -1783,6 +1782,33 @@ body {
   appearance: none;
 }
 
+.form-group select {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem 1.25rem;
+  padding-right: 3rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="white"%3E%3Cpath d="M8 11L3 6h10l-5 5z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 16px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-group select:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="white"%3E%3Cpath d="M8 5l5 5H3l5-5z"/%3E%3C/svg%3E');
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
 .form-group textarea {
   resize: vertical;
 }
@@ -1793,25 +1819,15 @@ body {
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
+.form-group textarea:focus {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
 /* Update the 'select' element within your form to style its options */
 .form-group select option {
-  background: #101c36; /* A dark blue that matches your contact section */
-  color: white; /* Ensures the text is visible */
-}
-
-/* You might also want to style the dropdown arrow, as it can be hard to see */
-.form-group select {
-  /* Using a custom arrow to ensure consistent styling */
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1.5rem;
+  background: #101c36;
+  color: white;
 }
 
 .submit-btn {
