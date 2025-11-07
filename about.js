@@ -34,11 +34,9 @@ function loadFounder(founder) {
       <h3>${founder.name}</h3>
       <p class="ceo-bio">${founder.bio}</p>
       <div class="social-links">
-        <a href="${founder.social.facebook}" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="${founder.social.twitter}" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
+
+        <a href="${founder.social.instagram}" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram "></i>
         </a>
         <a href="${founder.social.linkedin}" target="_blank" aria-label="LinkedIn">
           <i class="fab fa-linkedin"></i>
@@ -63,7 +61,15 @@ function loadTeamMembers(team) {
         </div>
         <div class="director-details">
           <h3>${member.name}</h3>
-          <p>${member.role}</p>
+          <p>${member.bio}</p>
+          <div class="social-links" style="margin-top: 16px;">
+            <a href="${member.social.instagram}" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
       </div>
     `;
@@ -85,7 +91,15 @@ function loadMentors(mentors) {
         </div>
         <div class="director-details">
           <h3>${mentor.name}</h3>
-          <p>${mentor.organization}</p>
+          <p>${mentor.bio}</p>
+          <div class="social-links" style="margin-top: 16px;">
+            <a href="${mentor.social.instagram}" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="${mentor.social.linkedin}" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
       </div>
     `;
