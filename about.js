@@ -63,9 +63,6 @@ function loadTeamMembers(team) {
           <h3>${member.name}</h3>
           <p>${member.bio}</p>
           <div class="social-links" style="margin-top: 16px;">
-            <a href="${member.social.instagram}" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
             <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
@@ -93,9 +90,6 @@ function loadMentors(mentors) {
           <h3>${mentor.name}</h3>
           <p>${mentor.bio}</p>
           <div class="social-links" style="margin-top: 16px;">
-            <a href="${mentor.social.instagram}" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
             <a href="${mentor.social.linkedin}" target="_blank" aria-label="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>

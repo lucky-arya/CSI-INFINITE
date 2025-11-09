@@ -2,10 +2,10 @@
   "founder": {
     "name": "Nikhil Mahadeshwar",
     "role": "Founder",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+    "image": "assets/CSI TEAM/nikhilmahadeshwar.png",
     "bio": "Founder of Cyber Secured India, driving the mission to create a safer digital environment through comprehensive cybersecurity awareness, education, and innovative solutions.",
     "social": {
-      "linkedin": "#",
+      "linkedin": "https://www.linkedin.com/in/nikhilmahadeshwar/",
       "instagram": "#"
     }
   },
@@ -13,17 +13,17 @@
     {
       "name": "Prathamesh Rane",
       "role": "CEO & Director",
-      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/prathamesh.png",
       "bio": "Leading Cyber Secured India's strategic vision and operations, dedicated to building a robust cybersecurity ecosystem across the nation.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/raneprathamesh/",
         "instagram": "#"
       }
     },
     {
       "name": "Retd. ACP Ravi Sardesai",
       "role": "Director - Law enforcement & Govt affairs",
-      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/ravisardesai.jpg",
       "bio": "Former Assistant Commissioner of Police bringing extensive law enforcement experience to strengthen cybersecurity governance and government relations.",
       "social": {
         "linkedin": "#",
@@ -33,7 +33,7 @@
     {
       "name": "Retd. Brig. Ramesh Balan",
       "role": "Strategic Advisor",
-      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/rameshbalan.png",
       "bio": "Retired Brigadier providing strategic military insights and defense sector expertise to enhance national cybersecurity infrastructure.",
       "social": {
         "linkedin": "#",
@@ -43,7 +43,7 @@
     {
       "name": "Retd. Col. Mahesh Ramachandran",
       "role": "Strategic Advisor",
-      "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/maheshramachandran.png",
       "bio": "Retired Colonel offering tactical and strategic guidance in cybersecurity operations and defense protocols.",
       "social": {
         "linkedin": "#",
@@ -53,20 +53,20 @@
     {
       "name": "Alpana Barua",
       "role": "Strategic Advisor",
-      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/alpanabarua.jpg",
       "bio": "Strategic advisor with deep expertise in cybersecurity policy, digital transformation, and organizational security frameworks.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/alpana-barua/",
         "instagram": "#"
       }
     },
     {
       "name": "Dr. Radhakrishnan Pillai",
       "role": "Mentor",
-      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/radhakrishnan.jpg",
       "bio": "Renowned mentor and thought leader guiding cybersecurity initiatives with extensive academic and industry experience.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/rchanakyapillai/",
         "instagram": "#"
       }
     },
@@ -76,27 +76,27 @@
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
       "bio": "Managing day-to-day operations and ensuring seamless execution of cybersecurity programs and community initiatives.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/mahendra-chavan-80086b144/",
         "instagram": "#"
       }
     },
     {
       "name": "Nidhi Shah",
       "role": "Head of Legal & Compliance",
-      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/nidhishah.png",
       "bio": "Leading legal and compliance efforts to ensure adherence to cybersecurity regulations and data protection standards.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/adv-nidhi-shah-93231521a/",
         "instagram": "#"
       }
     },
     {
       "name": "Mahadev Gavas",
       "role": "Core Team",
-      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/mahadevgavas.png",
       "bio": "Core team member contributing to cybersecurity awareness campaigns and community engagement programs.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/mahadev-gavas/",
         "instagram": "#"
       }
     },
@@ -106,14 +106,14 @@
       "image": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=500&fit=crop",
       "bio": "Core team member actively involved in technical security initiatives and educational outreach programs.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/kirankumar-subuddi/",
         "instagram": "#"
       }
     },
     {
       "name": "Prasad Palwankar",
       "role": "Core Team",
-      "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=500&fit=crop",
+      "image": "assets/CSI TEAM/prasadpalvenkar.jpg",
       "bio": "Core team member supporting cybersecurity research and development of innovative security solutions.",
       "social": {
         "linkedin": "#",
@@ -126,7 +126,7 @@
       "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=500&fit=crop",
       "bio": "Core team member dedicated to advancing cybersecurity education and community building initiatives.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/shinja-nagvekar/",
         "instagram": "#"
       }
     },
@@ -136,7 +136,7 @@
       "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
       "bio": "Core team member focused on technical cybersecurity operations and threat intelligence activities.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/akashpatil98/",
         "instagram": "#"
       }
     }
@@ -148,7 +148,7 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "Leading cybersecurity expert from Africa, driving digital security awareness and protection across the continent.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/bonaventure-armaah-382720276/",
         "instagram": "#"
       }
     },
@@ -158,7 +158,7 @@
       "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
       "bio": "Technology innovation expert specializing in cybersecurity solutions and digital transformation strategies.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/abu-safian-blay/",
         "instagram": "#"
       }
     },
@@ -168,7 +168,7 @@
       "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
       "bio": "Fintech and cybersecurity professional with expertise in secure payment systems and digital financial security.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/geeta-singh-70750017/",
         "instagram": "#"
       }
     },
@@ -178,7 +178,7 @@
       "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop",
       "bio": "Banking sector cybersecurity specialist focused on protecting financial infrastructure and customer data.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/shreya-gadve/",
         "instagram": "#"
       }
     },
@@ -188,7 +188,7 @@
       "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=500&fit=crop",
       "bio": "Academic leader promoting cybersecurity education and research in higher education institutions.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/sheetal-gawande-63a243106/",
         "instagram": "#"
       }
     },
@@ -198,7 +198,7 @@
       "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop",
       "bio": "Distinguished academician advancing cybersecurity curriculum development and student skill enhancement.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/poornashankar10/",
         "instagram": "#"
       }
     },
@@ -208,7 +208,7 @@
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
       "bio": "Independent cybersecurity consultant providing expert guidance on threat detection and security architecture.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/saurabh-j-014047158/",
         "instagram": "#"
       }
     },
@@ -218,7 +218,7 @@
       "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
       "bio": "AI and cybersecurity specialist integrating artificial intelligence for advanced threat detection systems.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/neelanjanmanna/",
         "instagram": "#"
       }
     },
@@ -228,7 +228,7 @@
       "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
       "bio": "Government cybersecurity official working on national digital security policies and implementation frameworks.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/cyberyuvi4u/",
         "instagram": "#"
       }
     },
@@ -238,7 +238,7 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "State-level cybercrime investigator specializing in digital forensics and cybercrime prevention.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/shrirang-pande-65754813b/",
         "instagram": "#"
       }
     },
@@ -248,7 +248,7 @@
       "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
       "bio": "Industrial cybersecurity expert securing critical infrastructure and operational technology systems.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/shivkataria/",
         "instagram": "#"
       }
     },
@@ -258,7 +258,7 @@
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
       "bio": "Ethical hacking expert conducting penetration testing and vulnerability assessments for organizations.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/hackerharshad/",
         "instagram": "#"
       }
     },
@@ -268,7 +268,7 @@
       "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
       "bio": "Cloud security specialist focused on securing cloud infrastructure and SaaS application environments.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/chinmay-lavekar-62185a75/",
         "instagram": "#"
       }
     },
@@ -278,7 +278,7 @@
       "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
       "bio": "Cybersecurity analyst specializing in threat intelligence and security operations center management.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/tushars25/",
         "instagram": "#"
       }
     },
@@ -298,7 +298,7 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "Banking cybersecurity professional ensuring secure digital banking operations and fraud prevention.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/akeel-ahmad-wani-jk/",
         "instagram": "#"
       }
     },
@@ -308,7 +308,7 @@
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
       "bio": "Enterprise security expert managing cybersecurity operations for global business process services.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/y0gi/",
         "instagram": "#"
       }
     },
@@ -318,7 +318,7 @@
       "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
       "bio": "IT security consultant at leading technology services company specializing in enterprise security solutions.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/darshan-naik-73b870204/",
         "instagram": "#"
       }
     },
@@ -328,7 +328,7 @@
       "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
       "bio": "Blockchain security auditor specializing in smart contract security and decentralized application protection.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/shivang-trivedi-a149b2190/",
         "instagram": "#"
       }
     },
@@ -338,7 +338,7 @@
       "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
       "bio": "Automotive cybersecurity specialist securing connected vehicles and automotive manufacturing systems.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/yashashvikumar/",
         "instagram": "#"
       }
     },
@@ -348,7 +348,7 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "Banking sector cybersecurity professional with expertise in financial system security and compliance.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/nikhil-suvarna-89857b189/",
         "instagram": "#"
       }
     },
@@ -358,7 +358,7 @@
       "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
       "bio": "Cybersecurity researcher focused on indigenous security solutions and digital sovereignty initiatives.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/priyank-gada/",
         "instagram": "#"
       }
     },
@@ -378,7 +378,7 @@
       "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
       "bio": "IT solutions architect specializing in secure system design and cybersecurity infrastructure.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/vasudev-jha-953a52289/",
         "instagram": "#"
       }
     },
@@ -388,17 +388,17 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "Financial services cybersecurity expert ensuring secure fintech operations and regulatory compliance.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/ashutoshuy/",
         "instagram": "#"
       }
     },
     {
       "name": "Saurabh Kashyap",
-      "organization": "Cybersecurity Expert",
+      "organization": "Awareness & Training",
       "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
       "bio": "Independent security researcher and consultant providing advanced cybersecurity advisory services.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/shyap/",
         "instagram": "#"
       }
     },
@@ -408,7 +408,7 @@
       "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
       "bio": "Cybersecurity consultant at Big Four firm specializing in risk management and security audits.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/hetvikam/",
         "instagram": "#"
       }
     },
@@ -418,7 +418,7 @@
       "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
       "bio": "Enterprise security advisor providing cybersecurity consulting and digital risk management services.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/rikunj/",
         "instagram": "#"
       }
     },
@@ -428,7 +428,7 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "Technology consultant specializing in cybersecurity architecture and secure software development.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/wh04m1i/",
         "instagram": "#"
       }
     },
@@ -438,7 +438,7 @@
       "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop",
       "bio": "Security startup founder developing innovative cybersecurity products and security automation tools.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/harshfromsecurze/",
         "instagram": "#"
       }
     },
@@ -448,7 +448,7 @@
       "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop",
       "bio": "Cybersecurity analyst at global consulting firm focusing on security strategy and implementation.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/sreedeep-ay/",
         "instagram": "#"
       }
     },
@@ -458,7 +458,7 @@
       "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
       "bio": "Security consultant providing enterprise cybersecurity solutions and compliance advisory services.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/iamsushantkamble/",
         "instagram": "#"
       }
     },
@@ -468,7 +468,7 @@
       "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
       "bio": "Gaming industry cybersecurity expert securing online platforms and protecting customer data.",
       "social": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/nikhilranecybersecurity/",
         "instagram": "#"
       }
     }
