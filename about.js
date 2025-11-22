@@ -26,21 +26,19 @@ function loadFounder(founder) {
   const founderSection = document.getElementById('founder-section');
   
   const founderHTML = `
-    <div class="ceo-image">
-      <span class="role-badge">${founder.role}</span>
-      <img src="${founder.image}" alt="${founder.name}" loading="lazy" />
-    </div>
-    <div class="ceo-content">
-      <h3>${founder.name}</h3>
-      <p class="ceo-bio">${founder.bio}</p>
-      <div class="social-links">
-
-        <a href="${founder.social.instagram}" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram "></i>
-        </a>
-        <a href="${founder.social.linkedin}" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
+    <div class="ceo-profile-inner">
+      <div class="ceo-image">
+        <span class="role-badge">${founder.role}</span>
+        <img src="${founder.image}" alt="${founder.name}" loading="lazy" />
+      </div>
+      <div class="ceo-content">
+        <h3>${founder.name}</h3>
+        <p class="ceo-bio">${founder.bio}</p>
+        <div class="social-links">
+          <a href="${founder.social.linkedin}" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
       </div>
     </div>
   `;
