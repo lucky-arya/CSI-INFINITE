@@ -858,3 +858,61 @@ function showMessage(message, type) {
     }, 5000);
   }
 }
+
+// Goal Section Sequential Animation
+document.addEventListener('DOMContentLoaded', () => {
+  const goals = document.querySelectorAll('.goal');
+  
+  const goalObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const goal = entry.target;
+        
+        // Get the delay based on step class
+        let delay = 0;
+        if (goal.classList.contains('step-2')) delay = 300;
+        if (goal.classList.contains('step-3')) delay = 600;
+        
+        setTimeout(() => {
+          goal.classList.add('animate');
+        }, delay);
+        
+        goalObserver.unobserve(goal);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  goals.forEach(goal => goalObserver.observe(goal));
+  
+  // About Section Sequential Animation
+  const aboutSection = document.querySelector('.about-section');
+  
+  if (aboutSection) {
+    const aboutObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const h2 = aboutSection.querySelector('h2');
+          const h1 = aboutSection.querySelector('h1');
+          const paragraphs = aboutSection.querySelectorAll('p');
+          const button = aboutSection.querySelector('.minimal-btn');
+          
+          // Trigger animations
+          if (h2) h2.classList.add('animate');
+          if (h1) h1.classList.add('animate');
+          paragraphs.forEach(p => p.classList.add('animate'));
+          if (button) button.classList.add('animate');
+          
+          aboutObserver.unobserve(aboutSection);
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    aboutObserver.observe(aboutSection);
+  }
+});

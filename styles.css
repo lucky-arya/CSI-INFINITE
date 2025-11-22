@@ -174,6 +174,8 @@ body {
   min-height: 50px;
   overflow: hidden;
   margin-bottom: 1rem;
+  display: inline-block;
+  min-width: 100%;
 }
 
 .headline {
@@ -187,6 +189,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
+  display: inline-block;
   /* This is the key change */
   /* width: 0; */
 }
@@ -552,6 +555,14 @@ body {
   font-size: 32px;
   color: #007bce;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.about-section h2.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-section h1 {
@@ -559,6 +570,14 @@ body {
   font-weight: 700;
   color: #000;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
+}
+
+.about-section h1.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-section p {
@@ -566,6 +585,21 @@ body {
   line-height: 1.6;
   color: #333;
   margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.about-section p:nth-of-type(1) {
+  transition: opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s;
+}
+
+.about-section p:nth-of-type(2) {
+  transition: opacity 0.6s ease-out 0.6s, transform 0.6s ease-out 0.6s;
+}
+
+.about-section p.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Minimal Button Styling */
@@ -580,7 +614,14 @@ body {
   font-weight: 600;
   border-radius: 25px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.3s ease, opacity 0.6s ease-out 0.8s, transform 0.6s ease-out 0.8s;
+}
+
+.minimal-btn.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .minimal-btn:hover {
@@ -625,6 +666,14 @@ body {
 .goal {
   position: relative;
   padding-left: 60px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.goal.animate {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Stacked Numbers */
