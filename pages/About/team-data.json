@@ -2,7 +2,7 @@
   "founder": {
     "name": "Nikhil Mahadeshwar",
     "role": "Founder",
-    "image": "assets/CSI TEAM/nikhilmahadeshwar.png",
+    "image": "../../assets/CSI TEAM/nikhilmahadeshwar.png",
     "bio": "Founder of Cyber Secured India, driving the mission to create a safer digital environment through comprehensive cybersecurity awareness, education, and innovative solutions.",
     "social": {
       "linkedin": "https://www.linkedin.com/in/nikhilmahadeshwar/",
@@ -13,7 +13,7 @@
     {
       "name": "Prathamesh Rane",
       "role": "CEO & Director",
-      "image": "assets/CSI TEAM/prathamesh.png",
+      "image": "../../assets/CSI TEAM/prathamesh.png",
       "bio": "Leading Cyber Secured India's strategic vision and operations, dedicated to building a robust cybersecurity ecosystem across the nation.",
       "social": {
         "linkedin": "https://www.linkedin.com/in/raneprathamesh/",
@@ -23,7 +23,7 @@
     {
       "name": "Retd. ACP Ravi Sardesai",
       "role": "Director - Law enforcement & Govt affairs",
-      "image": "assets/CSI TEAM/ravisardesai.jpg",
+      "image": "../../assets/CSI TEAM/ravisardesai.jpg",
       "bio": "Former Assistant Commissioner of Police bringing extensive law enforcement experience to strengthen cybersecurity governance and government relations.",
       "social": {
         "linkedin": "#",
@@ -33,7 +33,7 @@
     {
       "name": "Retd. Brig. Ramesh Balan",
       "role": "Strategic Advisor",
-      "image": "assets/CSI TEAM/rameshbalan.png",
+      "image": "../../assets/CSI TEAM/rameshbalan.png",
       "bio": "Retired Brigadier providing strategic military insights and defense sector expertise to enhance national cybersecurity infrastructure.",
       "social": {
         "linkedin": "#",
@@ -43,7 +43,7 @@
     {
       "name": "Retd. Col. Mahesh Ramachandran",
       "role": "Strategic Advisor",
-      "image": "assets/CSI TEAM/maheshramachandran.png",
+      "image": "../../assets/CSI TEAM/maheshramachandran.png",
       "bio": "Retired Colonel offering tactical and strategic guidance in cybersecurity operations and defense protocols.",
       "social": {
         "linkedin": "#",
@@ -53,7 +53,7 @@
     {
       "name": "Alpana Barua",
       "role": "Strategic Advisor",
-      "image": "assets/CSI TEAM/alpanabarua.jpg",
+      "image": "../../assets/CSI TEAM/alpanabarua.jpg",
       "bio": "Strategic advisor with deep expertise in cybersecurity policy, digital transformation, and organizational security frameworks.",
       "social": {
         "linkedin": "https://www.linkedin.com/in/alpana-barua/",
@@ -63,7 +63,7 @@
     {
       "name": "Dr. Radhakrishnan Pillai",
       "role": "Mentor",
-      "image": "assets/CSI TEAM/radhakrishnan.jpg",
+      "image": "../../assets/CSI TEAM/radhakrishnan.jpg",
       "bio": "Renowned mentor and thought leader guiding cybersecurity initiatives with extensive academic and industry experience.",
       "social": {
         "linkedin": "https://www.linkedin.com/in/rchanakyapillai/",
@@ -83,7 +83,7 @@
     {
       "name": "Nidhi Shah",
       "role": "Head of Legal & Compliance",
-      "image": "assets/CSI TEAM/nidhishah.png",
+      "image": "../../assets/CSI TEAM/nidhishah.png",
       "bio": "Leading legal and compliance efforts to ensure adherence to cybersecurity regulations and data protection standards.",
       "social": {
         "linkedin": "https://www.linkedin.com/in/adv-nidhi-shah-93231521a/",
@@ -93,7 +93,7 @@
     {
       "name": "Mahadev Gavas",
       "role": "Core Team",
-      "image": "assets/CSI TEAM/mahadevgavas.png",
+      "image": "../../assets/CSI TEAM/mahadevgavas.png",
       "bio": "Core team member contributing to cybersecurity awareness campaigns and community engagement programs.",
       "social": {
         "linkedin": "https://www.linkedin.com/in/mahadev-gavas/",
@@ -113,7 +113,7 @@
     {
       "name": "Prasad Palwankar",
       "role": "Core Team",
-      "image": "assets/CSI TEAM/prasadpalvenkar.jpg",
+      "image": "../../assets/CSI TEAM/prasadpalvenkar.jpg",
       "bio": "Core team member supporting cybersecurity research and development of innovative security solutions.",
       "social": {
         "linkedin": "#",

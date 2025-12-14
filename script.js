@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const mediaData = {
-  live: [
+  news: [
     {
       title: "Cyber Awareness Webinar",
       desc: "A deep dive into cybersecurity basics.",
@@ -642,7 +642,7 @@ function loadMedia(type) {
       const card = document.createElement("div");
       card.classList.add("media-card");
 
-      if (type === "live") {
+      if (type === "news") {
         card.innerHTML = `
           <iframe src="${item.yt}" frameborder="0" allowfullscreen></iframe>
           <div class="media-content">
@@ -673,7 +673,7 @@ tabs.forEach((tab) => {
     loadMedia(tab.dataset.type);
   });
 });
-loadMedia("live");
+loadMedia("news");
 
 // Reviews Slider
 const track = document.querySelector(".reviews-track");
@@ -909,8 +909,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.2,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px 0px 0px'
     });
     
     aboutObserver.observe(aboutSection);
