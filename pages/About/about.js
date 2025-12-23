@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   loadTeamData();
 });
@@ -20,6 +19,13 @@ async function loadTeamData() {
     if (Array.isArray(data.team)) members.push(...data.team);
 
     renderTeamGrid(members);
+
+    // Render speakers if present
+    if (Array.isArray(data.speakers) && data.speakers.length > 0) {
+      renderSpeakers(data.speakers);
+      const speakersSection = document.getElementById('speakers-section');
+      if (speakersSection) speakersSection.style.display = '';
+    }
   } catch (err) {
     console.error('Error loading team data:', err);
     const grid = document.getElementById('team-grid');
@@ -39,6 +45,32 @@ function renderTeamGrid(members) {
     // sanitize (basic) to avoid breaking markup; in a production app use proper sanitization
     const safeName = escapeHtml(member.name || '');
     const safeRole = escapeHtml(member.role || '');
+
+    return `
+      <div class="team-card" role="article">
+        <img class="avatar" src="${src}" alt="${safeName}" loading="lazy" />
+        <div class="member-name">${safeName}</div>
+        <div class="member-role">${safeRole}</div>
+        <div>
+          ${linkedin ? `<a class="social-link" href="${linkedin}" target="_blank" rel="noopener" aria-label="${safeName} LinkedIn"><i class="fab fa-linkedin-in"></i></a>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  grid.innerHTML = cards;
+}
+
+function renderSpeakers(speakers) {
+  const grid = document.getElementById('speakers-grid');
+  if (!grid) return;
+
+  const cards = speakers.map(speaker => {
+    const linkedin = speaker.social && speaker.social.linkedin ? speaker.social.linkedin : '';
+    const src = speaker.image || 'https://via.placeholder.com/320x320?text=Speaker';
+    const safeName = escapeHtml(speaker.name || '');
+    // Ensure role displays "Speaker" (fallback)
+    const safeRole = escapeHtml(speaker.role || 'Speaker');
 
     return `
       <div class="team-card" role="article">
