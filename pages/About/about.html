@@ -41,7 +41,7 @@
     <link rel="manifest" href="../../favicon/site.webmanifest" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header (kept minimal and unchanged) -->
     <header class="site-header">
       <div class="header-container">
         <a href="../../index.html" class="logo">
@@ -75,46 +75,63 @@
       </div>
     </header>
 
-    <!-- Meet Our Team Section -->
-    <section class="about-section meet-team">
-      <div class="container">
-        <div class="section-header">
-          <h2>Meet Our Team</h2>
-          <p class="section-description">
-            Our dedicated team of professionals working together to advance cybersecurity awareness and protection across India.
-          </p>
-        </div>
+    <!-- Intro Section -->
+    <main class="about-main">
+      <section class="intro container">
+        <h1>About Cyber Secured India (CSI)</h1>
+        <p class="lead">
+          Cyber Secured India (CSI) is a flagship initiative of the Feathers CSI
+          Foundation, registered as a non-profit company dedicated to building a
+          safer digital world.
+        </p>
 
-        <!-- Founder (Dynamically loaded) -->
-        <div class="ceo-profile" id="founder-section">
-          <!-- Content will be loaded via JavaScript -->
-        </div>
+        <p>
+          Since 2014, CSI has been at the forefront of training, internships,
+          mentorship, and capacity-building across the cybersecurity ecosystem.
+          Over the years, we have empowered 2,00,000+ individuals through
+          specialized programs in cybersecurity, digital forensics, and cyber
+          awareness.
+        </p>
 
-        <!-- Team Members Grid (Dynamically loaded) -->
-        <div class="directors-list" id="team-members-list" style="margin-top: 80px;">
-          <!-- Content will be loaded via JavaScript -->
-        </div>
-      </div>
-    </section>
+        <p class="small-heading">Our learners include:</p>
+        <ul class="learners-list">
+          <li>School & college students</li>
+          <li>Law Enforcement Agencies</li>
+          <li>Corporate professionals</li>
+          <li>Government bodies</li>
+          <li>Cybersecurity enthusiasts across the world</li>
+        </ul>
 
-    <!-- Our Mentors and Speakers Section -->
-    <section class="about-section board-directors">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our Mentors & Speakers</h2>
-          <p class="section-description">
-            Distinguished cybersecurity experts, industry leaders, and professionals who guide and inspire our community.
-          </p>
-        </div>
+        <p>
+          Today, CSI is supported by a global community of <strong>38,000+</strong>
+          members across <strong>130+ countries</strong>, united by a shared
+          mission — Cyber Security for All.
+        </p>
 
-        <!-- Mentors List (Dynamically loaded) -->
-        <div class="directors-list" id="mentors-list">
-          <!-- Content will be loaded via JavaScript -->
-        </div>
-      </div>
-    </section>
+        <h2 class="what-we-do-title">What We Do</h2>
+        <ul class="what-we-do">
+          <li>Cybersecurity Training & Bootcamps</li>
+          <li>Law Enforcement & Defence Capacity Building</li>
+          <li>Internships & Mentorship</li>
+          <li>Research & Product Development</li>
+          <li>Centers of Excellence</li>
+          <li>Publications & Awareness Programs</li>
+        </ul>
+      </section>
 
-    <!-- Footer -->
+      <!-- Meet Our Team (single-line subheading) -->
+      <section class="team container">
+        <h2 class="team-heading">Meet Our Team</h2>
+        <p class="team-subheading">Committed volunteers, mentors and leaders driving CSI.</p>
+
+        <!-- Team grid (rendered by about.js) -->
+        <div id="team-grid" class="team-grid" aria-live="polite">
+          <!-- team member cards populated by JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (kept as-is) -->
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-about">
@@ -187,16 +204,16 @@
       </div>
       <!-- Our Partners -->
       <div class="container partners-section">
-        <p>Our Partners: 
-          <a href="#" target="_blank" class="partner-link">Cyber Secured Africa</a> | 
-          <a href="#" target="_blank" class="partner-link">Cyber Secured Saudi Arabia</a> | 
-          <a href="#" target="_blank" class="partner-link">Inveteck Global</a> | 
-          <a href="#" target="_blank" class="partner-link">QUIK</a> | 
+        <p>Our Partners:
+          <a href="#" target="_blank" class="partner-link">Cyber Secured Africa</a> |
+          <a href="#" target="_blank" class="partner-link">Cyber Secured Saudi Arabia</a> |
+          <a href="#" target="_blank" class="partner-link">Inveteck Global</a> |
+          <a href="#" target="_blank" class="partner-link">QUIK</a> |
           <a href="#" target="_blank" class="partner-link">NST Cyber</a>
         </p>
       </div>
       <div class="container footer-bottom">
-        <p>© 2025 Cyber Secured India. All rights reserved.</p>
+        <p>© Cyber Secured India. All rights reserved.</p>
         <div class="developer-credit">
           After the dot, it's us. —
           <a
