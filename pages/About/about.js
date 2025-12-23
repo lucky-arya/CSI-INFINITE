@@ -1,101 +1,65 @@
-// About Page - Load Team Data Dynamically
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', () => {
   loadTeamData();
 });
 
 async function loadTeamData() {
   try {
-    const response = await fetch('team-data.json');
-    const data = await response.json();
-    
-    // Load Founder Section
-    loadFounder(data.founder);
-    
-    // Load Team Members
-    loadTeamMembers(data.team);
-    
-    // Load Mentors and Speakers
-    loadMentors(data.mentors);
-    
-  } catch (error) {
-    console.error('Error loading team data:', error);
+    const res = await fetch('team-data.json');
+    if (!res.ok) throw new Error('Could not fetch team-data.json');
+    const data = await res.json();
+
+    // combine founder + team so the founder appears first in the simple grid
+    const members = [];
+    if (data.founder) members.push({
+      name: data.founder.name,
+      role: data.founder.role,
+      image: data.founder.image,
+      social: data.founder.social || {}
+    });
+    if (Array.isArray(data.team)) members.push(...data.team);
+
+    renderTeamGrid(members);
+  } catch (err) {
+    console.error('Error loading team data:', err);
+    const grid = document.getElementById('team-grid');
+    if (grid) grid.innerHTML = '<p style="color:#6c757d">Failed to load team members.</p>';
   }
 }
 
-function loadFounder(founder) {
-  const founderSection = document.getElementById('founder-section');
-  
-  const founderHTML = `
-    <div class="ceo-profile-inner">
-      <div class="ceo-image">
-        <span class="role-badge">${founder.role}</span>
-        <img src="${founder.image}" alt="${founder.name}" loading="lazy" />
-      </div>
-      <div class="ceo-content">
-        <h3>${founder.name}</h3>
-        <p class="ceo-bio">${founder.bio}</p>
-        <div class="social-links">
-          <a href="${founder.social.linkedin}" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  `;
-  
-  founderSection.innerHTML = founderHTML;
-}
+function renderTeamGrid(members) {
+  const grid = document.getElementById('team-grid');
+  if (!grid) return;
 
-function loadTeamMembers(team) {
-  const teamList = document.getElementById('team-members-list');
-  let teamHTML = '';
-  
-  team.forEach((member, index) => {
-    teamHTML += `
-      <div class="director-item">
-        <div class="director-photo">
-          <span class="role-tag">${member.role}</span>
-          <img src="${member.image}" alt="${member.name}" loading="lazy" />
-        </div>
-        <div class="director-details">
-          <h3>${member.name}</h3>
-          <p>${member.bio}</p>
-          <div class="social-links" style="margin-top: 16px;">
-            <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+  const cards = members.map(member => {
+    const linkedin = member.social && member.social.linkedin ? member.social.linkedin : '';
+    // Use a fallback image if path is missing (optional)
+    const src = member.image || 'https://via.placeholder.com/320x320?text=CSI';
+
+    // sanitize (basic) to avoid breaking markup; in a production app use proper sanitization
+    const safeName = escapeHtml(member.name || '');
+    const safeRole = escapeHtml(member.role || '');
+
+    return `
+      <div class="team-card" role="article">
+        <img class="avatar" src="${src}" alt="${safeName}" loading="lazy" />
+        <div class="member-name">${safeName}</div>
+        <div class="member-role">${safeRole}</div>
+        <div>
+          ${linkedin ? `<a class="social-link" href="${linkedin}" target="_blank" rel="noopener" aria-label="${safeName} LinkedIn"><i class="fab fa-linkedin-in"></i></a>` : ''}
         </div>
       </div>
     `;
-  });
-  
-  teamList.innerHTML = teamHTML;
+  }).join('');
+
+  grid.innerHTML = cards;
 }
 
-function loadMentors(mentors) {
-  const mentorsList = document.getElementById('mentors-list');
-  let mentorsHTML = '';
-  
-  mentors.forEach((mentor, index) => {
-    mentorsHTML += `
-      <div class="director-item">
-        <div class="director-photo">
-          <span class="role-tag">${mentor.organization}</span>
-          <img src="${mentor.image}" alt="${mentor.name}" loading="lazy" />
-        </div>
-        <div class="director-details">
-          <h3>${mentor.name}</h3>
-          <p>${mentor.bio}</p>
-          <div class="social-links" style="margin-top: 16px;">
-            <a href="${mentor.social.linkedin}" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-  
-  mentorsList.innerHTML = mentorsHTML;
+// simple HTML-escape helper
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
