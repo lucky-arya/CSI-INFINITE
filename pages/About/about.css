@@ -1,4 +1,3 @@
-
 :root{
   --primary: #1084c3;
   --muted: #6c757d;
@@ -6,6 +5,7 @@
   --page-padding: 48px;
   --max-width: 1100px;
   --radius: 8px;
+  --header-height: 84px; /* used to avoid content hiding behind a fixed header */
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
@@ -18,12 +18,18 @@
 
 /* Page layout */
 .about-main{
-  padding: 48px 0;
+  /* add top padding to avoid header overlap (if header is fixed) */
+  padding: calc(var(--header-height) + 32px) 0 48px;
   background: var(--bg);
   color: #0a2540;
 }
 
 /* Intro */
+.intro {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
 .intro h1{
   font-size: 2rem;
   margin: 0 0 12px;
@@ -38,11 +44,15 @@
   font-weight: 500;
 }
 
+/* constrain paragraph width for better readability when centered */
 .intro p{
   color: var(--muted);
   line-height: 1.6;
   margin-bottom: 12px;
   font-size: 0.98rem;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .small-heading{
@@ -64,6 +74,7 @@
   font-size: 1.125rem;
   color: #0a2540;
   font-weight: 700;
+  text-align: center;
 }
 
 /* Team section */
@@ -78,12 +89,14 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #0a2540;
+  text-align: center; /* centered heading */
 }
 
 .team-subheading{
   margin: 6px 0 18px;
   color: var(--muted);
   font-size: 0.95rem;
+  text-align: center;
 }
 
 /* Simple grid for avatars */
@@ -149,6 +162,11 @@
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
+}
+
+/* Speakers section specifics (reuse team styles) */
+.speakers {
+  margin-top: 36px;
 }
 
 /* Responsive */
