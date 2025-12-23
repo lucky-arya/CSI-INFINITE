@@ -180,9 +180,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
-// Add this CSS to your styles.css to prevent body scrolling when menu is open
 /*
 body.menu-open {
     overflow: hidden;
@@ -674,6 +671,85 @@ tabs.forEach((tab) => {
   });
 });
 loadMedia("news");
+(function(){
+  function createCard(item){
+    const card = document.createElement('article');
+    card.className = 'media-card';
+    if(item.image){
+      const a = document.createElement('a');
+      a.href = item.url || '#'; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.className = 'media-card-image';
+      const img = document.createElement('img'); img.src = item.image; img.alt = item.title || 'media';
+      a.appendChild(img); card.appendChild(a);
+    }
+    const body = document.createElement('div'); body.className = 'media-card-body';
+    if(item.date){ const t = document.createElement('time'); t.className='media-card-date'; t.textContent = item.date; body.appendChild(t); }
+    if(item.title){ const h = document.createElement('h3'); h.className='media-card-title'; const a = document.createElement('a'); a.href=item.url||'#'; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=item.title; h.appendChild(a); body.appendChild(h); }
+    if(item.excerpt){ const p = document.createElement('p'); p.className='media-card-excerpt'; p.textContent = item.excerpt; body.appendChild(p); }
+    if(item.source){ const m = document.createElement('div'); m.className='media-card-meta'; m.textContent = item.source; body.appendChild(m); }
+    card.appendChild(body); return card;
+  }
+
+  function buildSlider(type, items, title){
+    const wrapper = document.createElement('div'); wrapper.className='media-slider'; wrapper.dataset.type=type;
+    const h = document.createElement('h3'); h.className='media-slider-heading'; h.textContent = title || type; wrapper.appendChild(h);
+    const controls = document.createElement('div'); controls.className='slider-controls';
+    controls.innerHTML = '<button class="slider-prev" aria-label="Prev">&larr;</button><button class="slider-next" aria-label="Next">&rarr;</button>';
+    wrapper.appendChild(controls);
+    const viewport = document.createElement('div'); viewport.className='slider-viewport';
+    const track = document.createElement('div'); track.className='slider-track';
+    items.forEach(it => { const slide = document.createElement('div'); slide.className='slider-item'; slide.appendChild(createCard(it)); track.appendChild(slide); });
+    viewport.appendChild(track); wrapper.appendChild(viewport);
+    const dots = document.createElement('div'); dots.className='slider-dots';
+    items.forEach((_,i)=>{ const d=document.createElement('button'); d.className='slider-dot'; d.dataset.index=i; dots.appendChild(d); });
+    wrapper.appendChild(dots);
+    return wrapper;
+  }
+
+  function setupSlider(s){
+    const track = s.querySelector('.slider-track');
+    const items = Array.from(s.querySelectorAll('.slider-item'));
+    const prev = s.querySelector('.slider-prev');
+    const next = s.querySelector('.slider-next');
+    const dots = Array.from(s.querySelectorAll('.slider-dot'));
+    let idx = 0; let visible=1;
+    function calcVisible(){ const w=window.innerWidth; if(w>=1200) visible=3; else if(w>=900) visible=2; else visible=1; }
+    function layout(){ const vp = s.querySelector('.slider-viewport'); const w = vp.clientWidth; calcVisible(); items.forEach(it=>it.style.width = (w/visible) + 'px'); track.style.width = (items.length * 100 / visible) + '%'; update(); }
+    function update(){ const percent = (idx * 100) / visible; track.style.transform = 'translateX(-' + percent + '%)'; dots.forEach(d=>d.classList.remove('active')); if(dots[idx]) dots[idx].classList.add('active'); prev.disabled = idx === 0; next.disabled = idx >= items.length - visible; }
+    prev.addEventListener('click', ()=>{ idx = Math.max(0, idx-1); update(); });
+    next.addEventListener('click', ()=>{ idx = Math.min(items.length - visible, idx+1); update(); });
+    dots.forEach(d=>d.addEventListener('click', e=>{ idx = Number(e.currentTarget.dataset.index); update(); }));
+    // simple swipe
+    let startX=0, down=false;
+    track.addEventListener('pointerdown', e=>{ down=true; startX=e.clientX; track.setPointerCapture(e.pointerId); track.style.transition='none'; });
+    track.addEventListener('pointerup', e=>{ if(!down) return; down=false; track.style.transition=''; const dx = e.clientX - startX; if(dx>40) prev.click(); else if(dx<-40) next.click(); });
+    track.addEventListener('pointercancel', ()=>{ down=false; track.style.transition=''; });
+    window.addEventListener('resize', layout); layout();
+  }
+
+  // render fallback if initMediaCoverage missing
+  window.renderMediaFallback = function(mediaData){
+    const grid = document.getElementById('mediaGrid'); if(!grid) return;
+    grid.innerHTML = '';
+    for(const key of Object.keys(mediaData)){
+      const arr = mediaData[key]; if(!arr || !arr.length) continue;
+      const title = key.charAt(0).toUpperCase() + key.slice(1);
+      const sec = buildSlider(key, arr, title); grid.appendChild(sec);
+    }
+    // wire tabs like earlier
+    const tabs = Array.from(document.querySelectorAll('.media-tab'));
+    function activate(t){
+      tabs.forEach(b=>b.classList.toggle('active', b.dataset.type===t));
+      const sliders = Array.from(grid.querySelectorAll('.media-slider'));
+      sliders.forEach(s=> s.style.display = s.dataset.type === t ? '' : 'none');
+      const active = grid.querySelector('.media-slider[data-type="'+t+'"]');
+      if(active && !active.dataset.init){ setupSlider(active); active.dataset.init='1'; }
+    }
+    tabs.forEach(b => b.addEventListener('click', ()=> activate(b.dataset.type)));
+    const activeTab = tabs.find(t=>t.classList.contains('active'));
+    if(activeTab) activate(activeTab.dataset.type); else if(tabs[0]) activate(tabs[0].dataset.type);
+  };
+})();
 
 // Reviews Slider
 const track = document.querySelector(".reviews-track");
