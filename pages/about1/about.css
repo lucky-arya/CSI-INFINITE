@@ -1,0 +1,171 @@
+/* Simplified About Page Styles (clean, minimal) */
+
+:root{
+  --primary: #1084c3;
+  --muted: #6c757d;
+  --bg: #ffffff;
+  --page-padding: 48px;
+  --max-width: 1100px;
+  --radius: 8px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Page layout */
+.about-main{
+  padding: 48px 0;
+  background: var(--bg);
+  color: #0a2540;
+}
+
+/* Intro */
+.intro h1{
+  font-size: 2rem;
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: #0a2540;
+}
+
+.lead{
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.intro p{
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 0.98rem;
+}
+
+.small-heading{
+  margin-top: 8px;
+  font-weight: 600;
+  color: #0a2540;
+}
+
+.learners-list,
+.what-we-do{
+  margin: 12px 0 18px 1.25rem;
+  color: var(--muted);
+  line-height: 1.6;
+  list-style: disc;
+}
+
+.what-we-do-title{
+  margin-top: 20px;
+  font-size: 1.125rem;
+  color: #0a2540;
+  font-weight: 700;
+}
+
+/* Team section */
+.team{
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f2f5;
+}
+
+.team-heading{
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a2540;
+}
+
+.team-subheading{
+  margin: 6px 0 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Simple grid for avatars */
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+/* Card */
+.team-card{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(10,37,64,0.04);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.team-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(10,37,64,0.08);
+}
+
+/* Circular avatar */
+.avatar{
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+  border: 2px solid rgba(16,132,195,0.12);
+}
+
+/* Name / role */
+.member-name{
+  font-weight: 700;
+  color: #0a2540;
+  margin: 6px 0 4px;
+  font-size: 1rem;
+}
+
+.member-role{
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+}
+
+/* social link */
+.social-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px){
+  .team-grid{ grid-template-columns: repeat(3,1fr); }
+}
+
+@media (max-width: 820px){
+  .team-grid{ grid-template-columns: repeat(2,1fr); gap: 14px; }
+  .avatar{ width: 96px; height: 96px; }
+}
+
+@media (max-width: 480px){
+  .team-grid{ grid-template-columns: 1fr; }
+  .container{ padding-left: 16px; padding-right: 16px; }
+  .team-card{ padding: 14px; }
+  .avatar{ width: 88px; height: 88px; }
+  .team-subheading{ display: none; } /* keep the header line only on small screens */
+}
