@@ -7,7 +7,7 @@
       "createdTime": "2 hours ago",
       "author": {
         "name": "CyberSecuredIndia",
-        "image": "cybersecuredindia_logo.jpeg"
+        "image": "./assets/CsiLogos/cybersecuredindia_logo.jpeg"
       },
       "engagement": {
         "likes": 87,
@@ -16,7 +16,7 @@
       },
       "media": {
         "type": "image",
-        "url": "hero_img1.jpg",
+        "url": "./assets/HeroImages/hero_img1.jpg",
         "alt": "Advanced cybersecurity training program launch"
       },
       "url": "https://linkedin.com/company/cybersecuredindia"
@@ -27,7 +27,7 @@
       "createdTime": "1 day ago",
       "author": {
         "name": "CyberSecuredIndia",
-        "image": "cybersecuredindia_logo.jpeg"
+        "image": "./assets/CsiLogos/cybersecuredindia_logo.jpeg"
       },
       "engagement": {
         "likes": 134,
@@ -36,7 +36,7 @@
       },
       "media": {
         "type": "image",
-        "url": "hero_img2.JPG",
+        "url": "./assets/HeroImages/hero_img2.JPG",
         "alt": "Cybersecurity awareness training statistics"
       },
       "url": "https://linkedin.com/company/cybersecuredindia"
@@ -47,7 +47,7 @@
       "createdTime": "3 days ago",
       "author": {
         "name": "CyberSecuredIndia",
-        "image": "cybersecuredindia_logo.jpeg"
+        "image": "./assets/CsiLogos/cybersecuredindia_logo.jpeg"
       },
       "engagement": {
         "likes": 92,
@@ -56,7 +56,7 @@
       },
       "media": {
         "type": "image",
-        "url": "hero_img3.jpg",
+        "url": "./assets/HeroImages/hero_img3.jpg",
         "alt": "Partnership announcement in cybersecurity industry"
       },
       "url": "https://linkedin.com/company/cybersecuredindia"
