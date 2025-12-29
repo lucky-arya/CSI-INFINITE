@@ -1,341 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publications | Cyber Secured India</title>
-    <meta
-      name="description"
-      content="Explore comprehensive cybersecurity publications, manuals, and research by Cyber Secured India. Download expert resources for law enforcement and cybersecurity professionals."
-    />
-    <link rel="canonical" href="https://www.cybersecuredindia.com/publications.html" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon/favicon-16x16.png"
-    />
-    <link rel="stylesheet" href="../../css/styles.css" />
-    <link rel="stylesheet" href="../../css/Publications/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha384-vp3cVmcjEyd2hApGFrFzL2N5eENvqC03fD2PZKsktDxx5L2GzUgLZa3YnVYtJQFm"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | Cyber Secured India</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Base CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  
+  <!-- Footer CSS -->
+  <link rel="stylesheet" href="../../css/footer.css">
+  
+  <!-- Publications CSS -->
+  <link rel="stylesheet" href="publications.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/CsiLogos/CSI LOGO PNG.png" alt="Cyber Secured India Logo">
+      </a>
 
-  <body>
-    <!-- Header -->
-    <header class="site-header">
-      <div class="container header-container">
-        <a href="index.html" class="logo">
-          <img
-            src="./assets/CsiLogos/CSI LOGO PNG.png"
-            alt="Cyber Secured India Logo"
-          />
-        </a>
-
-        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        <nav class="nav-links">
-          <a href="index.html#hero">Home</a>
-          <a href="pages/About/about.html">About</a>
-          <a href="pages/Services/Service.html">Services</a>
-          <a href="index.html#services">Who We Serve</a>
-          <a href="index.html#join">Get Involved</a>
-          <a href="index.html#contact">Contact</a>
-          <div class="social-icons">
-            <a href="https://instagram.com/cybersecuredindia" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://t.me/cybersecuredindia" target="_blank"
-              ><i class="fab fa-telegram"></i
-            ></a>
-            <a
-              href="https://linkedin.com/company/cybersecuredindia/"
-              target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Publications Grid -->
-    <section class="publications-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Publications</h2>
-      <p class="section-description">
-        Comprehensive guides and training materials developed by industry experts
-      </p>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <nav class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../pages/About/about.html">About</a>
+        <a href="../../pages/Services/Service.html">Services</a>
+        <a href="../../pages/Publications/index.html" class="active">Publications</a>
+        <a href="../../index.html#services">Who We Serve</a>
+        <a href="../../index.html#join">Get Involved</a>
+        <a href="../../index.html#contact">Contact</a>
+        <div class="social-icons">
+          <a href="https://instagram.com/cybersecuredindia" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://t.me/cybersecuredindia" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://linkedin.com/company/cybersecuredindia/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <!-- Publication Card 1 -->
-    <article class="publication-card">
-      <div class="publication-image">
-        <img
-          src="../../css/Publications/p1.jpg"
-          alt="Cyber Crime Investigation Manual - India Version"
-          loading="lazy"
-        />
+  <!-- Main Content -->
+  <main class="publications-page">
+    <div class="container">
+      <div class="page-header">
+        <h1>Publications</h1>
+        <p class="subtitle">Comprehensive investigation manuals and educational resources for cybersecurity professionals worldwide</p>
       </div>
-      <div class="publication-content">
-        <h3 class="publication-title">
-          Cyber Crime Investigation Manual - India Version
-        </h3>
-        <p class="publication-description">
-          A comprehensive guide for law enforcement agencies in India, covering the latest methodologies in cyber crime investigation and digital forensics. This manual includes detailed procedures, case studies, and best practices specifically tailored for Indian cybercrime scenarios, legal frameworks, and investigation protocols.
-        </p>
-        <div class="publication-meta">
-          <span class="meta-item">
-            <i class="fas fa-book"></i>
-            Version 1.0
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-globe"></i>
-            India
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-shield-alt"></i>
-            Law Enforcement Only
-          </span>
-        </div>
+
+      <!-- Publications List -->
+      <div class="publications-list">
         
-      </div>
-    </article>
-
-    <!-- Publication Card 2 -->
-    <article class="publication-card reverse">
-      <div class="publication-image">
-        <img
-          src="../../css/Publications/p2.jpg"
-          alt="Cyber Crime Investigation Manual - UAE Version"
-          loading="lazy"
-        />
-      </div>
-      <div class="publication-content">
-        <h3 class="publication-title">
-          Cyber Crime Investigation Manual - UAE Version
-        </h3>
-        <p class="publication-description">
-          Specially designed for law enforcement professionals in the United Arab Emirates, this manual addresses unique regional challenges in cybercrime investigation. It includes UAE-specific legal frameworks, regional threat landscapes, and collaborative investigation techniques aligned with Middle Eastern cybersecurity standards.
-        </p>
-        <div class="publication-meta">
-          <span class="meta-item">
-            <i class="fas fa-book"></i>
-            UAE Edition
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-globe"></i>
-            United Arab Emirates
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-shield-alt"></i>
-            Law Enforcement Only
-          </span>
-        </div>
-      </div>
-    </article>
-
-    <!-- Publication Card 3 -->
-    <article class="publication-card">
-      <div class="publication-image">
-        <img
-          src="../../css/Publications/p3.jpg"
-          alt="Cyber Crime Investigation Manual - UK Version"
-          loading="lazy"
-        />
-      </div>
-      <div class="publication-content">
-        <h3 class="publication-title">
-          Cyber Crime Investigation Manual - United Kingdom Version
-        </h3>
-        <p class="publication-description">
-          A comprehensive resource for UK law enforcement agencies covering Scotland, England, Wales, and Northern Ireland. This manual aligns with UK cybercrime legislation, GDPR compliance, and European standards for digital evidence handling. It includes region-specific case studies and investigation frameworks.
-        </p>
-        <div class="publication-meta">
-          <span class="meta-item">
-            <i class="fas fa-book"></i>
-            Version 1.0
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-globe"></i>
-            United Kingdom
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-shield-alt"></i>
-            Law Enforcement Only
-          </span>
-        </div>
-      </div>
-    </article>
-
-    <!-- Publication Card 4 -->
-    <article class="publication-card reverse">
-      <div class="publication-image">
-        <img
-          src="../../css/Publications/p4.jpg"
-          alt="Cyber Security Syllabus"
-          loading="lazy"
-        />
-      </div>
-      <div class="publication-content">
-        <h3 class="publication-title">
-          Cyber Security Syllabus - Version 1.0
-        </h3>
-        <p class="publication-description">
-          A structured curriculum designed for educational institutions and training programs worldwide. This comprehensive syllabus covers fundamental to advanced cybersecurity concepts, including threat analysis, network security, cryptography, ethical hacking, and incident response. Perfect for universities, colleges, and professional training centers.
-        </p>
-        <div class="publication-meta">
-          <span class="meta-item">
-            <i class="fas fa-book"></i>
-            Version 1.0
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-graduation-cap"></i>
-            Educational
-          </span>
-          <span class="meta-item">
-            <i class="fas fa-users"></i>
-            Public Access
-          </span>
-        </div>
-      </div>
-    </article>
-  </div>
-    </section>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-about">
-          <div class="footer-brand">
-            <img
-              src="./assets/CsiLogos/CSI_LOGO_whiteblue.png"
-              alt="Cyber Secured India Logo"
-              class="footer-logo"
-            />
+        <!-- Publication 1: India Manual -->
+        <article class="publication-item">
+          <div class="publication-header">
+            <div class="publication-cover">
+              <img src="../../assets/publications/p1.jpg" alt="Cyber Crime Investigation Manual - India Version">
+            </div>
+            <div class="publication-info">
+              <h2>Cyber Crime Investigation Manual - India Version 01</h2>
+              <div class="publication-meta">
+                <span class="meta-item">
+                  <i class="fas fa-globe"></i>
+                  India
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-shield-alt"></i>
+                  Law Enforcement Only
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-file-pdf"></i>
+                  PDF Format
+                </span>
+              </div>
+              <p class="publication-excerpt">
+                Comprehensive investigation manual designed specifically for Indian law enforcement agencies, covering local cyber laws, investigation procedures, and case studies relevant to the Indian context.
+              </p>
+              <button class="read-more-btn" onclick="togglePublication(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
           </div>
-          <p>
-            Leading India's cybersecurity transformation through innovation,
-            education, and comprehensive protection strategies for a digitally
-            secure future.
-          </p>
-          <div class="social-links">
-            <a
-              href="https://linkedin.com/company/cybersecuredindia/"
-              target="_blank"
-              class="social-icon bg-linkedin"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              href="https://instagram.com/cybersecuredindia"
-              target="_blank"
-              class="social-icon bg-instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://youtube.com/@cybersecuredindia"
-              target="_blank"
-              class="social-icon bg-youtube"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a
-              href="https://t.me/cybersecuredindia"
-              target="_blank"
-              class="social-icon bg-telegram"
-              ><i class="fab fa-telegram"></i
-            ></a>
+          <div class="publication-details">
+            <div class="details-content">
+              <div class="details-grid">
+                <div class="detail-section">
+                  <h3><i class="fas fa-book"></i> Contents</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Introduction to Cyber Crime in India</li>
+                    <li><i class="fas fa-check-circle"></i> IT Act 2000 & Amendments</li>
+                    <li><i class="fas fa-check-circle"></i> Investigation Procedures & Protocols</li>
+                    <li><i class="fas fa-check-circle"></i> Digital Evidence Collection</li>
+                    <li><i class="fas fa-check-circle"></i> Cryptocurrency Fraud Cases</li>
+                    <li><i class="fas fa-check-circle"></i> Social Media Crime Investigation</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h3><i class="fas fa-users"></i> Target Audience</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Police Officers & Investigators</li>
+                    <li><i class="fas fa-check-circle"></i> Cyber Crime Cell Personnel</li>
+                    <li><i class="fas fa-check-circle"></i> Forensic Experts</li>
+                    <li><i class="fas fa-check-circle"></i> Judicial Officers</li>
+                    <li><i class="fas fa-check-circle"></i> Prosecutors</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>This manual is specifically designed for Indian law enforcement agencies and covers investigation techniques aligned with Indian Cyber Laws and procedures. Free training available at nas.io/cybersecuredindia</p>
+              </div>
+
+              <div class="download-section">
+                <a href="#" class="download-btn">
+                  <i class="fas fa-download"></i>
+                  Request Manual
+                </a>
+                <a href="#" class="download-btn secondary">
+                  <i class="fas fa-envelope"></i>
+                  Contact for Training
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="footer-links">
-          <h3>Discover</h3>
-          <ul>
-            <li><a href="index.html#services">Who We Serve</a></li>
-            <li><a href="pages/About/about.html">Our Team</a></li>
-            <li><a href="index.html#join">Get Involved</a></li>
-            <li><a href="index.html#contact">Help & Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>About</h3>
-          <ul>
-            <li><a href="pages/About/about.html">About Us</a></li>
-            <li><a href="index.html#join">Careers</a></li>
-            <li><a href="#">News & Events</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#">Security Audits</a></li>
-            <li><a href="#">Training Programs</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>Locations</h3>
-          <ul>
-            <li><a href="#">Mumbai, India</a></li>
-            <li><a href="#">Accra, Ghana</a></li>
-            <li><a href="#">Riyadh, Saudi Arabia</a></li>
-            <li><a href="#">London, UK</a></li>
-          </ul>
-        </div>
+        </article>
+
+        <!-- Publication 2: UAE Manual -->
+        <article class="publication-item">
+          <div class="publication-header">
+            <div class="publication-cover">
+              <img src="../../assets/publications/p2.jpg" alt="Cyber Crime Investigation Manual - UAE Version">
+            </div>
+            <div class="publication-info">
+              <h2>Cyber Crime Investigation Manual - UAE Version</h2>
+              <div class="publication-meta">
+                <span class="meta-item">
+                  <i class="fas fa-globe"></i>
+                  United Arab Emirates
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-shield-alt"></i>
+                  Law Enforcement Only
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-file-pdf"></i>
+                  PDF Format
+                </span>
+              </div>
+              <p class="publication-excerpt">
+                Specialized manual adapted for UAE law enforcement, incorporating local cyber security laws, Arabic-English terminology, and region-specific case studies and investigation methodologies.
+              </p>
+              <button class="read-more-btn" onclick="togglePublication(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="publication-details">
+            <div class="details-content">
+              <div class="details-grid">
+                <div class="detail-section">
+                  <h3><i class="fas fa-book"></i> Contents</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> UAE Cyber Crime Law Framework</li>
+                    <li><i class="fas fa-check-circle"></i> Federal Decree-Law No. 34/2021</li>
+                    <li><i class="fas fa-check-circle"></i> GCC Cyber Crime Cooperation</li>
+                    <li><i class="fas fa-check-circle"></i> Financial Fraud Investigation</li>
+                    <li><i class="fas fa-check-circle"></i> Cross-Border Cyber Crime</li>
+                    <li><i class="fas fa-check-circle"></i> Digital Forensics Procedures</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h3><i class="fas fa-language"></i> Features</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Bilingual Content (Arabic/English)</li>
+                    <li><i class="fas fa-check-circle"></i> UAE Legal Framework</li>
+                    <li><i class="fas fa-check-circle"></i> Regional Case Studies</li>
+                    <li><i class="fas fa-check-circle"></i> Cultural Context</li>
+                    <li><i class="fas fa-check-circle"></i> Local Investigation Tools</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Published by MINDSYS UAE in collaboration with Cyber Secured India. This manual is tailored for UAE law enforcement and incorporates local laws, regulations, and investigation procedures specific to the region.</p>
+              </div>
+
+              <div class="download-section">
+                <a href="#" class="download-btn">
+                  <i class="fas fa-download"></i>
+                  Request Manual
+                </a>
+                <a href="#" class="download-btn secondary">
+                  <i class="fas fa-phone"></i>
+                  +971 521616786
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Publication 3: UK Manual -->
+        <article class="publication-item">
+          <div class="publication-header">
+            <div class="publication-cover">
+              <img src="../../assets/publications/p3.jpg" alt="Cyber Crime Investigation Manual - UK Version">
+            </div>
+            <div class="publication-info">
+              <h2>Cyber Crime Investigation Manual - United Kingdom Version 01</h2>
+              <div class="publication-meta">
+                <span class="meta-item">
+                  <i class="fas fa-globe"></i>
+                  United Kingdom
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-shield-alt"></i>
+                  Law Enforcement Only
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-file-pdf"></i>
+                  PDF Format
+                </span>
+              </div>
+              <p class="publication-excerpt">
+                Comprehensive manual developed for UK law enforcement covering England, Scotland, Wales, and Northern Ireland, aligned with Computer Misuse Act and GDPR requirements.
+              </p>
+              <button class="read-more-btn" onclick="togglePublication(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="publication-details">
+            <div class="details-content">
+              <div class="details-grid">
+                <div class="detail-section">
+                  <h3><i class="fas fa-book"></i> Contents</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Computer Misuse Act 1990</li>
+                    <li><i class="fas fa-check-circle"></i> GDPR & Data Protection Act</li>
+                    <li><i class="fas fa-check-circle"></i> RIPA & Investigatory Powers</li>
+                    <li><i class="fas fa-check-circle"></i> E-Evidence Admissibility</li>
+                    <li><i class="fas fa-check-circle"></i> Online Fraud Investigation</li>
+                    <li><i class="fas fa-check-circle"></i> Multi-Jurisdictional Cases</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h3><i class="fas fa-users"></i> Supported By</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Cyber Security & Digital Forensics UK</li>
+                    <li><i class="fas fa-check-circle"></i> SafeSkillz Limited</li>
+                    <li><i class="fas fa-check-circle"></i> Cyber Secured India</li>
+                    <li><i class="fas fa-check-circle"></i> Cyber Secured Africa</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Developed in collaboration with UK cybersecurity experts and law enforcement agencies. This manual covers all four countries of the UK with specific sections for Scotland, England, Wales, and Northern Ireland legal frameworks.</p>
+              </div>
+
+              <div class="download-section">
+                <a href="#" class="download-btn">
+                  <i class="fas fa-download"></i>
+                  Request Manual
+                </a>
+                <a href="#" class="download-btn secondary">
+                  <i class="fas fa-phone"></i>
+                  +44 7946 630285
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Publication 4: Cyber Security Syllabus -->
+        <article class="publication-item">
+          <div class="publication-header">
+            <div class="publication-cover">
+              <img src="../../assets/publications/p4.jpg" alt="Cyber Security Syllabus">
+            </div>
+            <div class="publication-info">
+              <h2>Cyber Security Syllabus - Version 1.0</h2>
+              <div class="publication-meta">
+                <span class="meta-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  Educational Resource
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-users"></i>
+                  For All Students
+                </span>
+                <span class="meta-item">
+                  <i class="fas fa-file-pdf"></i>
+                  PDF Format
+                </span>
+              </div>
+              <p class="publication-excerpt">
+                Comprehensive cybersecurity curriculum designed for educational institutions, covering fundamental to advanced topics with structured learning paths and practical exercises.
+              </p>
+              <button class="read-more-btn" onclick="togglePublication(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="publication-details">
+            <div class="details-content">
+              <div class="details-grid">
+                <div class="detail-section">
+                  <h3><i class="fas fa-book"></i> Curriculum Contents</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Fundamentals of Cybersecurity</li>
+                    <li><i class="fas fa-check-circle"></i> Network Security Concepts</li>
+                    <li><i class="fas fa-check-circle"></i> Ethical Hacking & Penetration Testing</li>
+                    <li><i class="fas fa-check-circle"></i> Digital Forensics Basics</li>
+                    <li><i class="fas fa-check-circle"></i> Cryptography & PKI</li>
+                    <li><i class="fas fa-check-circle"></i> Incident Response & Management</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h3><i class="fas fa-users"></i> Target Audience</h3>
+                  <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> Computer Science Students</li>
+                    <li><i class="fas fa-check-circle"></i> IT Professionals</li>
+                    <li><i class="fas fa-check-circle"></i> Faculty Members</li>
+                    <li><i class="fas fa-check-circle"></i> Training Institutes</li>
+                    <li><i class="fas fa-check-circle"></i> Self-Learners</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>This syllabus has been designed to provide a structured learning path for cybersecurity education. It includes module-wise breakup, learning objectives, practical exercises, and assessment criteria suitable for academic institutions.</p>
+              </div>
+
+              <div class="download-section">
+                <a href="#" class="download-btn">
+                  <i class="fas fa-download"></i>
+                  Download Syllabus
+                </a>
+                <a href="#" class="download-btn secondary">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                  Faculty Training
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <div class="container partners-section">
-        <p>
-          Our Partners:
-          <a href="#" target="_blank" class="partner-link"
-            >Cyber Secured Africa</a
-          >
-          |
-          <a href="#" target="_blank" class="partner-link"
-            >Cyber Secured Saudi Arabia</a
-          >
-          |
-          <a href="#" target="_blank" class="partner-link">Inveteck Global</a> |
-          <a href="#" target="_blank" class="partner-link">QUIK</a> |
-          <a href="#" target="_blank" class="partner-link">NST Cyber</a>
-        </p>
-      </div>
-      <div class="container footer-bottom">
-        <p>© 2025 Cyber Secured India. All rights reserved.</p>
-        <div class="developer-credit">
-          After the dot, it's us. —
-          <a
-            href="https://mkitos.codeberg.page"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            .MKITOS
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-about">
+        <div class="footer-brand">
+          <img src="../../assets/CsiLogos/CSI_LOGO_whiteblue.png" alt="Cyber Secured India Logo" class="footer-logo">
+        </div>
+        <p>Leading India's cybersecurity transformation through innovation, education, and comprehensive protection strategies for a digitally secure future.</p>
+        <div class="social-links">
+          <a href="https://linkedin.com/company/cybersecuredindia/" target="_blank" class="social-icon bg-linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/cybersecuredindia" target="_blank" class="social-icon bg-instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@cybersecuredindia" target="_blank" class="social-icon bg-youtube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/cybersecuredindia" target="_blank" class="social-icon bg-telegram">
+            <i class="fab fa-telegram"></i>
           </a>
         </div>
       </div>
-    </footer>
+      <div class="footer-links">
+        <h3>Discover</h3>
+        <ul>
+          <li><a href="../../index.html#services">Who We Serve</a></li>
+          <li><a href="../About/about.html">Our Team</a></li>
+          <li><a href="../../index.html#join">Get Involved</a></li>
+          <li><a href="../../index.html#contact">Help & Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../About/about.html">About Us</a></li>
+          <li><a href="../../index.html#join">Careers</a></li>
+          <li><a href="#">News & Events</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Security Audits</a></li>
+          <li><a href="#">Training Programs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Locations</h3>
+        <ul>
+          <li><a href="#">Mumbai, India</a></li>
+          <li><a href="#">Accra, Ghana</a></li>
+          <li><a href="#">Riyadh, Saudi Arabia</a></li>
+          <li><a href="#">London, UK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container partners-section">
+      <p>Our Partners: 
+        <a href="#" target="_blank" class="partner-link">Cyber Secured Africa</a> | 
+        <a href="#" target="_blank" class="partner-link">Cyber Secured Saudi Arabia</a> | 
+        <a href="#" target="_blank" class="partner-link">Inveteck Global</a> | 
+        <a href="#" target="_blank" class="partner-link">QUIK</a> | 
+        <a href="#" target="_blank" class="partner-link">NST Cyber</a>
+      </p>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2025 Cyber Secured India. All rights reserved.</p>
+      <div class="developer-credit">
+        After the dot, it's us. — <a href="https://mkitos.codeberg.page" target="_blank" rel="noopener noreferrer">.MKITOS</a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="publications.js"></script>
+</body>
 </html>
