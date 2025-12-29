@@ -122,78 +122,151 @@
 
       <!-- Meet Our Team -->
 
-      <section class="slider-container">
+      <!-- Team Slider Section -->
+<section class="team-slider-section">
+  <div class="container">
+    <h2 class="section-heading">Meet the Team</h2>
+    <p class="section-subheading">Dedicated professionals driving our mission forward</p>
+  </div>
+  
+  <section class="slider-container">
+    <div class="slider-wrapper">
       <div class="slider-images">
-        <div class="slider-img">
-          <img src="Images/1.png" alt="1" />
+        <div class="slider-img active">
+          <img src="Images/1.png" alt="Mike" />
           <h1>Mike</h1>
           <div class="details">
             <h2>Mike</h2>
-            <p>web3 Developer</p>
+            <p>Web3 Developer</p>
           </div>
         </div>
         <div class="slider-img">
-          <img src="Images/2.png" alt="2" />
-          <h1>samite</h1>
+          <img src="Images/2.png" alt="Samite" />
+          <h1>Samite</h1>
           <div class="details">
-            <h2>samite</h2>
-            <p>wordpress Developer</p>
+            <h2>Samite</h2>
+            <p>WordPress Developer</p>
           </div>
         </div>
         <div class="slider-img">
-          <img src="Images/3.png" alt="3" />
-          <h1>hashi</h1>
+          <img src="Images/3.png" alt="Hashi" />
+          <h1>Hashi</h1>
           <div class="details">
-            <h2>hashi</h2>
-            <p>java Developer</p>
-          </div>
-        </div>
-        <div class="slider-img active">
-          <img src="Images/4.png" alt="4" />
-          <h1>kaity</h1>
-          <div class="details">
-            <h2>kaity</h2>
-            <p>web Developer</p>
+            <h2>Hashi</h2>
+            <p>Java Developer</p>
           </div>
         </div>
         <div class="slider-img">
-          <img src="Images/5.png" alt="5" />
-          <h1>lauren</h1>
+          <img src="Images/4.png" alt="Kaity" />
+          <h1>Kaity</h1>
           <div class="details">
-            <h2>lauren</h2>
-            <p>php Developer</p>
+            <h2>Kaity</h2>
+            <p>Web Developer</p>
           </div>
         </div>
         <div class="slider-img">
-          <img src="Images/6.png" alt="6" />
-          <h1>ryan</h1>
+          <img src="Images/5.png" alt="Lauren" />
+          <h1>Lauren</h1>
           <div class="details">
-            <h2>ryan</h2>
-            <p>seo Developer</p>
+            <h2>Lauren</h2>
+            <p>PHP Developer</p>
           </div>
         </div>
         <div class="slider-img">
-          <img src="Images/7.png" alt="7" />
-          <h1>dakes</h1>
+          <img src="Images/6.png" alt="Ryan" />
+          <h1>Ryan</h1>
           <div class="details">
-            <h2>dakes</h2>
-            <p>sql Developer</p>
+            <h2>Ryan</h2>
+            <p>SEO Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/7.png" alt="Dakes" />
+          <h1>Dakes</h1>
+          <div class="details">
+            <h2>Dakes</h2>
+            <p>SQL Developer</p>
+          </div>
+        </div>
+        <div class="slider-img">
+          <img src="Images/8.png" alt="Sarah" />
+          <h1>Sarah</h1>
+          <div class="details">
+            <h2>Sarah</h2>
+            <p>UX Designer</p>
           </div>
         </div>
       </div>
-    </section>
-    <script src="js/jQuery.js"></script>
-    <script>
-      jQuery(document).ready(function ($) {
-        $(".slider-img").on("click", function () {
-          $(".slider-img").removeClass("active");
-          $(this).addClass("active");
-        });
-      });
-    </script>
+    </div>
+  </section>
+</section>
+
+<script src="js/jQuery.js"></script>
+<script>
+  jQuery(document).ready(function ($) {
+    // Center the active element on page load
+    function centerActiveElement() {
+      const container = $(".slider-wrapper");
+      const activeElement = $(".slider-img.active");
+      
+      if (activeElement.length && container.length) {
+        const containerWidth = container.width();
+        const activePos = activeElement.position().left;
+        const elementWidth = activeElement.outerWidth();
+        
+        let scrollPosition;
+        
+        if ($(window).width() > 1024) {
+          // Desktop: center the active card
+          scrollPosition = activePos + container.scrollLeft() - (containerWidth / 2) + (elementWidth / 2);
+        } else {
+          // Mobile/Tablet: position active card with some left padding
+          scrollPosition = activePos + container.scrollLeft() - 20;
+        }
+        
+        container.scrollLeft(scrollPosition);
+      }
+    }
+    
+    // Center on load
+    setTimeout(centerActiveElement, 100);
+    
+    // Handle window resize
+    $(window).on('resize', function() {
+      centerActiveElement();
+    });
+    
+    // Handle click events
+    $(".slider-img").on("click", function () {
+      $(".slider-img").removeClass("active");
+      $(this).addClass("active");
+      
+      // Smooth scroll to position the active element
+      const container = $(".slider-wrapper");
+      const activeElement = $(this);
+      const containerWidth = container.width();
+      const activePos = activeElement.position().left;
+      const elementWidth = activeElement.outerWidth();
+      
+      let scrollPosition;
+      
+      if ($(window).width() > 1024) {
+        // Desktop: center the active card
+        scrollPosition = activePos + container.scrollLeft() - (containerWidth / 2) + (elementWidth / 2);
+      } else {
+        // Mobile/Tablet: position active card with some left padding
+        scrollPosition = activePos + container.scrollLeft() - 20;
+      }
+      
+      container.animate({
+        scrollLeft: scrollPosition
+      }, 600);
+    });
+  });
+</script>
 
       <section class="team container">
-        <h2 class="team-heading">Meet Our Team</h2>
+        <h2 class="team-heading">Core Team</h2>
         <p class="team-subheading">Committed volunteers, mentors and leaders driving CSI.</p>
 
         <!-- Team grid (rendered by about.js) -->
