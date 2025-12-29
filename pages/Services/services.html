@@ -32,13 +32,13 @@ header {
 }
 
 header h1 {
-  font-size: 56px; /* increased size */
+  font-size: 56px;
   color: white;
 }
 
 header p {
   margin-top: 15px;
-  font-size: 22px; /* increased size */
+  font-size: 22px;
   color: white;
   opacity: 0.9;
 }
@@ -66,6 +66,33 @@ header p {
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
+}
+
+/* SEPARATOR */
+.section-separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0;
+  position: relative;
+}
+
+.section-separator::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #1e88e5, transparent);
+}
+
+.section-separator i {
+  background: #f5f7fa;
+  padding: 0 20px;
+  color: #1e88e5;
+  font-size: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 /* CARD */
@@ -208,55 +235,169 @@ header p {
 <section class="services-wrapper">
 <div class="services-grid">
 
-<div class="service-card" data-animation="fadeUp">
-  <i class="fas fa-chalkboard-teacher"></i>
-  <div>
-    <h3>Faculty Development</h3>
-    <span>Empowering educators with cyber excellence</span>
-    <p>Advanced cybersecurity programs designed to empower educators with modern cyber skills.</p>
-    <button onclick="openModal('faculty')">Read More</button>
+  <div class="service-card" data-animation="fadeUp">
+    <i class="fas fa-gavel"></i>
+    <div>
+      <h3>Law Enforcement</h3>
+      <span>Cybercrime investigation expertise</span>
+      <p>Specialized cybercrime investigation and digital forensics training for officers.</p>
+      <button onclick="openModal('law')">Read More</button>
+    </div>
   </div>
-</div>
 
-<div class="service-card" data-animation="fadeLeft">
-  <i class="fas fa-user-graduate"></i>
-  <div>
-    <h3>Student Bootcamps</h3>
-    <span>Industry-ready cyber skill programs</span>
-    <p>Hands-on bootcamps focused on ethical hacking, forensics and real-world cyber labs.</p>
-    <button onclick="openModal('student')">Read More</button>
+  <div class="service-card" data-animation="fadeLeft">
+    <i class="fas fa-shield-alt"></i>
+    <div>
+      <h3>Defence Training</h3>
+      <span>Strategic cyber warfare programs</span>
+      <p>Advanced cyber warfare, defensive strategies and national security-focused programs.</p>
+      <button onclick="openModal('defence')">Read More</button>
+    </div>
   </div>
-</div>
 
-<div class="service-card" data-animation="fadeRight">
-  <i class="fas fa-building"></i>
-  <div>
-    <h3>Corporate Training</h3>
-    <span>Cyber awareness & resilience building</span>
-    <p>Customized cybersecurity awareness and technical training for modern organizations.</p>
-    <button onclick="openModal('corporate')">Read More</button>
+  <div class="service-card" data-animation="fadeRight">
+    <i class="fas fa-building"></i>
+    <div>
+      <h3>Corporate Training</h3>
+      <span>Cyber awareness & resilience building</span>
+      <p>Customized cybersecurity awareness and technical training for modern organizations.</p>
+      <button onclick="openModal('corporate')">Read More</button>
+    </div>
   </div>
-</div>
 
-<div class="service-card" data-animation="fadeDown">
-  <i class="fas fa-shield-alt"></i>
-  <div>
-    <h3>Defence Training</h3>
-    <span>Strategic cyber warfare programs</span>
-    <p>Advanced cyber warfare, defensive strategies and national security-focused programs.</p>
-    <button onclick="openModal('defence')">Read More</button>
+  <div class="service-card" data-animation="fadeDown">
+    <i class="fas fa-chalkboard-teacher"></i>
+    <div>
+      <h3>Faculty Development</h3>
+      <span>Empowering educators with cyber excellence</span>
+      <p>Advanced cybersecurity programs designed to empower educators with modern cyber skills.</p>
+      <button onclick="openModal('faculty')">Read More</button>
+    </div>
   </div>
-</div>
 
-<div class="service-card" data-animation="zoomIn">
-  <i class="fas fa-gavel"></i>
-  <div>
-    <h3>Law Enforcement</h3>
-    <span>Cybercrime investigation expertise</span>
-    <p>Specialized cybercrime investigation and digital forensics training for officers.</p>
-    <button onclick="openModal('law')">Read More</button>
+  <div class="service-card" data-animation="zoomIn">
+    <i class="fas fa-user-graduate"></i>
+    <div>
+      <h3>Student Bootcamps</h3>
+      <span>Industry-ready cyber skill programs</span>
+      <p>Hands-on bootcamps focused on ethical hacking, forensics and real-world cyber labs.</p>
+      <button onclick="openModal('student')">Read More</button>
+    </div>
   </div>
-</div>
+
+  <div class="service-card" data-animation="fadeUp">
+    <i class="fas fa-hand-sparkles"></i>
+    <div>
+      <h3>Cyber Hygiene</h3>
+      <span>Essential Cyber Safety Practices</span>
+      <p>Awareness training on phishing, password management, and safe browsing.</p>
+      <button onclick="openModal('cyber_hygiene')">Read More</button>
+    </div>
+  </div>
+
+  <div class="section-separator">
+    <i class="fas fa-user-shield"></i>
+  </div>
+
+  <div class="service-card" data-animation="fadeLeft">
+    <i class="fas fa-robot"></i>
+    <div>
+      <h3>Cyber Crime Chatbot</h3>
+      <span>24/7 Digital Incident Support</span>
+      <p>Automated fraud triage, evidence collection, and legal consultation support.</p>
+      <button onclick="openModal('helpline_chatbot')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeRight">
+    <i class="fas fa-laptop-code"></i>
+    <div>
+      <h3>Web App VAPT</h3>
+      <span>Securing Web Applications</span>
+      <p>Threat modeling and dynamic analysis to uncover logic flaws and vulnerabilities.</p>
+      <button onclick="openModal('web_vapt')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeDown">
+    <i class="fas fa-mobile-alt"></i>
+    <div>
+      <h3>Mobile App VAPT</h3>
+      <span>Mobile Security Excellence</span>
+      <p>Static and dynamic analysis for root detection and API traffic monitoring.</p>
+      <button onclick="openModal('mobile_vapt')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="zoomIn">
+    <i class="fas fa-search-plus"></i>
+    <div>
+      <h3>VA & PT</h3>
+      <span>Vulnerability Assessment</span>
+      <p>Internal and external network scanning to identify and assess security gaps.</p>
+      <button onclick="openModal('vapt_general')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeUp">
+    <i class="fas fa-user-ninja"></i>
+    <div>
+      <h3>Red Teaming</h3>
+      <span>Adversarial Simulation</span>
+      <p>Live system exploitation and red-blue team drills for true resilience testing.</p>
+      <button onclick="openModal('red_teaming')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeLeft">
+    <i class="fas fa-fingerprint"></i>
+    <div>
+      <h3>Digital Forensics</h3>
+      <span>Investigation & Analysis</span>
+      <p>Comprehensive imaging and analysis of digital artifacts for deep investigations.</p>
+      <button onclick="openModal('digital_forensics')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeRight">
+    <i class="fas fa-file-signature"></i>
+    <div>
+      <h3>Forensics Readiness</h3>
+      <span>Incident Preparedness</span>
+      <p>Designing protocols and log strategies to ensure legal and technical readiness.</p>
+      <button onclick="openModal('forensics_readiness')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeDown">
+    <i class="fas fa-clipboard-check"></i>
+    <div>
+      <h3>IT GRC</h3>
+      <span>Governance & Compliance</span>
+      <p>Ensuring ISO compliance and privacy guidelines through rigorous auditing.</p>
+      <button onclick="openModal('it_grc')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="zoomIn">
+    <i class="fas fa-cloud-shield"></i>
+    <div>
+      <h3>Cloud DevSecOps ☁️🛡️</h3>
+      <span>Security Integrated CI/CD</span>
+      <p>Securing containers, Kubernetes, and pipelines through automated testing.</p>
+      <button onclick="openModal('devsecops')">Read More</button>
+    </div>
+  </div>
+
+  <div class="service-card" data-animation="fadeUp">
+    <i class="fas fa-satellite-dish"></i>
+    <div>
+      <h3>SOC IR w/XDR</h3>
+      <span>Response & Threat Hunting</span>
+      <p>Advanced SIEM/EDR capabilities for proactive threat handling.</p>
+      <button onclick="openModal('soc_ir')">Read More</button>
+    </div>
+  </div>
 
 </div>
 </section>
@@ -274,7 +415,19 @@ const data = {
   student: `<h2>Student Bootcamps</h2><ul><li>Ethical Hacking</li><li>Digital Forensics</li><li>OSINT</li><li>Live Cyber Labs</li></ul>`,
   corporate: `<h2>Corporate Training</h2><ul><li>Risk Management</li><li>Incident Response</li><li>Compliance Training</li><li>Employee Awareness</li></ul>`,
   defence: `<h2>Defence Cyber Training</h2><ul><li>Offensive Cyber Operations</li><li>Defensive Cyber Operations</li><li>Cyber Intelligence</li><li>Simulation Exercises</li></ul>`,
-  law: `<h2>Law Enforcement Training</h2><ul><li>Cybercrime Investigation</li><li>Digital Evidence Handling</li><li>Legal Frameworks</li><li>Advanced Forensics</li></ul>`
+  law: `<h2>Law Enforcement Training</h2><ul><li>Cybercrime Investigation</li><li>Digital Evidence Handling</li><li>Legal Frameworks</li><li>Advanced Forensics</li></ul>`,
+  digital_forensics: `<h2>Digital Forensics</h2><ul><li>Disk and memory Imaging</li><li>Email and browser artifact analysis</li><li>Malware behavior analysis</li><li>Chain-of-custody handling</li></ul>`,
+  forensics_readiness: `<h2>Forensics Readiness</h2><ul><li>Incident evidence collection protocols</li><li>Legal readiness and documentation</li><li>Log retention and monitoring strategy</li><li>Staff sensitization and policy design</li></ul>`,
+  data_analytics: `<h2>Data Analytics - ML Engineer</h2><ul><li>Practical Python (Numpy, Pandas)</li><li>Statistical Methods for Analytics</li><li>Advanced Data Analytics ML</li><li>Supervised & Unsupervised Learning</li></ul>`,
+  it_grc: `<h2>IT GRC / IT Audit</h2><ul><li>ISO Standard Compliance (27001, 31000)</li><li>Privacy Guidelines (DPDP, GDPR, HIPAA)</li><li>Vendor Audit (SOC2, Third Party)</li><li>IS Auditing standards (COBIT)</li></ul>`,
+  vapt_general: `<h2>VA & PT</h2><ul><li>Internal/external network scanning</li><li>Firewall, router, switch assessment</li><li>Configuration & access control testing</li><li>Wi-Fi security testing</li></ul>`,
+  red_teaming: `<h2>Red Teaming</h2><ul><li>Red-Blue team drills</li><li>Network intrusion & lateral movement</li><li>Exploitation of live systems</li><li>Reporting with attack chains</li></ul>`,
+  cyber_hygiene: `<h2>Cyber Hygiene</h2><ul><li>Phishing & scam awareness</li><li>Safe browsing & social media practices</li><li>Password management</li><li>Mobile device hygiene</li></ul>`,
+  helpline_chatbot: `<h2>Cyber Crime Helpline Chatbot</h2><ul><li>Fraud/abuse triage and advisory</li><li>Initial evidence collection</li><li>Legal consultation support</li><li>Incident logging and tracking</li></ul>`,
+  devsecops: `<h2>Cloud DevSecOps</h2><ul><li>Secure CI/CD pipelines</li><li>Integrating SAST, DAST, SCA tools</li><li>Securing Docker and Kubernetes</li><li>Monitoring, alerting, and log analysis (ELK)</li></ul>`,
+  soc_ir: `<h2>SOC IR w/XDR</h2><ul><li>SIEM Architecture & Integration (ELK / Splunk)</li><li>EDR/XDR Capabilities</li><li>Threat Intel & Threat Hunting</li><li>MITRE / Kill Chain</li></ul>`,
+  web_vapt: `<h2>Web App VAPT</h2><ul><li>Threat modeling and scope definition</li><li>Static and dynamic analysis</li><li>Logic flaws and session review</li><li>Business logic vulnerability testing</li></ul>`,
+  mobile_vapt: `<h2>Mobile App VAPT</h2><ul><li>Static code analysis</li><li>Dynamic runtime behavior analysis</li><li>Reverse engineering</li><li>Root/jailbreak detection</li></ul>`
 };
 
 function openModal(key) {
@@ -286,7 +439,6 @@ function closeModal() {
   document.getElementById('modal').style.display = 'none';
 }
 
-// Scroll-triggered animations
 const cards = document.querySelectorAll('.service-card');
 
 function animateOnScroll() {

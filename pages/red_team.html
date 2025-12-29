@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Red Team Operations – Assessment</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #1a73e8, #0f9d58);
+    min-height: 100vh;
+}
+
+header {
+    padding: 70px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 0;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.container {
+    max-width: 900px;
+    background: #ffffff;
+    margin: -50px auto 40px;
+    padding: 45px;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.field-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-top: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    margin-top: 12px;
+    font-size: 15px;
+    padding: 8px 4px;
+    background: transparent;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #1a73e8;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+button {
+    margin-top: 45px;
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1a73e8, #0f9d58);
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.92;
+}
+
+.footer-note {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Advanced Red Team Operations</h1>
+    <p>Technical Assessment & Scenario-Based Evaluation</p>
+</header>
+
+<div class="container">
+
+<form action="submit.php" method="POST">
+
+<!-- Personal Details -->
+<div class="section-title">Participant Details</div>
+
+<div class="field-card">
+    <label>Name *</label>
+    <input type="text" name="name" placeholder="Your answer" required>
+</div>
+
+<div class="field-card">
+    <label>Email *</label>
+    <input type="email" name="email" placeholder="Your answer" required>
+</div>
+
+<div class="field-card">
+    <label>Contact No. *</label>
+    <input type="text" name="contact" placeholder="Your answer" required>
+</div>
+
+<div class="field-card">
+    <label>City *</label>
+    <input type="text" name="city" placeholder="Your answer" required>
+</div>
+
+<!-- Questions -->
+<div class="section-title" style="margin-top:40px;">Assessment Questions</div>
+
+<div class="field-card">
+<label>
+You get access to a normal Windows domain user account on a company workstation that’s part of the internal Active Directory environment. What should be your first logical step before attempting privilege escalation?
+</label>
+<textarea name="q1" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+While analyzing a legacy Windows service running with SYSTEM permissions, you discover the binary path is unquoted and located in a folder with write access for non-admin users. What specific misconfiguration should you look for next?
+</label>
+<textarea name="q2" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You’ve compromised the NTLM credentials of a domain user during a phishing engagement. Which tool would best help you visualize and analyze their access rights and relationships within the Active Directory environment?
+</label>
+<textarea name="q3" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+During post-exploitation, you obtain a valid Kerberos TGT from a user session. Which specific technique allows you to reuse this ticket to access other machines in the domain without re-entering credentials?
+</label>
+<textarea name="q4" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You attempt to use Mimikatz to extract credentials from memory, but the security solution on the endpoint immediately blocks and quarantines the process. What should your next action be to achieve your objective while staying stealthy?
+</label>
+<textarea name="q5" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+Using enumeration tools like BloodHound or manual querying, you observe that a specific domain user is logged into five different machines across various subnets. What might this pattern indicate about the user’s role or privilege level?
+</label>
+<textarea name="q6" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+While reviewing user desktop files on a compromised machine, you come across a saved .rdp file. What value might this file provide during lateral movement or privilege escalation activities?
+</label>
+<textarea name="q7" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You attempt to move laterally using WMI but it fails due to RPC firewall restrictions. Which alternate native method could you use on Windows systems to execute code remotely without requiring WMI?
+</label>
+<textarea name="q8" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You discover a service account with registered SPNs and a password last set over 5 years ago. Which specific Active Directory attack technique is best suited to exploit this situation?
+</label>
+<textarea name="q9" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You want to dump credentials from a live Windows session without triggering antivirus alerts. Which tool or method is commonly used by red teamers to extract password hashes from memory in a stealthy way?
+</label>
+<textarea name="q10" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+Your implant establishes a connection to your C2 server over HTTP, but you notice that the endpoint detection solution is flagging the traffic as suspicious. What operational security adjustment should you make to evade detection while maintaining control?
+</label>
+<textarea name="q11" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+After gaining Domain Admin access during an internal assessment, what is a discreet method to maintain persistence within the Active Directory environment without creating new user accounts?
+</label>
+<textarea name="q12" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You deploy a PowerShell-based payload to a set of systems, but it consistently fails to execute. What could be a likely reason related to endpoint security configurations or policies in modern Windows environments?
+</label>
+<textarea name="q13" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You scan the network and find that SMB (port 445) is open on several Windows hosts. What lateral movement technique can be applied here, assuming you have appropriate credentials or hashes?
+</label>
+<textarea name="q14" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You are in a post-exploitation phase of an engagement. What is the primary goal of performing lateral movement across systems within the network?
+</label>
+<textarea name="q15" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+During a red team engagement, you are detected by the SOC while trying to perform privilege escalation. What is the most professional and strategic response from a red team perspective?
+</label>
+<textarea name="q16" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+While reviewing the client's Active Directory setup, you discover a previously unknown critical vulnerability (zero-day). What is the most ethical and responsible course of action?
+</label>
+<textarea name="q17" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+You want to structure your red team attack paths based on commonly observed adversary behavior patterns. Which well-known cybersecurity framework helps you align your tactics and techniques with real-world threats?
+</label>
+<textarea name="q18" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+The client has asked you to simulate how a real-world threat actor would attempt to breach and persist within their network using stealthy tactics. What type of engagement best fits this request?
+</label>
+<textarea name="q19" required></textarea>
+</div>
+
+<div class="field-card">
+<label>
+After conducting a multi-week red team assessment, you realize that none of your actions were detected by the client's defenses. What should be your next step during the reporting or debrief phase?
+</label>
+<textarea name="q20" required></textarea>
+</div>
+
+<button type="submit">Submit Assessment</button>
+
+</form>
+
+<div class="footer-note">
+© Advanced Red Team Operations | Assessment Form
+</div>
+
+</div>
+
+</body>
+</html>

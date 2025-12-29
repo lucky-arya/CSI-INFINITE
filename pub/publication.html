@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Publications | Cyber Secured India</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+    --primary-teal: #1cb5b5;
+    --accent-yellow: #f9e13d;
+    --dark-blue: #0b3c5d;
+    --text-gray: #444;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: #f0f4f7; color: var(--text-gray); }
+
+header {
+    background: var(--primary-teal);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    border-bottom: 8px solid var(--accent-yellow);
+}
+header h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
+header p { font-size: 1.2rem; font-weight: 300; }
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider to fit book ratio */
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover { transform: translateY(-10px); }
+
+/* --- UPDATED IMAGE SECTION --- */
+.card-img-box {
+    width: 100%;
+    height: 450px; /* Increased height for full vertical cover visibility */
+    background: #f9f9f9; /* Light background to fill gaps if aspect ratios differ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid var(--accent-yellow);
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* This ensures the manual is never cropped */
+    padding: 10px; /* Optional: adds a little breathing room around the cover */
+}
+/* ------------------------------ */
+
+.card-content { padding: 25px; flex-grow: 1; text-align: center; }
+.card-content h3 { color: var(--dark-blue); font-size: 1.4rem; margin-bottom: 10px; }
+.card-content span { color: var(--primary-teal); font-weight: 600; display: block; margin-bottom: 15px; }
+
+.read-btn {
+    background: var(--primary-teal);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.read-btn:hover { background: var(--dark-blue); box-shadow: 0 5px 15px rgba(28, 181, 181, 0.4); }
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.modal-content {
+    background: white;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.close { position: absolute; top: 20px; right: 25px; font-size: 30px; cursor: pointer; color: #999; }
+
+.modal-body h2 { color: var(--primary-teal); margin-bottom: 20px; }
+.modal-body h4 { color: var(--dark-blue); margin-top: 15px; border-left: 4px solid var(--accent-yellow); padding-left: 10px; }
+.modal-body ul { list-style: none; margin: 15px 0; }
+.modal-body li { margin-bottom: 8px; font-size: 0.95rem; }
+.modal-body li i { color: var(--primary-teal); margin-right: 10px; }
+
+.soon-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-yellow);
+    color: var(--dark-blue);
+    padding: 5px 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    z-index: 2;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Publications</h1>
+    <p>Professional Manuals & Educational Syllabi for Law Enforcement Only</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-img-box">
+            <img src="p1.jpg" alt="UAE Manual">
+        </div>
+        <div class="card-content">
+            <h3>UAE Investigation Manual</h3>
+            <span>Published by Mindsys UAE</span>
+            <button class="read-btn" onclick="showDetails('uae')">View Manual Details</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img-box">
+            <img src="p2.jpg" alt="UK Manual">
+        </div>
+        <div class="card-content">
+            <h3>UK Investigation Manual</h3>
+            <span>Developed by CSDF UK</span>
+            <button class="read-btn" onclick="showDetails('uk')">View Manual Details</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img-box">
+            <img src="p3.jpg" alt="Version 01 Manual">
+        </div>
+        <div class="card-content">
+            <h3>Investigation Manual V.01</h3>
+            <span>Global Enforcement Standard</span>
+            <button class="read-btn" onclick="showDetails('v01')">View Manual Details</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img-box">
+            <img src="p4.jpg" alt="Syllabus">
+        </div>
+        <div class="card-content">
+            <h3>Cyber Security Syllabus</h3>
+            <span>Version 1.0 Curriculum</span>
+            <button class="read-btn" onclick="showDetails('syllabus')">View Syllabus Details</button>
+        </div>
+    </div>
+
+    <div class="card" style="position: relative; opacity: 0.8;">
+        <div class="soon-badge">COMING SOON</div>
+        <div class="card-img-box">
+            <img src="https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?auto=format&fit=crop&q=80&w=400" alt="Africa Manual">
+        </div>
+        <div class="card-content">
+            <h3>Africa Investigation Manual</h3>
+            <span>Regional Edition</span>
+            <p>Specialized guidelines for African LEA units.</p>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="detailsModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+const data = {
+    uae: {
+        title: "UAE Version Manual",
+        content: `
+            <h4>Regional Enforcement</h4>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Tailored for UAE Cyber Crime Laws</li>
+                <li><i class="fas fa-check-circle"></i> Evidence Collection Protocols</li>
+                <li><i class="fas fa-check-circle"></i> Incident Logging and Tracking</li>
+            </ul>
+            <h4>Contact Info</h4>
+            <p>Published by: Mindsys UAE<br>Support: +971 521616786</p>`
+    },
+    uk: {
+        title: "United Kingdom Version 01",
+        content: `
+            <h4>Strategic Forensics</h4>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Network Intrusion & Lateral Movement</li>
+                <li><i class="fas fa-check-circle"></i> Firewalls, Routers & Switch Assessment</li>
+                <li><i class="fas fa-check-circle"></i> Exploitation of Live Systems</li>
+            </ul>
+            <h4>Support</h4>
+            <p>Developed by: CSDF UK Limited<br>Supported by: Cyber Secured Africa & India</p>`
+    },
+    v01: {
+        title: "Cyber Crime Manual Version 01",
+        content: `
+            <h4>Core Investigation Modules</h4>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Disk and Memory Imaging</li>
+                <li><i class="fas fa-check-circle"></i> Malware Behavior Analysis</li>
+                <li><i class="fas fa-check-circle"></i> Chain-of-Custody Handling</li>
+                <li><i class="fas fa-check-circle"></i> Fraud/Abuse Triage and Advisory</li>
+            </ul>
+            <h4>Global Pricing</h4>
+            <p>Price: $15 / £15 / Rs. 699</p>`
+    },
+    syllabus: {
+        title: "Cyber Security Syllabus V1.0",
+        content: `
+            <h4>Training Framework</h4>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Practical Python (Numpy, Pandas, Stat Foundations)</li>
+                <li><i class="fas fa-check-circle"></i> Web App VAPT (Threat Modeling & Scope)</li>
+                <li><i class="fas fa-check-circle"></i> Cloud DevSecOps (Secure CI/CD Pipelines)</li>
+                <li><i class="fas fa-check-circle"></i> IT GRC / IT Audit (ISO Standard Compliance)</li>
+            </ul>`
+    }
+};
+
+function showDetails(key) {
+    const item = data[key];
+    document.getElementById('modalBody').innerHTML = `<h2>${item.title}</h2>${item.content}`;
+    document.getElementById('detailsModal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('detailsModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('detailsModal')) closeModal();
+}
+</script>
+
+</body>
+</html>

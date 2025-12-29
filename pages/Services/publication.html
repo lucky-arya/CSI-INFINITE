@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications | Cyber Secured India</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+/* HEADER - High Tech Theme */
+header {
+  text-align: center;
+  background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), 
+              url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2000') no-repeat center center/cover;
+  padding: 100px 20px 80px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  color: white;
+}
+
+header h1 { font-size: 52px; font-weight: 700; letter-spacing: -1px; }
+header p { margin-top: 15px; font-size: 20px; opacity: 0.9; font-weight: 300; }
+
+/* CONTENT SECTION */
+.pub-intro {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  color: #0b3c5d;
+  line-height: 1.8;
+}
+
+.publications-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 25px;
+}
+
+.publications-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* PUBLICATION CARD GUI */
+.pub-card {
+  background: white;
+  flex: 1 1 300px;
+  max-width: 360px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.4s ease;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #edf2f7;
+}
+
+.pub-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(30, 136, 229, 0.15);
+}
+
+/* IMAGE STYLING */
+.img-box {
+  width: 100%;
+  height: 240px;
+  background: #f0f4f8;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.4s ease;
+}
+
+/* Icon fallback if image is missing */
+.img-box i {
+  font-size: 80px;
+  color: #1e88e5;
+  position: absolute;
+  z-index: 0;
+}
+
+.pub-card h3 { color: #0b3c5d; font-size: 22px; margin-bottom: 8px; }
+.pub-card span { color: #1e88e5; font-weight: 600; font-size: 13px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+.pub-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 25px; }
+
+/* BUTTONS */
+.btn-details {
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.btn-details:hover { background: #1565c0; letter-spacing: 0.5px; }
+
+/* BADGES */
+.badge-soon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff9800;
+  color: white;
+  padding: 4px 12px;
+  font-size: 11px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+/* MODAL STYLING */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 60, 93, 0.9);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 650px;
+  padding: 50px;
+  border-radius: 30px;
+  position: relative;
+  animation: modalPop 0.4s ease;
+}
+
+@keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.close-btn { position: absolute; top: 20px; right: 25px; font-size: 30px; cursor: pointer; color: #999; }
+.modal-body h2 { color: #0b3c5d; margin-bottom: 20px; border-bottom: 3px solid #1e88e5; display: inline-block; padding-bottom: 5px; }
+.modal-body ul { list-style: none; margin-top: 20px; }
+.modal-body li { margin-bottom: 12px; padding-left: 25px; position: relative; color: #444; }
+.modal-body li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #1e88e5; }
+
+/* SCROLL ANIMATION */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cyber Publications</h1>
+  <p>Standard Investigation Manuals & Specialized Frameworks</p>
+</header>
+
+<div class="pub-intro">
+  <p>Our manuals are adopted by Law Enforcement Agencies (LEA) and Cyber Security divisions worldwide to standardize digital investigation and forensic protocols.</p>
+</div>
+
+<div class="publications-wrapper">
+  <div class="publications-grid">
+
+    <div class="pub-card" style="animation: fadeInUp 0.6s forwards 0.1s">
+      <div class="img-box">
+        <i class="fas fa-book-bookmark"></i>
+        <img src="images/p1.jpg" onerror="this.style.opacity='0'" alt="Manual">
+      </div>
+      <span>Published: Mindsys UAE</span>
+      <h3>UAE Investigation Manual</h3>
+      <p>Official Cyber Crime Investigation Manual tailored for UAE legal frameworks.</p>
+      <button class="btn-details" onclick="openModal('p1')">Manual Details</button>
+    </div>
+
+    <div class="pub-card" style="animation: fadeInUp 0.6s forwards 0.2s">
+      <div class="img-box">
+        <i class="fas fa-book-bookmark"></i>
+        <img src="images/p2.jpg" onerror="this.style.opacity='0'" alt="Manual">
+      </div>
+      <span>Edition: CSDF UK</span>
+      <h3>UK Investigation Manual</h3>
+      <p>Version 01 - Cyber Security and Digital Forensics standards for UK enforcement.</p>
+      <button class="btn-details" onclick="openModal('p2')">Manual Details</button>
+    </div>
+
+    <div class="pub-card" style="animation: fadeInUp 0.6s forwards 0.3s">
+      <div class="img-box">
+        <i class="fas fa-book-bookmark"></i>
+        <img src="images/p3.jpg" onerror="this.style.opacity='0'" alt="Manual">
+      </div>
+      <span>Global Standard</span>
+      <h3>Investigation Manual V.01</h3>
+      <p>The core framework for digital evidence collection and cyber investigation.</p>
+      <button class="btn-details" onclick="openModal('p3')">Manual Details</button>
+    </div>
+
+    <div class="pub-card" style="animation: fadeInUp 0.6s forwards 0.4s">
+      <div class="img-box">
+        <i class="fas fa-graduation-cap"></i>
+        <img src="images/p4.jpg" onerror="this.style.opacity='0'" alt="Manual">
+      </div>
+      <span>Curriculum V1.0</span>
+      <h3>Cyber Security Syllabus</h3>
+      <p>Professional training syllabus for academic and tactical cybersecurity units.</p>
+      <button class="btn-details" onclick="openModal('p4')">Manual Details</button>
+    </div>
+
+    <div class="pub-card" style="animation: fadeInUp 0.6s forwards 0.5s">
+      <div class="img-box" style="background: #e3f2fd;">
+        <span class="badge-soon">Coming Soon</span>
+        <i class="fas fa-globe-africa" style="opacity: 0.3;"></i>
+      </div>
+      <span>Regional Series</span>
+      <h3>Africa Investigation Manual</h3>
+      <p>Specialized guidelines for African LEA and Cyber Crime Units coming soon.</p>
+      <button class="btn-details" style="background:#b0bec5; cursor:default;">Coming Soon</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" id="pubModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="modalContent" class="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const manualData = {
+  p1: {
+    title: "UAE Investigation Manual",
+    details: [
+      "Exclusive procedural guide for Mindsys UAE partners.",
+      "Comprehensive breakdown of UAE Cyber Law protocols.",
+      "Evidence triage for financial and social media fraud.",
+      "LEA-only restricted access modules."
+    ]
+  },
+  p2: {
+    title: "UK Investigation Manual",
+    details: [
+      "CSDF UK Version 01 Standards.",
+      "Digital Forensic Chain of Custody for UK Courts.",
+      "Reporting formats for Cyber Security Incident Response.",
+      "Advanced memory and disk forensics workflows."
+    ]
+  },
+  p3: {
+    title: "Cyber Investigation Manual V.01",
+    details: [
+      "International Standard for Cyber Triage.",
+      "Volatility analysis and RAM imaging techniques.",
+      "Mobile device forensic acquisition guidelines.",
+      "Search and Seizure procedures for digital evidence."
+    ]
+  },
+  p4: {
+    title: "Cyber Security Syllabus V1.0",
+    details: [
+      "Strategic 12-module cybersecurity curriculum.",
+      "From Ethical Hacking to Advanced Threat Hunting.",
+      "Lab-based training manual for academic excellence.",
+      "Adopted by global Cyber Secured India centers."
+    ]
+  }
+};
+
+function openModal(id) {
+  const manual = manualData[id];
+  let listHtml = `<h2>${manual.title}</h2><ul>`;
+  manual.details.forEach(item => { listHtml += `<li>${item}</li>`; });
+  listHtml += `</ul>`;
+  
+  document.getElementById('modalContent').innerHTML = listHtml;
+  document.getElementById('pubModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('pubModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById('pubModal')) closeModal();
+}
+</script>
+
+</body>
+</html>

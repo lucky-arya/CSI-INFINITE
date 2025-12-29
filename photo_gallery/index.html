@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+
+<style>
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #cce7ff;
+  color: #003366;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FULLSCREEN OVERLAY */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 20, 50, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: zoomIn 0.4s ease;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 45px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header { font-size: 2.2rem; }
+  .gallery img { height: 220px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>Photo Gallery</header>
+
+<div class="gallery">
+  <img src="conf_1.jpg">
+  <img src="conf_2.jpg">
+  <img src="conf_3.jpg">
+  <img src="conf_4.jpg">
+  <img src="conf_5.jpg">
+  <img src="conf_6.jpg">
+  <img src="ctf_1.jpg">
+  <img src="ctf_2.jpg">
+  <img src="ctf_3.jpg">
+  <img src="ctf_4.jpg">
+  <img src="ctf_5.jpg">
+  <img src="ctf_6.jpg">
+  <img src="m_1.jpg">
+  <img src="m_2.jpg">
+  <img src="m_3.jpg">
+  <img src="m_4.jpg">
+  <img src="m_5.jpg">
+  <img src="m_6.jpg">
+  <img src="m_7.jpg">
+  <img src="M_8.jpg">
+  <img src="m_8.jpg">
+  <img src="T_4.jpg">
+  <img src="T_5.jpg">
+  <img src="T_6.jpg">
+  <img src="T_7.jpg">
+  <img src="T_8.jpg">
+  <img src="T_9.jpg">
+  <img src="T_10.jpg">
+  <img src="T_11.jpg">
+  <img src="T_12.jpg">
+  <img src="T_13.jpg">
+  <img src="T_14.jpg">
+  <img src="T_15.jpg">
+  <img src="T_16.jpg">
+  <img src="T_17.jpg">
+  <img src="V_3.jpg">
+  <img src="V_4.jpg">
+  <img src="V_5.jpg">
+  <img src="V_6.jpg">
+  <img src="V_7.jpg">
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <img id="lightboxImg">
+</div>
+
+<script>
+const images = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeBtn = document.getElementById("closeBtn");
+
+// Open image
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+// Close on X
+closeBtn.addEventListener("click", closeLightbox);
+
+// Close on background click
+lightbox.addEventListener("click", e => {
+  if (e.target !== lightboxImg) closeLightbox();
+});
+
+function closeLightbox() {
+  lightbox.style.display = "none";
+  lightboxImg.src = "";
+  document.body.style.overflow = "auto";
+}
+</script>
+
+</body>
+</html>

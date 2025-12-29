@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Associations | Cyber Secured India</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background-color: #f0f4f8;
+        color: #333;
+    }
+
+    /* Header */
+    header {
+        padding: 50px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #0056b3, #00bfff);
+        color: white;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    /* Form Container */
+    .form-container {
+        max-width: 700px;
+        margin: 40px auto 60px;
+        background-color: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #0056b3;
+        font-weight: 600;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        padding: 14px 16px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
+        outline: none;
+    }
+
+    form textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    form button {
+        width: 100%;
+        background: linear-gradient(135deg, #0056b3, #00bfff);
+        color: white;
+        padding: 16px;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    form button:hover {
+        background: linear-gradient(135deg, #004494, #0099e6);
+        transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+        header h1 {
+            font-size: 2rem;
+        }
+        .form-container {
+            margin: 20px;
+            padding: 35px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Associations</h1>
+</header>
+
+<div class="form-container">
+    <h2>Association Registration Form</h2>
+    <form id="associationForm">
+        <label for="companyName">Company Name *</label>
+        <input type="text" id="companyName" name="companyName" placeholder="Enter your company name" required>
+
+        <label for="contactPerson">Contact Person *</label>
+        <input type="text" id="contactPerson" name="contactPerson" placeholder="Enter contact person's name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Enter email address" required>
+
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+
+        <label for="website">Website</label>
+        <input type="url" id="website" name="website" placeholder="https://">
+
+        <label for="reason">Why do you want to join Cyber Secured India? *</label>
+        <textarea id="reason" name="reason" placeholder="Explain your reason..." required></textarea>
+
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="notes" placeholder="Any additional information..."></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('associationForm').addEventListener('submit', function(e){
+        e.preventDefault();
+
+        const companyName = document.getElementById('companyName').value.trim();
+        const contactPerson = document.getElementById('contactPerson').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const reason = document.getElementById('reason').value.trim();
+
+        if(!companyName || !contactPerson || !email || !phone || !reason){
+            alert('Please fill all required fields.');
+            return;
+        }
+
+        alert('Form submitted successfully!\nWe will get back to you soon.');
+
+        document.getElementById('associationForm').reset();
+    });
+</script>
+
+</body>
+</html>
