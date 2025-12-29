@@ -1,90 +1,36 @@
 // Services Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
-  initMobileMenu();
-  initServiceToggles();
-  initSmoothScroll();
-  initScrollEffects();
-});
-
 // Mobile Menu Toggle
-function initMobileMenu() {
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
   const navLinks = document.querySelector('.nav-links');
-  
-  if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
-      this.classList.toggle('active');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('menu-open');
     });
 
     // Close menu when clicking on a link
-    const links = document.querySelectorAll('.nav-links a');
+    const links = navLinks.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('menu-open');
       });
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('menu-open');
+      }
+    });
   }
-}
 
-// Service Description Toggle with Animation
-function initServiceToggles() {
-  const readMoreButtons = document.querySelectorAll('.read-more-btn');
-  
-  readMoreButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const serviceItem = this.closest('.service-item');
-      const description = serviceItem.querySelector('.service-description');
-      
-      if (description.style.display === 'block') {
-        description.style.display = 'none';
-        this.textContent = 'Read More';
-        this.setAttribute('aria-expanded', 'false');
-      } else {
-        description.style.display = 'block';
-        this.textContent = 'Read Less';
-        this.setAttribute('aria-expanded', 'true');
-        
-        // Smooth scroll to keep the content visible
-        setTimeout(() => {
-          serviceItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 100);
-      }
-    });
-  });
-}
-
-// Smooth Scroll for Navigation Links
-function initSmoothScroll() {
-  const links = document.querySelectorAll('a[href^="#"]');
-  
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId !== '#' && targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const headerOffset = 100;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
-  });
-}
-
-// Scroll Effects - Header Background
-function initScrollEffects() {
+  // Add scrolled class to header on scroll
   const header = document.querySelector('.site-header');
-  
   window.addEventListener('scroll', function() {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -93,49 +39,76 @@ function initScrollEffects() {
     }
   });
 
-  // Trigger on load
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  }
-}
-
-// Helper function for toggling descriptions (backward compatibility)
-function toggleDescription(id) {
-  const el = document.getElementById(id);
-  const button = event.target;
-  
-  if (el.style.display === 'block') {
-    el.style.display = 'none';
-    button.textContent = 'Read More';
-  } else {
-    el.style.display = 'block';
-    button.textContent = 'Read Less';
-  }
-}
-
-// Animation on Scroll for Service Items
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
-}, observerOptions);
 
-// Observe service items for animation
-document.addEventListener('DOMContentLoaded', function() {
+  // Add stagger animation to service items
   const serviceItems = document.querySelectorAll('.service-item');
+  serviceItems.forEach((item, index) => {
+    item.style.animationDelay = `${index * 0.1}s`;
+  });
+});
+
+// Toggle Service Details (Dropdown)
+function toggleService(button) {
+  const serviceItem = button.closest('.service-item');
+  const serviceDetails = serviceItem.querySelector('.service-details');
+  const allServiceItems = document.querySelectorAll('.service-item');
   
-  serviceItems.forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(20px)';
-    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(item);
+  // Check if this item is currently active
+  const isActive = serviceDetails.classList.contains('active');
+  
+  // Close all other service items
+  allServiceItems.forEach(item => {
+    const details = item.querySelector('.service-details');
+    const btn = item.querySelector('.read-more-btn');
+    details.classList.remove('active');
+    btn.classList.remove('active');
+    btn.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+  });
+  
+  // If this item wasn't active, open it
+  if (!isActive) {
+    serviceDetails.classList.add('active');
+    button.classList.add('active');
+    button.innerHTML = 'Show Less <i class="fas fa-chevron-down"></i>';
+    
+    // Smooth scroll to the item after a brief delay
+    setTimeout(() => {
+      serviceItem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }, 100);
+  }
+}
+
+// Allow clicking anywhere on the service header to toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceHeaders = document.querySelectorAll('.service-header');
+  
+  serviceHeaders.forEach(header => {
+    header.addEventListener('click', function(e) {
+      // Prevent double-triggering if button is clicked
+      if (e.target.closest('.read-more-btn')) {
+        return;
+      }
+      
+      const button = this.querySelector('.read-more-btn');
+      if (button) {
+        toggleService(button);
+      }
+    });
   });
 });
