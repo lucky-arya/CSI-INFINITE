@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us Volunteer</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #1a73e8, #0f9d58);
+    min-height: 100vh;
+}
+
+header {
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    background: #ffffff;
+    margin: -40px auto 40px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #d0d0d0;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+select {
+    appearance: auto;
+    -webkit-appearance: menulist;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26,115,232,0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1a73e8, #0f9d58);
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Join Us Volunteer</h1>
+</header>
+
+<div class="container">
+
+<form action="submit.php" method="POST">
+
+    <label>Email *</label>
+    <input type="email" name="email" required>
+
+    <label>Full Name *</label>
+    <input type="text" name="full_name" required>
+
+    <label>Gender *</label>
+    <select name="gender" required>
+        <option value="" disabled selected>Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <label>WhatsApp Number *</label>
+    <input type="text" name="whatsapp" required>
+
+    <label>Email ID *</label>
+    <input type="email" name="email_id" required>
+
+    <label>Country *</label>
+    <input type="text" name="country" required>
+
+    <label>City *</label>
+    <input type="text" name="city" required>
+
+    <label>Name of Company / Institution *</label>
+    <input type="text" name="company" required>
+
+    <label>Designation / Class *</label>
+    <input type="text" name="designation" required>
+
+    <label>Which of the following have you worked on? *</label>
+    <select name="skills" required>
+        <option value="" disabled selected>Select</option>
+        <option>Web App VAPT</option>
+        <option>Mobile App VAPT</option>
+        <option>Network VAPT</option>
+        <option>Python</option>
+        <option>Java</option>
+        <option>Dot Net</option>
+        <option>Computer Forensics</option>
+        <option>Mobile Forensics</option>
+        <option>Network Forensics</option>
+        <option>Cloud Forensics</option>
+        <option>Cloud VAPT</option>
+        <option>Web App Development</option>
+        <option>Mobile App Development</option>
+        <option>Research</option>
+        <option>None of the Above</option>
+    </select>
+
+    <label>Mention your experience *</label>
+    <textarea name="experience" rows="4" required></textarea>
+
+    <label>Do you wish to start an offline chapter? *</label>
+    <select name="offline_chapter" required>
+        <option value="" disabled selected>Select</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
+    <label>Are you part of other cybersecurity community? *</label>
+    <select name="other_community" required>
+        <option value="" disabled selected>Select</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
+    <label>If yes, mention name of community</label>
+    <input type="text" name="community_name">
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

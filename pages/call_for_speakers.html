@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call for Speakers</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #1a73e8, #0f9d58);
+    min-height: 100vh;
+}
+
+header {
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.container {
+    max-width: 750px;
+    background: #ffffff;
+    margin: -40px auto 40px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1a73e8, #0f9d58);
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Call for Speakers</h1>
+    <p>Share your expertise. Inspire the community.</p>
+</header>
+
+<div class="container">
+
+<form action="submit-speaker.php" method="POST">
+
+    <label>Full Name *</label>
+    <input type="text" name="full_name" required>
+
+    <label>Email Address *</label>
+    <input type="email" name="email" required>
+
+    <label>Contact Number *</label>
+    <input type="text" name="contact" required>
+
+    <label>Organization / Company *</label>
+    <input type="text" name="organization" required>
+
+    <label>Designation *</label>
+    <input type="text" name="designation" required>
+
+    <label>Speaker Experience Level *</label>
+    <select name="experience_level" required>
+        <option value="">Select</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+    </select>
+
+    <label>Proposed Talk Title *</label>
+    <input type="text" name="talk_title" required>
+
+    <label>Talk Description / Abstract *</label>
+    <textarea name="talk_description" rows="4" required></textarea>
+
+    <label>Area of Expertise *</label>
+    <select name="expertise" required>
+        <option value="">Select</option>
+        <option>Cybersecurity</option>
+        <option>Web Security</option>
+        <option>Cloud Security</option>
+        <option>Digital Forensics</option>
+        <option>AI / ML</option>
+        <option>Blockchain</option>
+        <option>Other</option>
+    </select>
+
+    <label>Previous Speaking Experience (if any)</label>
+    <textarea name="previous_experience" rows="3"></textarea>
+
+    <label>LinkedIn / Portfolio / Website</label>
+    <input type="url" name="profile_link">
+
+    <label>Any Additional Information</label>
+    <textarea name="additional_info" rows="3"></textarea>
+
+    <button type="submit">Submit Proposal</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
