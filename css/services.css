@@ -1,0 +1,184 @@
+/* Who We Serve Section */
+.who-we-serve {
+  padding: 2rem 1.5rem;
+  background: #fff;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 3.5rem;
+  color: #1a365d;
+}
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.serve-card-container {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  height: 420px;
+  width: 100%;
+}
+
+.serve-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.serve-card-container:hover .serve-card-wrapper {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-front {
+  background: linear-gradient(
+    180deg,
+    hsla(213, 55%, 60%, 1) 0%,
+    hsla(220, 82%, 96%, 1) 79%,
+    hsla(218, 85%, 97%, 1) 100%
+  );
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.icon-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.icon-area svg {
+  width: 100%;
+  height: 100%;
+  max-width: 280px;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+.serve-card-container:hover .icon-area {
+  opacity: 0.12;
+}
+
+.text-area {
+  padding: 1.8rem;
+  text-align: center;
+}
+
+.text-area h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #1a365d;
+}
+
+.text-area p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2d3748;
+  opacity: 0.9;
+}
+
+.back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.back-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a365d;
+}
+
+.back-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2d3748;
+  max-width: 90%;
+}
+
+/* Mobile Services */
+@media (max-width: 768px) {
+  .serve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .serve-card-container {
+    height: 380px;
+  }
+
+  .text-area h3,
+  .back-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .text-area p,
+  .back-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .who-we-serve {
+    padding: 1.5rem 1rem;
+  }
+
+  .serve-card-container {
+    height: 360px;
+  }
+
+  .text-area,
+  .back-content {
+    padding: 1.2rem;
+  }
+
+  .back-content p {
+    max-width: 100%;
+  }
+}
