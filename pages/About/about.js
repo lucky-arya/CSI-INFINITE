@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   loadTeamData();
+  loadCoreTeam();
 });
 
 async function loadTeamData() {
@@ -77,6 +78,52 @@ function renderSpeakers(speakers) {
         <img class="avatar" src="${src}" alt="${safeName}" loading="lazy" />
         <div class="member-name">${safeName}</div>
         <div class="member-role">${safeRole}</div>
+        <div>
+          ${linkedin ? `<a class="social-link" href="${linkedin}" target="_blank" rel="noopener" aria-label="${safeName} LinkedIn"><i class="fab fa-linkedin-in"></i></a>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  grid.innerHTML = cards;
+}
+
+async function loadCoreTeam() {
+  try {
+    const res = await fetch('core-team.json');
+    if (!res.ok) throw new Error('Could not fetch core-team.json');
+    const data = await res.json();
+    
+    if (Array.isArray(data.members) && data.members.length > 0) {
+      renderCoreTeam(data.members);
+      const coreTeamSection = document.getElementById('core-team-section');
+      if (coreTeamSection) coreTeamSection.style.display = 'block';
+    }
+  } catch (err) {
+    console.error('Error loading core team data:', err);
+    const grid = document.getElementById('core-team-grid');
+    if (grid) grid.innerHTML = '<p style="color:#6c757d">Failed to load core team members.</p>';
+  }
+}
+
+function renderCoreTeam(members) {
+  const grid = document.getElementById('core-team-grid');
+  if (!grid) return;
+
+  const cards = members.map(member => {
+    const linkedin = member.social && member.social.linkedin ? member.social.linkedin : '';
+    const src = member.image || 'https://via.placeholder.com/320x320?text=Team';
+    
+    const safeName = escapeHtml(member.name || '');
+    const safeRole = escapeHtml(member.role || '');
+    const safeBio = escapeHtml(member.bio || '');
+
+    return `
+      <div class="team-card" role="article">
+        <img class="avatar square-avatar" src="${src}" alt="${safeName}" loading="lazy" />
+        <div class="member-name">${safeName}</div>
+        <div class="member-role">${safeRole}</div>
+        ${safeBio ? `<p class="member-bio">${safeBio}</p>` : ''}
         <div>
           ${linkedin ? `<a class="social-link" href="${linkedin}" target="_blank" rel="noopener" aria-label="${safeName} LinkedIn"><i class="fab fa-linkedin-in"></i></a>` : ''}
         </div>
