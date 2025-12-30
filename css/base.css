@@ -1,0 +1,60 @@
+/* Base Styles & CSS Variables */
+:root {
+  --primary: #1084c3;
+  --dark: #000;
+  --light: #fff;
+  --grey-100: #f8fafc;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --primary-color: #1084c3;
+  --secondary-color: #0a2540;
+  --text-light: #fff;
+  --text-dark: #0a2540;
+  --accent-color: #ffd700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--dark);
+  background-color: var(--light);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

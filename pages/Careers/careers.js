@@ -1,4 +1,4 @@
-// Services Page JavaScript
+// Careers Page JavaScript
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -53,62 +53,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Add stagger animation to service items
-  const serviceItems = document.querySelectorAll('.service-item');
-  serviceItems.forEach((item, index) => {
+  // Add stagger animation to job items
+  const jobItems = document.querySelectorAll('.job-item');
+  jobItems.forEach((item, index) => {
     item.style.animationDelay = `${index * 0.1}s`;
   });
 });
 
-// Toggle Service Details (Dropdown)
-function toggleService(button) {
-  const serviceItem = button.closest('.service-item');
-  const serviceDetails = serviceItem.querySelector('.service-details');
-  const allServiceItems = document.querySelectorAll('.service-item');
+// Toggle Job Details (Dropdown)
+function toggleJob(button) {
+  const jobItem = button.closest('.job-item');
+  const jobDetails = jobItem.querySelector('.job-details');
+  const allJobItems = document.querySelectorAll('.job-item');
   
-  // Check if this item is currently active
-  const isActive = serviceDetails.classList.contains('active');
+  const isActive = jobDetails.classList.contains('active');
   
-  // Close all other service items
-  allServiceItems.forEach(item => {
-    const details = item.querySelector('.service-details');
-    const btn = item.querySelector('.read-more-btn');
+  // Close all other job items
+  allJobItems.forEach(item => {
+    const details = item.querySelector('.job-details');
+    const btn = item.querySelector('.view-details-btn');
     details.classList.remove('active');
     btn.classList.remove('active');
-    btn.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+    btn.innerHTML = 'View Details <i class="fas fa-chevron-down"></i>';
   });
   
   // If this item wasn't active, open it
   if (!isActive) {
-    serviceDetails.classList.add('active');
+    jobDetails.classList.add('active');
     button.classList.add('active');
-    button.innerHTML = 'Show Less <i class="fas fa-chevron-down"></i>';
+    button.innerHTML = 'Hide Details <i class="fas fa-chevron-down"></i>';
     
     // Smooth scroll to the item after a brief delay
     setTimeout(() => {
-      serviceItem.scrollIntoView({
+      jobItem.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest'
       });
     }, 100);
   }
 }
-
-// Allow clicking anywhere on the service header to toggle
-document.addEventListener('DOMContentLoaded', function() {
-  const serviceHeaders = document.querySelectorAll('.service-header');
-  
-  serviceHeaders.forEach(header => {
-    header.addEventListener('click', function(e) {
-      // Prevent double-triggering if button is clicked
-      if (e.target.closest('.read-more-btn')) {
-        return;
-      }
-      
-      const button = this.querySelector('.read-more-btn');
-      if (button) {
-        toggleService(button);
-      }
-    });
-  });
-});

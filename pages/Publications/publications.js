@@ -1,4 +1,4 @@
-// Services Page JavaScript
+// Publications Page JavaScript
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -53,25 +53,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Add stagger animation to service items
-  const serviceItems = document.querySelectorAll('.service-item');
-  serviceItems.forEach((item, index) => {
+  // Add stagger animation to publication items
+  const publicationItems = document.querySelectorAll('.publication-item');
+  publicationItems.forEach((item, index) => {
     item.style.animationDelay = `${index * 0.1}s`;
   });
 });
 
-// Toggle Service Details (Dropdown)
-function toggleService(button) {
-  const serviceItem = button.closest('.service-item');
-  const serviceDetails = serviceItem.querySelector('.service-details');
-  const allServiceItems = document.querySelectorAll('.service-item');
+// Toggle Publication Details (Dropdown)
+function togglePublication(button) {
+  const publicationItem = button.closest('.publication-item');
+  const publicationDetails = publicationItem.querySelector('.publication-details');
+  const allPublicationItems = document.querySelectorAll('.publication-item');
   
-  // Check if this item is currently active
-  const isActive = serviceDetails.classList.contains('active');
+  const isActive = publicationDetails.classList.contains('active');
   
-  // Close all other service items
-  allServiceItems.forEach(item => {
-    const details = item.querySelector('.service-details');
+  // Close all other publication items
+  allPublicationItems.forEach(item => {
+    const details = item.querySelector('.publication-details');
     const btn = item.querySelector('.read-more-btn');
     details.classList.remove('active');
     btn.classList.remove('active');
@@ -80,35 +79,16 @@ function toggleService(button) {
   
   // If this item wasn't active, open it
   if (!isActive) {
-    serviceDetails.classList.add('active');
+    publicationDetails.classList.add('active');
     button.classList.add('active');
     button.innerHTML = 'Show Less <i class="fas fa-chevron-down"></i>';
     
     // Smooth scroll to the item after a brief delay
     setTimeout(() => {
-      serviceItem.scrollIntoView({
+      publicationItem.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest'
       });
     }, 100);
   }
 }
-
-// Allow clicking anywhere on the service header to toggle
-document.addEventListener('DOMContentLoaded', function() {
-  const serviceHeaders = document.querySelectorAll('.service-header');
-  
-  serviceHeaders.forEach(header => {
-    header.addEventListener('click', function(e) {
-      // Prevent double-triggering if button is clicked
-      if (e.target.closest('.read-more-btn')) {
-        return;
-      }
-      
-      const button = this.querySelector('.read-more-btn');
-      if (button) {
-        toggleService(button);
-      }
-    });
-  });
-});
