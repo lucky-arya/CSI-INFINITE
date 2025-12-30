@@ -1,4 +1,4 @@
-// Publications Page JavaScript
+// Careers Page JavaScript
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -53,9 +53,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Add stagger animation to publication items
-  const publicationItems = document.querySelectorAll('.publication-item');
-  publicationItems.forEach((item, index) => {
+  // Add stagger animation to job items
+  const jobItems = document.querySelectorAll('.job-item');
+  jobItems.forEach((item, index) => {
     item.style.animationDelay = `${index * 0.1}s`;
   });
 });
+
+// Toggle Job Details (Dropdown)
+function toggleJob(button) {
+  const jobItem = button.closest('.job-item');
+  const jobDetails = jobItem.querySelector('.job-details');
+  const allJobItems = document.querySelectorAll('.job-item');
+  
+  const isActive = jobDetails.classList.contains('active');
+  
+  // Close all other job items
+  allJobItems.forEach(item => {
+    const details = item.querySelector('.job-details');
+    const btn = item.querySelector('.view-details-btn');
+    details.classList.remove('active');
+    btn.classList.remove('active');
+    btn.innerHTML = 'View Details <i class="fas fa-chevron-down"></i>';
+  });
+  
+  // If this item wasn't active, open it
+  if (!isActive) {
+    jobDetails.classList.add('active');
+    button.classList.add('active');
+    button.innerHTML = 'Hide Details <i class="fas fa-chevron-down"></i>';
+    
+    // Smooth scroll to the item after a brief delay
+    setTimeout(() => {
+      jobItem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }, 100);
+  }
+}
