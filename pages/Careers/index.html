@@ -5,22 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers | Cyber Secured India</title>
   
-  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Base CSS -->
   <link rel="stylesheet" href="../../css/base.css">
   
-  <!-- Footer CSS -->
   <link rel="stylesheet" href="../../css/footer.css">
   
-  <!-- Careers CSS -->
   <link rel="stylesheet" href="careers.css">
 
   <style>
@@ -47,6 +41,27 @@
     .job-header h2 {
       color: #0d3b66;
       font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* Added Meta Styles */
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 15px;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .job-meta span {
+      display: flex;
+      align-items: center;
+    }
+
+    .job-meta i {
+      color: #0d3b66;
+      margin-right: 8px;
     }
 
     .job-item p,
@@ -82,7 +97,6 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="header-container">
       <button class="mobile-menu-toggle" aria-label="Toggle navigation">
@@ -116,7 +130,6 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="careers-page container py-5">
 
     <div class="page-header mb-5 text-center">
@@ -124,10 +137,14 @@
       <p class="subtitle">Join our team of cybersecurity experts and help shape the future of digital security in India and beyond</p>
     </div>
 
-    <!-- ===================== JOB 1 ===================== -->
     <article class="job-item">
       <div class="job-header">
         <h2>Red Team Operator</h2>
+        <div class="job-meta">
+          <span><i class="fas fa-briefcase"></i> 3-5 Years Experience</span>
+          <span><i class="fas fa-location-dot"></i> On-site</span>
+          <span><i class="fas fa-clock"></i> Full-Time</span>
+        </div>
       </div>
       <a class="btn btn-readmore" data-bs-toggle="collapse" href="#job1">Read More</a>
       <div class="collapse" id="job1">
@@ -157,10 +174,14 @@
       </div>
     </article>
 
-    <!-- ===================== JOB 2 ===================== -->
     <article class="job-item">
       <div class="job-header">
         <h2>Senior Vulnerability Researcher</h2>
+        <div class="job-meta">
+          <span><i class="fas fa-briefcase"></i> 4-7 Years Experience</span>
+          <span><i class="fas fa-location-dot"></i> On-site</span>
+          <span><i class="fas fa-clock"></i> Full-Time</span>
+        </div>
       </div>
       <a class="btn btn-readmore" data-bs-toggle="collapse" href="#job2">Read More</a>
       <div class="collapse" id="job2">
@@ -192,10 +213,14 @@
       </div>
     </article>
 
-    <!-- ===================== JOB 3 ===================== -->
     <article class="job-item">
       <div class="job-header">
         <h2>Jr. OSINT Analyst</h2>
+        <div class="job-meta">
+          <span><i class="fas fa-briefcase"></i> 1-3 Years Experience</span>
+          <span><i class="fas fa-location-dot"></i> On-site</span>
+          <span><i class="fas fa-clock"></i> Full-Time</span>
+        </div>
       </div>
       <a class="btn btn-readmore" data-bs-toggle="collapse" href="#job3">Read More</a>
       <div class="collapse" id="job3">
@@ -229,10 +254,14 @@
       </div>
     </article>
 
-    <!-- ===================== JOB 4 ===================== -->
     <article class="job-item">
       <div class="job-header">
         <h2>Sr. OSINT Analyst</h2>
+        <div class="job-meta">
+          <span><i class="fas fa-briefcase"></i> 3-5 Years Experience</span>
+          <span><i class="fas fa-location-dot"></i> On-site</span>
+          <span><i class="fas fa-clock"></i> Full-Time</span>
+        </div>
       </div>
       <a class="btn btn-readmore" data-bs-toggle="collapse" href="#job4">Read More</a>
       <div class="collapse" id="job4">
@@ -260,10 +289,14 @@
       </div>
     </article>
 
-    <!-- ===================== JOB 5 ===================== -->
     <article class="job-item">
       <div class="job-header">
         <h2>Offensive Engineer – SCADA / ICS</h2>
+        <div class="job-meta">
+          <span><i class="fas fa-briefcase"></i> Experienced</span>
+          <span><i class="fas fa-location-dot"></i> On-site</span>
+          <span><i class="fas fa-clock"></i> Full-Time</span>
+        </div>
       </div>
       <a class="btn btn-readmore" data-bs-toggle="collapse" href="#job5">Read More</a>
       <div class="collapse" id="job5">
@@ -293,13 +326,13 @@
             <li>Ability to research, discover, and exploit zero-days in industrial protocols and devices</li>
             <li>Understanding of how to map, attack, and pivot inside ICS/SCADA networks</li>
           </ul>
+          <p>Send your resume to <a href="mailto:hr@cybersecuredindia.com">hr@cybersecuredindia.com</a></p>
         </div>
       </div>
     </article>
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-container">
       <p>Leading India's cybersecurity transformation through innovation, education, and comprehensive protection strategies for a digitally secure future.</p>
@@ -316,7 +349,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
