@@ -2,45 +2,50 @@
 const IMAGES_PER_PAGE = 12;
 let currentPage = 1;
 let currentFilter = 'all';
+let galleryData = {};
 let allImages = [];
 let displayedImages = [];
 
-// Image database - UPDATE THIS ARRAY WITH YOUR IMAGES
-const imageDatabase = [
-  // Events 2024
-  { src: 'gallery/events-2024/img1.jpg', category: 'events-2024', caption: 'Event 2024' },
-  { src: 'gallery/events-2024/img2.jpg', category: 'events-2024', caption: 'Event 2024' },
-  { src: 'gallery/events-2024/img3.jpg', category: 'events-2024', caption: 'Event 2024' },
-  
-  // Events 2023
-  { src: 'gallery/events-2023/img1.jpg', category: 'events-2023', caption: 'Event 2023' },
-  { src: 'gallery/events-2023/img2.jpg', category: 'events-2023', caption: 'Event 2023' },
-  
-  // Workshops
-  { src: 'gallery/workshops/img1.jpg', category: 'workshops', caption: 'Workshop Session' },
-  { src: 'gallery/workshops/img2.jpg', category: 'workshops', caption: 'Workshop Session' },
-  
-  // Team Photos
-  { src: 'gallery/team-photos/img1.jpg', category: 'team-photos', caption: 'Team Photo' },
-  { src: 'gallery/team-photos/img2.jpg', category: 'team-photos', caption: 'Team Photo' },
-  
-  // Training Sessions
-  { src: 'gallery/training-sessions/img1.jpg', category: 'training-sessions', caption: 'Training Session' },
-  { src: 'gallery/training-sessions/img2.jpg', category: 'training-sessions', caption: 'Training Session' },
-  
-  // Miscellaneous
-  { src: 'gallery/misc/img1.jpg', category: 'misc', caption: 'Miscellaneous' },
-  { src: 'gallery/misc/img2.jpg', category: 'misc', caption: 'Miscellaneous' },
-];
-
 // Initialize gallery
 document.addEventListener('DOMContentLoaded', () => {
-  allImages = [...imageDatabase];
-  loadGallery();
+  loadGalleryData();
   setupFilters();
   setupLightbox();
   setupMobileMenu();
 });
+
+// Load gallery data from JSON
+async function loadGalleryData() {
+  const galleryGrid = document.getElementById('galleryGrid');
+  
+  try {
+    const response = await fetch('gallery-data.json');
+    if (!response.ok) throw new Error('Failed to load gallery data');
+    
+    galleryData = await response.json();
+    
+    // Flatten all images into a single array with category info
+    allImages = [];
+    Object.keys(galleryData).forEach(category => {
+      galleryData[category].forEach(item => {
+        allImages.push({
+          ...item,
+          category: category
+        });
+      });
+    });
+    
+    // Load the gallery
+    loadGallery();
+  } catch (error) {
+    console.error('Error loading gallery data:', error);
+    galleryGrid.innerHTML = `
+      <div class="loading-state">
+        <p style="color: #dc3545;">Failed to load gallery. Please refresh the page.</p>
+      </div>
+    `;
+  }
+}
 
 // Load gallery images
 function loadGallery() {
@@ -59,6 +64,16 @@ function loadGallery() {
   
   // Clear loading state
   galleryGrid.innerHTML = '';
+  
+  if (displayedImages.length === 0) {
+    galleryGrid.innerHTML = `
+      <div class="loading-state">
+        <p>No images found in this category.</p>
+      </div>
+    `;
+    loadMoreBtn.style.display = 'none';
+    return;
+  }
   
   // Render images
   displayedImages.forEach((image, index) => {
@@ -88,13 +103,13 @@ function createGalleryItem(image, index) {
   item.dataset.category = image.category;
   
   const img = document.createElement('img');
-  img.src = image.src;
-  img.alt = image.caption || 'Gallery Image';
+  img.src = image.image;
+  img.alt = image.title || 'Gallery Image';
   img.loading = 'lazy';
   
   // Error handling for missing images
   img.onerror = () => {
-    img.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
+    img.src = 'https://via.placeholder.com/400x300?text=Image+Not+Available';
   };
   
   const overlay = document.createElement('div');
@@ -102,14 +117,14 @@ function createGalleryItem(image, index) {
   
   const caption = document.createElement('div');
   caption.className = 'gallery-item-caption';
-  caption.textContent = image.caption || 'CSI Gallery';
+  caption.textContent = image.title || 'CSI Gallery';
   
   overlay.appendChild(caption);
   item.appendChild(img);
   item.appendChild(overlay);
   
   // Click to open lightbox
-  item.addEventListener('click', () => openLightbox(image.src, image.caption));
+  item.addEventListener('click', () => openLightbox(image.image, image.title));
   
   return item;
 }
@@ -130,12 +145,19 @@ function setupFilters() {
       
       // Reload gallery
       loadGallery();
+      
+      // Scroll to gallery grid smoothly
+      document.querySelector('.gallery-grid').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
     });
   });
 }
 
 // Lightbox functionality
 let currentLightboxIndex = 0;
+let currentLightboxImages = [];
 
 function setupLightbox() {
   const lightbox = document.getElementById('lightbox');
@@ -166,8 +188,13 @@ function openLightbox(src, caption) {
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxCaption = document.getElementById('lightboxCaption');
   
-  // Find current image index in all images
-  currentLightboxIndex = allImages.findIndex(img => img.src === src);
+  // Get current filtered images for navigation
+  currentLightboxImages = currentFilter === 'all' 
+    ? allImages 
+    : allImages.filter(img => img.category === currentFilter);
+  
+  // Find current image index
+  currentLightboxIndex = currentLightboxImages.findIndex(img => img.image === src);
   
   lightboxImage.src = src;
   lightboxCaption.textContent = caption || '';
@@ -186,17 +213,17 @@ function navigateLightbox(direction) {
   
   // Wrap around
   if (currentLightboxIndex < 0) {
-    currentLightboxIndex = allImages.length - 1;
-  } else if (currentLightboxIndex >= allImages.length) {
+    currentLightboxIndex = currentLightboxImages.length - 1;
+  } else if (currentLightboxIndex >= currentLightboxImages.length) {
     currentLightboxIndex = 0;
   }
   
-  const image = allImages[currentLightboxIndex];
+  const image = currentLightboxImages[currentLightboxIndex];
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxCaption = document.getElementById('lightboxCaption');
   
-  lightboxImage.src = image.src;
-  lightboxCaption.textContent = image.caption || '';
+  lightboxImage.src = image.image;
+  lightboxCaption.textContent = image.title || '';
 }
 
 // Mobile menu
