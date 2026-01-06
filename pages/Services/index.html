@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Cyber Secured India</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="services.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/CsiLogos/CSI LOGO PNG.png" alt="Cyber Secured India Logo">
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <nav class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../pages/About/about.html">About</a>
+        <a href="../../pages/Services/Service.html" class="active">Services</a>
+        <a href="../../index.html#services">Who We Serve</a>
+        <a href="../../index.html#join">Get Involved</a>
+        <a href="../../index.html#contact">Contact</a>
+        <div class="social-icons">
+          <a href="https://instagram.com/cybersecuredindia" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://t.me/cybersecuredindia" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://linkedin.com/company/cybersecuredindia/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="services-page">
+    <div class="container">
+      <div class="page-header">
+        <h1>Trainings & Programs</h1>
+        <p class="subtitle">Comprehensive cybersecurity training programs designed to empower professionals across all sectors</p>
+      </div>
+
+      <!-- Services List -->
+      <div class="services-list">
+        
+        <!-- Service 1: Law Enforcement Training -->
+        <article class="service-item">
+          <div class="service-header">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">
+                <i class="fas fa-shield-halved"></i>
+              </div>
+            </div>
+            <div class="service-info">
+              <h2>Law Enforcement Training</h2>
+              <p class="service-excerpt">Specialized programs designed to enhance the investigation and detection capabilities of cybercrime officers</p>
+              <button class="read-more-btn" onclick="toggleService(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="service-details">
+            <div class="details-content">
+              <p class="lead-text">Comprehensive training programs tailored for law enforcement professionals to tackle modern cyber threats effectively.</p>
+              
+              <div class="training-modules">
+                <h3>Training Topics Include:</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Cryptocurrency Fraud Investigation</li>
+                      <li><i class="fas fa-check-circle"></i> Digital Arrest Investigation</li>
+                      <li><i class="fas fa-check-circle"></i> Online Financial Crime Investigation</li>
+                      <li><i class="fas fa-check-circle"></i> Electronic Search & Seizure</li>
+                      <li><i class="fas fa-check-circle"></i> Call Data Record (CDR) Analysis</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> IP Data Record (IPDR) Analysis</li>
+                      <li><i class="fas fa-check-circle"></i> OSINT & Dark Web Investigation</li>
+                      <li><i class="fas fa-check-circle"></i> AI-based Cybercrime Investigation</li>
+                      <li><i class="fas fa-check-circle"></i> Data Breach & Theft Investigation</li>
+                      <li><i class="fas fa-check-circle"></i> Ransomware Investigation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="program-structure">
+                <h3>Program Structure</h3>
+                <div class="level-badges">
+                  <span class="level-badge basic">Basic Level</span>
+                  <span class="level-badge intermediate">Intermediate Level</span>
+                  <span class="level-badge advanced">Advanced Level</span>
+                </div>
+                <p class="structure-note">Designed for both technical and non-technical officers</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 2: Faculty Development Programs -->
+        <article class="service-item">
+          <div class="service-header">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+            </div>
+            <div class="service-info">
+              <h2>Faculty Development Programs</h2>
+              <p class="service-excerpt">Empowering educators with the latest knowledge and tools to guide the next generation of cybersecurity professionals</p>
+              <button class="read-more-btn" onclick="toggleService(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="service-details">
+            <div class="details-content">
+              <p class="lead-text">Comprehensive faculty development initiatives to enhance teaching capabilities and curriculum development in cybersecurity education.</p>
+              
+              <div class="training-modules">
+                <h3>Program Highlights:</h3>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="highlight-box">
+                      <i class="fas fa-graduation-cap"></i>
+                      <h4>Advanced Teaching Methodologies</h4>
+                      <p>Learn innovative approaches to teaching complex cybersecurity concepts</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="highlight-box">
+                      <i class="fas fa-laptop-code"></i>
+                      <h4>Industry-Aligned Curriculum</h4>
+                      <p>Develop courses that meet current industry standards and demands</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="highlight-box">
+                      <i class="fas fa-certificate"></i>
+                      <h4>Certification Support</h4>
+                      <p>Guidance for professional certifications and continuous learning</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 3: Student Bootcamps -->
+        <article class="service-item">
+          <div class="service-header">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+            <div class="service-info">
+              <h2>Student Bootcamps & Development Programs</h2>
+              <p class="service-excerpt">Hands-on bootcamps designed for students across all academic years and streams</p>
+              <button class="read-more-btn" onclick="toggleService(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="service-details">
+            <div class="details-content">
+              <p class="lead-text">Intensive practical training programs that equip students with real-world cybersecurity skills and industry experience.</p>
+              
+              <div class="training-modules">
+                <h3>Focus Areas:</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Cybersecurity Fundamentals</li>
+                      <li><i class="fas fa-check-circle"></i> Ethical Hacking Techniques</li>
+                      <li><i class="fas fa-check-circle"></i> Digital Forensics & Investigation</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Open Source Intelligence (OSINT)</li>
+                      <li><i class="fas fa-check-circle"></i> Cybersecurity Awareness Training</li>
+                      <li><i class="fas fa-check-circle"></i> Real-World Case Studies & Analysis</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Programs available for students from all academic years and streams - no prior technical knowledge required</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 4: Corporate Training -->
+        <article class="service-item">
+          <div class="service-header">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">
+                <i class="fas fa-building"></i>
+              </div>
+            </div>
+            <div class="service-info">
+              <h2>Corporate Training</h2>
+              <p class="service-excerpt">Customized cybersecurity training programs crafted to meet specific organizational needs and challenges</p>
+              <button class="read-more-btn" onclick="toggleService(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="service-details">
+            <div class="details-content">
+              <p class="lead-text">Tailored enterprise-level training solutions designed to strengthen your organization's security posture and build a security-aware workforce.</p>
+              
+              <div class="training-modules">
+                <h3>Key Training Modules:</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Advanced Threat Management</li>
+                      <li><i class="fas fa-check-circle"></i> Incident Response & Crisis Management</li>
+                      <li><i class="fas fa-check-circle"></i> Cloud Security Best Practices</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Digital Forensics for Organizations</li>
+                      <li><i class="fas fa-check-circle"></i> Security Compliance & Governance</li>
+                      <li><i class="fas fa-check-circle"></i> Employee Security Awareness</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-box">
+                <i class="fas fa-briefcase"></i>
+                <p>We work with your team to develop customized training programs aligned with your industry requirements and compliance standards</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 5: Defence Training -->
+        <article class="service-item">
+          <div class="service-header">
+            <div class="service-icon-wrapper">
+              <div class="service-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+            </div>
+            <div class="service-info">
+              <h2>Defence Training</h2>
+              <p class="service-excerpt">Advanced training programs for defence personnel in critical cyber operations and national security</p>
+              <button class="read-more-btn" onclick="toggleService(this)">
+                Read More <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="service-details">
+            <div class="details-content">
+              <p class="lead-text">Specialized high-level training designed for defence and military personnel to protect critical national infrastructure and conduct strategic cyber operations.</p>
+              
+              <div class="training-modules">
+                <h3>Training Modules:</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Offensive Cyber Operations</li>
+                      <li><i class="fas fa-check-circle"></i> Defensive Cyber Strategies</li>
+                      <li><i class="fas fa-check-circle"></i> Advanced Cyber Investigation Techniques</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="module-list">
+                      <li><i class="fas fa-check-circle"></i> Critical Infrastructure Protection</li>
+                      <li><i class="fas fa-check-circle"></i> Cyber Threat Intelligence</li>
+                      <li><i class="fas fa-check-circle"></i> National Security Operations</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-box warning">
+                <i class="fas fa-shield-virus"></i>
+                <p>Classified training programs available for authorized defence personnel with appropriate security clearances</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-about">
+        <div class="footer-brand">
+          <img src="../../assets/CsiLogos/CSI_LOGO_whiteblue.png" alt="Cyber Secured India Logo" class="footer-logo">
+        </div>
+        <p>Leading India's cybersecurity transformation through innovation, education, and comprehensive protection strategies for a digitally secure future.</p>
+        <div class="social-links">
+          <a href="https://linkedin.com/company/cybersecuredindia/" target="_blank" class="social-icon bg-linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://instagram.com/cybersecuredindia" target="_blank" class="social-icon bg-instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@cybersecuredindia" target="_blank" class="social-icon bg-youtube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/cybersecuredindia" target="_blank" class="social-icon bg-telegram">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Discover</h3>
+        <ul>
+          <li><a href="../../index.html#services">Who We Serve</a></li>
+          <li><a href="../About/about.html">Our Team</a></li>
+          <li><a href="../../index.html#join">Get Involved</a></li>
+          <li><a href="../../index.html#contact">Help & Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../About/about.html">About Us</a></li>
+          <li><a href="../../index.html#join">Careers</a></li>
+          <li><a href="#">News & Events</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Security Audits</a></li>
+          <li><a href="#">Training Programs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Locations</h3>
+        <ul>
+          <li><a href="#">Mumbai, India</a></li>
+          <li><a href="#">Accra, Ghana</a></li>
+          <li><a href="#">Riyadh, Saudi Arabia</a></li>
+          <li><a href="#">London, UK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container partners-section">
+      <p>Our Partners: 
+        <a href="#" target="_blank" class="partner-link">Cyber Secured Africa</a> | 
+        <a href="#" target="_blank" class="partner-link">Cyber Secured Saudi Arabia</a> | 
+        <a href="#" target="_blank" class="partner-link">Inveteck Global</a> | 
+        <a href="#" target="_blank" class="partner-link">QUIK</a> | 
+        <a href="#" target="_blank" class="partner-link">NST Cyber</a>
+      </p>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2025 Cyber Secured India. All rights reserved.</p>
+      <div class="developer-credit">
+        After the dot, it's us. — <a href="https://mkitos.codeberg.page" target="_blank" rel="noopener noreferrer">.MKITOS</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="services.js"></script>
+</body>
+</html>

@@ -8,10 +8,12 @@
       name="description"
       content="Meet our team of cybersecurity experts dedicated to protecting India's digital future."
     />
-    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="about.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./core-team.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -39,41 +41,50 @@
       href="../../favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="../../favicon/site.webmanifest" />
+
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
   </head>
   <body>
     <!-- Header (kept minimal and unchanged) -->
     <header class="site-header">
-      <div class="header-container">
-        <a href="../../index.html" class="logo">
-          <img src="../../assets/CsiLogos/CSI LOGO PNG.png" alt="Cyber Secured India Logo" />
-        </a>
+  <div class="header-container">
+    <a href="../../index.html" class="logo">
+      <img
+        src="../../assets/CsiLogos/CSI LOGO PNG.png"
+        alt="Cyber Secured India Logo"
+      />
+    </a>
 
-        <button class="mobile-menu-toggle" aria-label="Toggle navigation">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-        <nav class="nav-links">
-          <a href="../../index.html">Home</a>
-          <a href="about.html" class="active">About</a>
-          <a href="../Services/Service.html">Services</a>
-          <a href="../../index.html#services">Who We Serve</a>
-          <a href="../../index.html#join">Get Involved</a>
-          <a href="../../index.html#contact">Contact</a>
-          <div class="social-icons">
-            <a href="https://instagram.com/cybersecuredindia" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://t.me/cybersecuredindia" target="_blank"
-              ><i class="fab fa-telegram"></i
-            ></a>
-            <a href="https://linkedin.com/company/cybersecuredindia/" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </div>
-        </nav>
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <nav class="nav-links">
+      <a href="../../index.html">Home</a>
+      <a href="../../pages/About/about.html">About</a>
+      <a href="../../pages/Services/Service.html">Services</a>
+      <a href="../../index.html#services">Who We Serve</a>
+      <a href="../../index.html#join">Get Involved</a>
+      <a href="../../index.html#contact">Contact</a>
+      <div class="social-icons">
+        <a href="https://instagram.com/cybersecuredindia" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/cybersecuredindia" target="_blank">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://linkedin.com/company/cybersecuredindia/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </div>
-    </header>
+    </nav>
+  </div>
+</header>
 
     <!-- Intro Section -->
     <main class="about-main">
@@ -120,9 +131,20 @@
       </section>
 
       <!-- Meet Our Team -->
+
+      <!-- Core Team Section -->
+      <section class="core-team container" id="core-team-section">
+        <h2 class="what-we-do-title">Core Team</h2>
+        <p class="team-subheading">The dedicated professionals driving our mission forward.</p>
+        
+        <div id="core-team-grid" class="core-team-grid" aria-live="polite">
+          <!-- core team cards populated by JS -->
+        </div>
+      </section>
+
       <section class="team container">
-        <h2 class="team-heading">Meet Our Team</h2>
-        <p class="team-subheading">Committed volunteers, mentors and leaders driving CSI.</p>
+        <h2 class="what-we-do-title">Our Advisors</h2>
+        <p class="team-subheading">Committed mentors and leaders driving CSI.</p>
 
         <!-- Team grid (rendered by about.js) -->
         <div id="team-grid" class="team-grid" aria-live="polite">
@@ -132,9 +154,9 @@
 
       <!-- Speakers (rendered by about.js) -->
       <section class="speakers container" id="speakers-section" aria-labelledby="speakers-heading" style="display:none;">
-        <h2 id="speakers-heading" class="team-heading">Speakers</h2>
+        <h2 class="what-we-do-title">Speakers</h2>
         <p class="team-subheading">Industry and academic speakers collaborating with CSI.</p>
-        <div id="speakers-grid" class="team-grid" aria-live="polite">
+        <div id="speakers-grid" class="speaker-grid" aria-live="polite">
           <!-- speaker cards populated by JS -->
         </div>
       </section>
@@ -228,5 +250,7 @@
 
     <script src="../../script.js"></script>
     <script src="about.js"></script>
+    
+    
   </body>
 </html>

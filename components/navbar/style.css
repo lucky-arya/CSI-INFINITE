@@ -1,0 +1,173 @@
+/* CSS Variables - Add these to your :root if not already present */
+:root {
+  --primary: #1084c3;
+  --primary-color: #1084c3;
+  --accent-color: #0a2540;
+  --dark: #0a2540;
+  --light: #f8f9fb;
+}
+
+/* Site Header & Navigation */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+  z-index: 10;
+}
+
+.site-header.scrolled {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.header-container {
+  max-width: 100%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.social-icons a {
+  margin-left: 0;
+  color: #000000;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Mobile Navigation */
+@media (max-width: 867px) {
+  .header-container {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--light);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 99;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: absolute;
+  }
+
+  .hamburger-line:nth-child(1) {
+    top: 14px;
+  }
+
+  .hamburger-line:nth-child(2) {
+    top: 19px;
+  }
+
+  .hamburger-line:nth-child(3) {
+    top: 24px;
+  }
+
+  .menu-open .hamburger-line:nth-child(1) {
+    top: 19px;
+    transform: rotate(45deg);
+  }
+
+  .menu-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .menu-open .hamburger-line:nth-child(3) {
+    top: 19px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-toggle:hover .hamburger-line {
+    background-color: var(--accent-color);
+  }
+
+  .social-icons {
+    margin-left: 0;
+  }
+}

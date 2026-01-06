@@ -1,0 +1,369 @@
+{
+  "conference": [
+    {
+      "id": 1,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Cybersecurity Conference 2024",
+      "image": "../../assets/photo_gallery/conf_9.jpg"
+    }
+  ],
+  "ctf": [
+    {
+      "id": 1,
+      "title": "Pillai College of Engineering",
+      "image": "../../assets/photo_gallery/ctf_1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Pillai College of Engineering",
+      "image": "../../assets/photo_gallery/ctf_2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Pillai College of Engineering",
+      "image": "../../assets/photo_gallery/ctf_3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Pillai College of Engineering ",
+      "image": "../../assets/photo_gallery/ctf_4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Imperative - Pune",
+      "image": "../../assets/photo_gallery/ctf_5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Imperative - Pune",
+      "image": "../../assets/photo_gallery/ctf_6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Imperative - Thane",
+      "image": "../../assets/photo_gallery/ctf_7.jpeg"
+    },
+    {
+      "id": 8,
+      "title": "Imperative - Thane",
+      "image": "../../assets/photo_gallery/ctf_8.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "Imperative - Thane",
+      "image": "../../assets/photo_gallery/ctf_9.jpeg"
+    }
+  ],
+  "mou": [
+    {
+      "id": 1,
+      "title": "Padmashri Babasaheb Vengurlekar Mahavidyalay",
+      "image": "../../assets/photo_gallery/MOU_1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Galgotias Polytechnic College",
+      "image": "../../assets/photo_gallery/MOU_2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Symbiosis International University",
+      "image": "../../assets/photo_gallery/MOU_3.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Pillai HOC",
+      "image": "../../assets/photo_gallery/MOU_4.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Ramrao Adik Institute of Technology",
+      "image": "../../assets/photo_gallery/MOU_5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "MIT-WPU",
+      "image": "../../assets/photo_gallery/MOU_6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Annasaheb Dange College of Engineering and Technology",
+      "image": "../../assets/photo_gallery/MOU_7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Symbiosis Institute of Technology",
+      "image": "../../assets/photo_gallery/MOU_8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Acropolis Institute of Technology and Research",
+      "image": "../../assets/photo_gallery/MOU_9.jpeg"
+    },
+    {
+      "id": 10,
+      "title": "OPSWAT",
+      "image": "../../assets/photo_gallery/MOU_10.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Marwadi University",
+      "image": "../../assets/photo_gallery/MOU_11.jpeg"
+    },
+    {
+      "id": 12,
+      "title": "Marwadi University",
+      "image": "../../assets/photo_gallery/MOU_12.jpeg"
+    }
+  ],
+  "meetup": [
+    {
+      "id": 1,
+      "title": "Kolkata Chapter-1",
+      "image": "../../assets/photo_gallery/m_1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Kolkata Chapter-1",
+      "image": "../../assets/photo_gallery/m_2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Kolkata Chapter-2",
+      "image": "../../assets/photo_gallery/m_3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Kolkata Chapter-2",
+      "image": "../../assets/photo_gallery/m_10.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "Thane Meetup",
+      "image": "../../assets/photo_gallery/m_4.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Thane Meetup",
+      "image": "../../assets/photo_gallery/m_4.1.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Pillai Meetup",
+      "image": "../../assets/photo_gallery/m_5.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Pillai Meetup",
+      "image": "../../assets/photo_gallery/m_5.1.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "Banglore Meetup",
+      "image": "../../assets/photo_gallery/m_6.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Banglore Meetup",
+      "image": "../../assets/photo_gallery/m_7.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Banglore Meetup",
+      "image": "../../assets/photo_gallery/m_7.1.jpeg"
+    },
+    {
+      "id": 12,
+      "title": "Indore Meetup",
+      "image": "../../assets/photo_gallery/m_8.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Indore Meetup",
+      "image": "../../assets/photo_gallery/m_8.1.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Indore Meetup",
+      "image": "../../assets/photo_gallery/m_8.2.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Noida Meetup",
+      "image": "../../assets/photo_gallery/m_12.jpeg"
+    },
+    {
+      "id": 16,
+      "title": "Noida Meetup",
+      "image": "../../assets/photo_gallery/m_13.jpeg"
+    },
+    {
+      "id": 15,
+      "title": "Noida Meetup",
+      "image": "../../assets/photo_gallery/m_14.jpg"
+    }
+  ],
+  "training": [
+    {
+      "id": 1,
+      "title": "Indian Army",
+      "image": "../../assets/photo_gallery/t_4.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Indian Army",
+      "image": "../../assets/photo_gallery/t_1.1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Mumbai Police",
+      "image": "../../assets/photo_gallery/T_6.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Mumbai Police",
+      "image": "../../assets/photo_gallery/T_5.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Mumbai Police",
+      "image": "../../assets/photo_gallery/T_16.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Mumbai Police",
+      "image": "../../assets/photo_gallery/T_17.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Mumbai Police",
+      "image": "../../assets/photo_gallery/T_1.2.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Bombay Municipal Corporation - BMC",
+      "image": "../../assets/photo_gallery/T_2.1.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "Meghalaya Police - CID",
+      "image": "../../assets/photo_gallery/T_3.1.jpeg"
+    },
+    {
+      "id": 10,
+      "title": "Meghalaya Police - CID",
+      "image": "../../assets/photo_gallery/T_3.2.jpeg"
+    },
+    {
+      "id": 11,
+      "title": "Rashtriya Chemical Fertilizer - RCF",
+      "image": "../../assets/photo_gallery/T_4.1.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Rashtriya Chemical Fertilizer - RCF",
+      "image": "../../assets/photo_gallery/T_4.2.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Advanced Security Training",
+      "image": "../../assets/photo_gallery/training_13.jpeg"
+    },
+    {
+      "id": 14,
+      "title": "Certification Program",
+      "image": "../../assets/photo_gallery/training_14.jpeg"
+    },
+    {
+      "id": 15,
+      "title": "Specialized Training Session",
+      "image": "../../assets/photo_gallery/training_15.jpeg"
+    },
+    {
+      "id": 16,
+      "title": "Professional Development Training",
+      "image": "../../assets/photo_gallery/training_16.jpeg"
+    },
+    {
+      "id": 17,
+      "title": "Expert-led Training Workshop",
+      "image": "../../assets/photo_gallery/training_17.jpeg"
+    }
+  ],
+  "global": [
+    {
+      "id": 1,
+      "title": "International Conference - Dubai",
+      "image": "../../assets/photo_gallery/global_1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Global Summit - London",
+      "image": "../../assets/photo_gallery/global_2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Africa Chapter Launch",
+      "image": "../../assets/photo_gallery/global_3.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Saudi Arabia Representation",
+      "image": "../../assets/photo_gallery/global_4.jpeg"
+    },
+    {
+      "id": 5,
+      "title": "International Partnership Event",
+      "image": "../../assets/photo_gallery/global_5.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Global Collaboration Meet",
+      "image": "../../assets/photo_gallery/global_6.jpeg"
+    },
+    {
+      "id": 7,
+      "title": "Cross-border Initiative",
+      "image": "../../assets/photo_gallery/global_7.jpeg"
+    }
+  ]
+}
